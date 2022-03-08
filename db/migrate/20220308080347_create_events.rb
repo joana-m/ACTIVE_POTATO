@@ -6,7 +6,7 @@ class CreateEvents < ActiveRecord::Migration[6.1]
       t.text :description
       t.string :sports, array: true, default: []
       t.date :date
-      t.string :location
+      t.string :address
       t.time :time_of_event
       t.integer :number_of_participants
       t.boolean :morning
