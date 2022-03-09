@@ -9,7 +9,7 @@
           <div class="card-event-dateandtime"><%=event.date.strftime("%-d/%m/%y")%> | <%=event.time_of_event.strftime("%-l:%M %P") %></div>
         </div>
         <div class="card-event-locationandtimeofday">
-          <div class="card-event-timeofday-icon"></div>
+          <%= image_tag event.image_source, class: "card-event-timeofday-icon" %>
           <div class="card-event-location">📍 <%=event.address%></div>
         </div>
       </div>
