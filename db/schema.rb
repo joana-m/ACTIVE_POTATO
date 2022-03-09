@@ -54,7 +54,7 @@ ActiveRecord::Schema.define(version: 2022_03_09_062703) do
     t.bigint "user_id", null: false
     t.string "title"
     t.text "description"
-    t.string "sports", default: [], array: true
+    t.string "sport"
     t.date "date"
     t.string "address"
     t.time "time_of_event"
