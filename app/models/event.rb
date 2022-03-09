@@ -1,5 +1,5 @@
 class Event < ApplicationRecord
-  SPORTS = ['Surfing', 'Yoga', 'Swimming', 'Boxing', 'Hiking']
+  SPORTS = ['Surf', 'Yoga', 'Swimming', 'Boxing', 'Hiking', 'Tennis']
   belongs_to :user
   has_many :user_events
   has_many :users, through: :user_events
