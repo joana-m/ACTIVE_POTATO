@@ -1,0 +1,106 @@
+.form {
+  display:block;
+  text-align: center;
+  margin-top: 25%;
+}
+
+.form > img {
+  height: 110px;
+  width: 150px;
+  object-fit: cover;
+}
+
+.form > h1 {
+  color: #FF8552;
+}
+
+.form-check {
+  padding: 0px;
+  justify-content: center;
+  display:flex;
+}
+
+.selections {
+  margin-top: 10%;
+}
+
+
+.category-time-wrapper {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.category-time-item {
+  flex: 0 0 30%;
+}
+
+.category-time-selector {
+  position: absolute;
+  transform: scale(0);
+}
+
+.category-time-selector + label {
+  cursor: pointer;
+  background-color: #FAFAFA;
+  border-radius: 8px;
+  border: 1px solid #FF8552;
+  width: 257px;
+  height: 107px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #FF8552;
+}
+
+.category-time-selector:checked + label {
+  background-color: #FF8552;
+  color: #FAFAFA;
+  border-radius: 8px;
+  width: 257px;
+  height: 107px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.category-sport-wrapper {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.category-sport-item {
+  flex: 0 0 30%;
+}
+
+.category-sport-selector {
+  position: absolute;
+  transform: scale(0);
+}
+
+.category-sport-selector + label {
+  cursor: pointer;
+  background-color: white;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+  font-family: 'Poppins', sans-serif;
+  border-radius: 8px;
+  border: none;
+  color: #454E9E;
+  font-size: 14px;
+  width: 147px;
+  height: 67px;
+  font-weight: bold;
+}
+
+.category-sport-selector:checked + label {
+  background-color: #454E9E;
+  font-family: 'Poppins', sans-serif;
+  border-radius: 8px;
+  border: none;
+  color: white;
+  font-size: 14px;
+  width: 147px;
+  height: 67px;
+  font-weight: bold;
+}
