@@ -5,6 +5,6 @@ class PagesController < ApplicationController
   end
 
   def form
-    @model = ""
+    @model = :wizard
   end
 end
