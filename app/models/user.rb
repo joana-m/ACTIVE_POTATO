@@ -11,7 +11,7 @@ class User < ApplicationRecord
   has_many :my_events_chatrooms, through: :events, foreign_key: "user_id", source: :chatroom # Chatroom that User acts as owner
   has_many :joined_chatrooms, through: :joined_events, foreign_key: "user_id", source: :chatroom # Chatroom that User joined an event
 
-  has_one_attached :avatar
+  # has_one_attached :avatar
   validates :user_name, :address, :email, presence: true
   validates :user_name, uniqueness: true
   validates :user_name, length: { minimum: 3 }

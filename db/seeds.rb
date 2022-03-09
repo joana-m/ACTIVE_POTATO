@@ -8,7 +8,7 @@
 
 User.destroy_all
 Event.destroy_all
-User_event.destroy_all
+UserEvent.destroy_all
 
 # names = %w[Christina Ray Joana Nasi Pooja Andrey Mel Daniel Tory Jess Ratna Shania]
 # bios = ["New here, I would like to meet people to do sports with. Feel free to contact me!", "Hello, looking for buddies to do sports with :)"]
