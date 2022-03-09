@@ -4,7 +4,7 @@ class CreateEvents < ActiveRecord::Migration[6.1]
       t.references :user, null: false, foreign_key: true
       t.string :title
       t.text :description
-      t.string :sports, array: true, default: []
+      t.string :sport
       t.date :date
       t.string :address
       t.time :time_of_event
