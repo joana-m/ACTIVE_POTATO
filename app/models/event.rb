@@ -6,4 +6,6 @@ class Event < ApplicationRecord
   has_one :chatroom
 
   validates :sport, inclusion: {in: SPORTS}
+  validates :title, :sport, :address, :time_of_event, presence: true
+  validates :description, length: { maximum: 50 }
 end
