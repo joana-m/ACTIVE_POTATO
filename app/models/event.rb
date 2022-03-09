@@ -1,5 +1,5 @@
 class Event < ApplicationRecord
-  SPORTS = ['Surf', 'Yoga', 'Swimming', 'Boxing', 'Hiking', 'Tennis']
+  SPORTS = ['Surfing', 'Yoga', 'Swimming', 'Boxing', 'Hiking', 'Tennis', 'Crossfit', 'Running']
   belongs_to :user
   has_many :user_events
   has_many :users, through: :user_events
@@ -8,4 +8,16 @@ class Event < ApplicationRecord
   validates :sport, inclusion: {in: SPORTS}
   validates :title, :sport, :address, :time_of_event, presence: true
   validates :description, length: { maximum: 50 }
+
+  before_create :assign_time_of_day
+
+  def assign_time_of_day
+    if time_of_event.hour < 12
+      self.morning = true
+    elsif time_of_event.hour >= 12 && time_of_event.hour < 17
+      self.afternoon = true
+    else
+      self.evening = true
+    end
+  end
 end

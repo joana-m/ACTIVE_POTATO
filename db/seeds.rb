@@ -62,13 +62,13 @@ user_12.avatar.attach(io: file_12, filename: 'nes.png', content_type: 'image/png
 # end
 
 #SURF AM
-event_1 = Event.create!(user_id: user_1.id, title: "Surf with #{user_1.user_name}", description: "Let's go surfing together", address: "Canggu", sport: "Surf", date: Date.tomorrow, time_of_event: "8:00", number_of_participants: 4, morning: true)
+event_1 = Event.create!(user_id: user_1.id, title: "Surf with #{user_1.user_name}", description: "Let's go surfing together", address: "Canggu", sport: "Surfing", date: Date.tomorrow, time_of_event: "8:00", number_of_participants: 4, morning: true)
 user_event_1 = UserEvent.create!(user_id: user_2.id, event_id: event_1.id)
 user_event_2 = UserEvent.create!(user_id: user_3.id, event_id: event_1.id)
 user_event_3 = UserEvent.create!(user_id: user_4.id, event_id: event_1.id)
 user_event_4 = UserEvent.create!(user_id: user_7.id, event_id: event_1.id)
 
-event_4 = Event.create!(user_id: user_10.id, title: "Surf with #{user_10.user_name}", description: "Let's go and surf together", address: "Canggu", sport: "Surf", date: Date.tomorrow, time_of_event: "10:00", number_of_participants: 3, morning: true)
+event_4 = Event.create!(user_id: user_10.id, title: "Surf with #{user_10.user_name}", description: "Let's go and surf together", address: "Canggu", sport: "Surfing", date: Date.tomorrow, time_of_event: "10:00", number_of_participants: 3, morning: true)
 user_event_7 = UserEvent.create!(user_id: user_11.id, event_id: event_4.id)
 user_event_8 = UserEvent.create!(user_id: user_12.id, event_id: event_4.id)
 
@@ -81,13 +81,13 @@ user_event_6 = UserEvent.create!(user_id: user_9.id, event_id: event_3.id)
 
 
 #SURF PM
-event_5 = Event.create!(user_id: user_2.id, title: "Surf with #{user_2.user_name}", description: "Let's go surfing together", address: "Canggu", sport: "Surf", date: Date.tomorrow, time_of_event: "16:00", number_of_participants: 4, afternoon: true)
+event_5 = Event.create!(user_id: user_2.id, title: "Surf with #{user_2.user_name}", description: "Let's go surfing together", address: "Canggu", sport: "Surfing", date: Date.tomorrow, time_of_event: "16:00", number_of_participants: 4, afternoon: true)
 user_event_9 = UserEvent.create!(user_id: user_1.id, event_id: event_5.id)
 user_event_10 = UserEvent.create!(user_id: user_3.id, event_id: event_5.id)
 user_event_11 = UserEvent.create!(user_id: user_4.id, event_id: event_5.id)
 user_event_12 = UserEvent.create!(user_id: user_7.id, event_id: event_5.id)
 
-event_6 = Event.create!(user_id: user_11.id, title: "Surf with #{user_11.user_name}", description: "Let's go and surf together", address: "Canggu", sport: "Surf", date: Date.tomorrow, time_of_event: "15:00", number_of_participants: 3, afternoon: true)
+event_6 = Event.create!(user_id: user_11.id, title: "Surf with #{user_11.user_name}", description: "Let's go and surf together", address: "Canggu", sport: "Surfing", date: Date.tomorrow, time_of_event: "15:00", number_of_participants: 3, afternoon: true)
 user_event_13 = UserEvent.create!(user_id: user_10.id, event_id: event_6.id)
 user_event_14 = UserEvent.create!(user_id: user_12.id, event_id: event_6.id)
 
