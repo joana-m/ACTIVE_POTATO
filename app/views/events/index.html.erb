@@ -1,10 +1,18 @@
-
-  <% @grouped_events.each do |sport, events| %>
-    <h3><%= sport %></h3>
-    <% events.each do |event| %>
-      <h5><%= event.title %> </h5>
-      <p><%=event.address%> </p>
-      <h5><%= event.user_events.count %> </h5>
-      <p><%=event.time_of_event%> </p>
-    <% end %>
+<% @grouped_events.each do |sport, events| %>
+  <h3><%= sport %></h3>
+  <% events.each do |event| %>
+    <div class="card-event">
+      <div class="card-event-avatar"></div>
+        <div class="card-event-textcontent">
+          <div class="card-event-title"><%= event.title %></div>
+          <div class="card-event-useramount"><%= event.user_events.count %>/10 Potatoes Joining</div>
+          <div class="card-event-dateandtime"><%=event.date.strftime("%-d/%m/%y")%> | <%=event.time_of_event.strftime("%-l:%M %P") %></div>
+        </div>
+        <div class="card-event-locationandtimeofday">
+          <div class="card-event-timeofday-icon"></div>
+          <div class="card-event-location">📍 <%=event.address%></div>
+        </div>
+      </div>
+    </div>
+  <% end %>
 <% end %>
