@@ -62,12 +62,23 @@
 }
 
 .card-event-timeofday-icon {
-  background-color: orange;
   width: 18px;
   height: 18px;
   border-radius: 50%;
   margin-left: 75px;
   margin-bottom: 30px;
+
+  // &.morning {
+  //   background-image: asset-url('sun.png');
+  // }
+
+  // &.afternoon {
+  //   background-image: asset-url('sun.png');
+  // }
+
+  // &.evening {
+  //   background-image: asset-url('sun.png');
+  // }
 }
 
 .card-event-location {
