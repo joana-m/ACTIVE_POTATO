@@ -20,4 +20,14 @@ class Event < ApplicationRecord
       self.evening = true
     end
   end
+
+  def image_source
+    if morning
+      "sun.png"
+    elsif afternoon
+      "afternoon.png"
+    else
+      "evening.png"
+    end
+  end
 end

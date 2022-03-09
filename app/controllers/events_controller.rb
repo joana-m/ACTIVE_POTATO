@@ -1,15 +1,15 @@
 class EventsController < ApplicationController
 
   def index
-    if params[:morning]
+    if params[:wizard][:morning]
       morning_events = Event.where(morning: true)
     end
 
-    if params[:afternoon]
+    if params[:wizard][:afternoon]
       afternoon_events = Event.where(afternoon: true)
     end
 
-    if params[:evening]
+    if params[:wizard][:evening]
       evening_events = Event.where(evening: true)
     end
 
