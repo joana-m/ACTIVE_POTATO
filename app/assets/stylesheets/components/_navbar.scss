@@ -3,7 +3,7 @@
 
   background: white;
   width: 100%;
-  position: sticky;
+  position: fixed;
   bottom: 0;
 }
 
@@ -38,4 +38,10 @@
 
 .icon {
   color:#dddcdc;
+}
+
+.page-container {
+  display: grid;
+  min-height: 100vh;
+  grid-template-rows: auto 1fr auto;
 }
