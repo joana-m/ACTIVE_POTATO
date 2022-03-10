@@ -17,4 +17,9 @@ class EventsController < ApplicationController
 
     @grouped_events = events.group_by { |event| event.sport }
   end
+
+  def show
+    @event = Event.find(params[:id])
+    @event_users = @event.user_events.map {|user_event| user_event.user}
+  end
 end

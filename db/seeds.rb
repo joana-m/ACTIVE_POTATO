@@ -30,7 +30,7 @@ file_12 = URI.open('https://ui-avatars.com/api/?name=ratna')
 #   User.create(user_name: name, email: "#{name}@gmail.com", bio: bios.sample, password: "123456", avatar: "https://ui-avatars.com/api/?name=#{name}", address: "Canggu")
 # end
 
-user_1 = User.create!(email: "christina@gmail.com", user_name: "Christina", password: "123456", bio: "New here, I would like to meet people to do sports...", address: "Canggu")
+user_1 = User.create!(email: "christina@gmail.com", user_name: "Chris", password: "123456", bio: "New here, I would like to meet people to do sports...", address: "Canggu")
 user_2 = User.create!(email: "ray@gmail.com", user_name: "Ray", password: "123456", bio: "New here, I would like to meet people to do sports...", address: "Canggu")
 user_3 = User.create!(email: "joana@gmail.com", user_name: "Joana", password: "123456", bio: "Hello, looking for buddies to do sports with.", address: "Canggu")
 user_4 = User.create!(email: "nasi@gmail.com", user_name: "Nasi", password: "123456", bio: "New here, I would like to meet people to do sports...", address: "Canggu")

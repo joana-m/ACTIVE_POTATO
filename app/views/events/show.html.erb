@@ -1,0 +1,32 @@
+<div class="container">
+
+  <div>
+    <div class="title-event">
+      <%= image_tag @event.user.avatar, class: "card-event-avatar" %>
+      <h2><%= @event.title %></h2>
+    </div>
+
+    <div class="info-bar">
+      <p><%= @event.time_of_event.strftime("%H:%M") %></p>
+      <%= image_tag @event.image_source, class: "card-event-timeofday-icon" %>
+      <p>📍 <%= @event.address %></p>
+    </div>
+
+    <div class="description-event">
+      <p><%= @event.description %></p>
+    </div>
+
+    <div class="participants-event">
+      <% @event_users.each do |event_user| %>
+        <%= image_tag event_user.avatar, class: "card-event-avatar" %>
+      <% end %>
+    </div>
+
+    <div class="join-btn">
+      <div class="btn-purple">Join
+        <%= link_to 'Join' %>
+      </div>
+    </div>
+
+  </div>
+</div>
