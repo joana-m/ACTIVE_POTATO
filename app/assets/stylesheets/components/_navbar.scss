@@ -1,12 +1,41 @@
+/* Style the navbar */
 .navbar-lewagon {
-  justify-content: space-between;
+
   background: white;
+  width: 100%;
+  position: sticky;
+  bottom: 0;
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+/* Navbar links */
+.navbar-lewagon a {
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 10px;
+  text-decoration: none;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+/* Page content */
+.content {
+  justify-content: space-between;
+  display: flex;
+  color: #fafafa;
+  font-size: 20px;
+}
+
+.nav-plus {
+  border-radius: 50%;
+  background:#dddcdc;
+  height: 50px;
+  width: 50px;
+  margin-top: -8px;
+}
+
+.nav-plus i {
+  color: white;
+}
+
+.icon {
+  color:#dddcdc;
 }
