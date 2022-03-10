@@ -1,5 +1,17 @@
-.card-timeofday {
+.card-timeofday-unclicked {
+  background-color: white;
+  border-radius: 8px;
+  border-color: #FF8552;
+  width: 257px;
+  height: 107px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-timeofday-clicked {
   background-color: #FF8552;
+  color: white;
   border-radius: 8px;
   width: 257px;
   height: 107px;
