@@ -54,24 +54,31 @@
   cursor: pointer;
   background-color: #FAFAFA;
   border-radius: 8px;
-  border: 1px solid #FF8552;
+  // border: 1px solid #FF8552;
   width: 257px;
   height: 107px;
   display: flex;
   justify-content: center;
   align-items: center;
   color: #FF8552;
+  // font-weight: bold;
+  font-size: 16px;
+  transition: 0.3s;
+  box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.1), 0 1px 1px 0 rgba(0, 0, 0, 0.1);
 }
 
 .category-time-selector:checked + label {
   background-color: #FF8552;
   color: #FAFAFA;
+  // font-weight: bold;
+  font-size: 16px;
   border-radius: 8px;
   width: 257px;
   height: 107px;
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: 0.3s;
 }
 
 .sport-page-wrapper > h1 {
@@ -97,18 +104,19 @@
 .category-sport-selector + label {
   cursor: pointer;
   background-color: white;
-  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.1), 0 1px 1px 0 rgba(0, 0, 0, 0.1);
   font-family: 'Poppins', sans-serif;
   border-radius: 8px;
   border: none;
   color: #454E9E;
-  font-size: 14px;
+  font-size: 16px;
   width: 147px;
   height: 67px;
-  font-weight: bold;
+  // font-weight: bold;
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: 0.3s;
 }
 
 .category-sport-selector:checked + label {
@@ -117,10 +125,11 @@
   border-radius: 8px;
   border: none;
   color: white;
-  font-size: 14px;
+  font-size: 16px;
   width: 147px;
   height: 67px;
-  font-weight: bold;
+  // font-weight: bold;
+  transition: 0.3s;
 }
 
 .btn-sport {
