@@ -6,6 +6,8 @@
    <a href="#plus"> <i class="fas fa-plus"></i></a>
   </div>
   <a href="#friends"><i class="fas fa-users icon"></i></a>
-  <a href="#avatar"><i class="fas fa-circle icon"></i></a>
+  <%= link_to destroy_user_session_path, method: :delete do %>
+   <i class="fas fa-circle icon"></i>
+  <% end %>
   </div>
 </div>
