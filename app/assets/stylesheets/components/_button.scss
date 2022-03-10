@@ -87,3 +87,21 @@
   border-style: solid;
   border: 1px solid $blue;
 }
+
+.btn-purple-chat {
+  background-color: #454E9E;
+  font-family: 'Poppins', sans-serif;
+  border-radius: 8px;
+  border: none;
+  color: white;
+  font-size: 14px;
+  width: 95px;
+  height: 62px;
+  font-weight: bold;
+  margin-right: 8px;
+  align-items: center;
+  margin-top: 8px;
+  i {
+    margin: 0px;
+  }
+}

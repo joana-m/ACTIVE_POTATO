@@ -7,6 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require "open-uri"
 
+Message.destroy_all
+Chatroom.destroy_all
 UserEvent.destroy_all
 Event.destroy_all
 User.destroy_all
@@ -102,3 +104,9 @@ event_9 = Event.create!(user_id: user_8.id, title: "Tennis with #{user_8.user_na
 user_event_16 = UserEvent.create!(user_id: user_7.id, event_id: event_9.id)
 
 event_10 = Event.create!(user_id: user_2.id, title: "Tennis with #{user_2.user_name}", description: "Let's go and play tennis together", address: "Canggu", sport: "Tennis", date: Date.tomorrow, time_of_event: "20:00", number_of_participants: 2, evening: true)
+
+#chatrooms
+chatroom_1 = Chatroom.create!(event_id: event_6.id)
+
+#messages
+message_1 = Message.create!(user_id: user_12.id, content: "hi", chatroom_id: chatroom_1.id)
