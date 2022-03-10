@@ -24,6 +24,10 @@
   margin-top: 10%;
 }
 
+.time-page-wrapper > h1 {
+  color:#FF8552;
+  margin-bottom: 20px;
+}
 
 .category-time-wrapper {
   display: flex;
@@ -38,6 +42,12 @@
 .category-time-selector {
   position: absolute;
   transform: scale(0);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 20px;
 }
 
 .category-time-selector + label {
@@ -62,6 +72,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.sport-page-wrapper > h1 {
+  color: $blue;
+  margin-bottom: 20px;
 }
 
 .category-sport-wrapper {
@@ -91,6 +106,9 @@
   width: 147px;
   height: 67px;
   font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .category-sport-selector:checked + label {
@@ -103,4 +121,13 @@
   width: 147px;
   height: 67px;
   font-weight: bold;
+}
+
+.btn-sport {
+  width: 330px;
+  margin: 25px;
+
+  & input {
+    color: white;
+  }
 }

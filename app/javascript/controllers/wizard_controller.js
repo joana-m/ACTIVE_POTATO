@@ -5,7 +5,9 @@ export default class extends Controller {
 
   goToNext(event) {
     const nextStep = event.target.dataset.nextStep - 1;
-    const actualStep = event.target.dataset.nextStep;
+    const actualStep = parseInt(event.target.dataset.nextStep, 10)
+
+    console.log(nextStep, actualStep, this.stepTargets[actualStep])
 
     this.stepTargets[nextStep].classList.add("hidden");
     this.stepTargets[actualStep].classList.remove("hidden");

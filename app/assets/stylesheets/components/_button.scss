@@ -71,3 +71,19 @@
   cursor: pointer;
   font-weight: bold;
 }
+
+.btn-purple-long-unfilled {
+  background-color: #fafafa;
+  font-family: 'Poppins', sans-serif;
+  border-radius: 8px;
+  border: none;
+  color: $blue;
+  font-size: 14px;
+  width: 330px;
+  margin: 0px 25px;
+  height: 33px;
+  font-weight: bold;
+  border-color: #454E9E;
+  border-style: solid;
+  border: 1px solid $blue;
+}
