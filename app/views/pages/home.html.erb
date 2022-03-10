@@ -1,2 +1,14 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<% @user_events.each do |event| %>
+  <div class="card-event">
+    <%= image_tag event.user.avatar, class: "card-event-avatar" %>
+      <div class="card-event-textcontent">
+        <div class="card-event-title"><%= event.user.user_name %></div>
+        <div class="card-event-useramount"><%= event.user_events.count %>/10 Potatoes Joining</div>
+        <div class="card-event-dateandtime"><%=event.date.strftime("%-d/%m/%y")%> | <%=event.time_of_event.strftime("%-l:%M %P") %></div>
+      </div>
+      <div class="card-event-locationandtimeofday">
+        <%= image_tag event.image_source, class: "card-event-timeofday-icon" %>
+        <div class="card-event-location">📍 <%=event.address%></div>
+      </div>
+  </div>
+<% end %>
