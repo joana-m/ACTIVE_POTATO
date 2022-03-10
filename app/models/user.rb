@@ -15,7 +15,7 @@ class User < ApplicationRecord
   validates :user_name, :address, :email, presence: true
   validates :user_name, uniqueness: true
   validates :user_name, length: { minimum: 3 }
-  validates :user_name, length: { maximum: 9 }
+  validates :user_name, length: { maximum: 6 }
   # validates :email, format: { with: /\A.*@.*\.com\z/ }
 
   def chatrooms
