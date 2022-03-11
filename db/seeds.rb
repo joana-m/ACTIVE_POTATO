@@ -64,7 +64,8 @@ user_12.avatar.attach(io: file_12, filename: 'nes.png', content_type: 'image/png
 # end
 
 #SURF AM
-event_1 = Event.create!(user_id: user_1.id, title: "Surf with #{user_1.user_name}", description: "Let's go surfing together", address: "Canggu, Bali", sport: "Surfing", date: Date.tomorrow, time_of_event: "8:00", number_of_participants: 4, morning: true)
+
+event_1 = Event.create!(user_id: user_1.id, title: "Surf with #{user_1.user_name}", description: "Let's go surfing together", address: "Canggu, Bali", sport: "Surfing", date: Date.today, time_of_event: "8:00", number_of_participants: 4, morning: true)
 user_event_1 = UserEvent.create!(user_id: user_2.id, event_id: event_1.id)
 user_event_2 = UserEvent.create!(user_id: user_3.id, event_id: event_1.id)
 user_event_3 = UserEvent.create!(user_id: user_4.id, event_id: event_1.id)
@@ -75,7 +76,7 @@ user_event_7 = UserEvent.create!(user_id: user_11.id, event_id: event_4.id)
 user_event_8 = UserEvent.create!(user_id: user_12.id, event_id: event_4.id)
 
 #TENNIS AM
-event_2 = Event.create!(user_id: user_5.id, title: "Tennis with #{user_5.user_name}", description: "Let's go and play tennis together", address: "Canggu, Bali", sport: "Tennis", date: Date.tomorrow, time_of_event: "10:00", number_of_participants: 2, morning: true)
+event_2 = Event.create!(user_id: user_5.id, title: "Tennis with #{user_5.user_name}", description: "Let's go and play tennis together", address: "Canggu, Bali", sport: "Tennis", date: Date.today, time_of_event: "10:00", number_of_participants: 2, morning: true)
 user_event_5 = UserEvent.create!(user_id: user_6.id, event_id: event_2.id)
 
 event_3 = Event.create!(user_id: user_8.id, title: "Tennis with #{user_8.user_name}", description: "Let's go and play tennis together", address: "Canggu, Bali", sport: "Tennis", date: Date.tomorrow, time_of_event: "8:00", number_of_participants: 2, morning: true)
@@ -100,8 +101,10 @@ user_event_15 = UserEvent.create!(user_id: user_5.id, event_id: event_7.id)
 event_8 = Event.create!(user_id: user_8.id, title: "Tennis with #{user_8.user_name}", description: "Let's go and play tennis together", address: "Canggu, Bali", sport: "Tennis", date: Date.tomorrow, time_of_event: "16:00", number_of_participants: 2, afternoon: true)
 
 #TENNIS EVENING
-event_9 = Event.create!(user_id: user_8.id, title: "Tennis with #{user_8.user_name}", description: "Let's go and play tennis together", address: "Canggu, Bali", sport: "Tennis", date: Date.tomorrow, time_of_event: "20:00", number_of_participants: 2, evening: true)
+event_9 = Event.create!(user_id: user_8.id, title: "Tennis with #{user_8.user_name}", description: "Let's go and play tennis together", address: "Canggu, Bali", sport: "Tennis", date: Date.yesterday, time_of_event: "20:00", number_of_participants: 2, evening: true)
+
 user_event_16 = UserEvent.create!(user_id: user_7.id, event_id: event_9.id)
+user_event_17 = UserEvent.create!(user_id: user_2.id, event_id: event_9.id)
 
 event_10 = Event.create!(user_id: user_2.id, title: "Tennis with #{user_2.user_name}", description: "Let's go and play tennis together", address: "Canggu, Bali", sport: "Tennis", date: Date.tomorrow, time_of_event: "20:00", number_of_participants: 2, evening: true)
 
