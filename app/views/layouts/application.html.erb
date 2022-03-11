@@ -15,7 +15,9 @@
   <body>
     <div class="page-container">
       <%= render 'shared/flashes' %>
-      <%= yield %>
+      <% unless action_name == "message#create" %>
+        <%= yield %>
+      <% end %>
       <%= render 'shared/navbar' %>
     </div>
   </body>
