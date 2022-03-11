@@ -1,0 +1,13 @@
+<h1>Messages<h1>
+  <% @chatrooms.each do |chatroom| %>
+  <%= link_to chatroom_path(chatroom), class:"card-message" do%>
+    <%= cl_image_tag chatroom.messages.last.user.avatar.key, class: "card-message-avatar" %>
+     <div class="card-event-textcontent">
+       <div class="card-message-username"><%= chatroom.messages.last.user.user_name %></div>
+       <div class="card-message-content"><%= chatroom.messages.last.content %></div>
+     </div>
+     <div class="card-message-locationandtimeofday">
+       <div class="card-message-date"><%=chatroom.messages.last.created_at.strftime("%-d/%m/%y")%></div>
+     </div>
+  <% end %>
+ <% end %>

@@ -16,6 +16,8 @@ class EventsController < ApplicationController
     events = [morning_events, afternoon_events, evening_events].flatten.compact.sort_by { |event| event.time_of_event}
 
     @grouped_events = events.group_by { |event| event.sport }
+    type = @grouped_events.keys[0]
+    @random_event = @grouped_events[type][0]
   end
 
   def show

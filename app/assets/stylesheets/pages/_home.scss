@@ -2,3 +2,19 @@
 .hidden {
   display: none;
 }
+
+#past-events-header {
+  color: #AEADAD;
+  font-weight: bolder;
+  font-size: 18px;
+}
+
+#greeting-header {
+  color: $blue;
+  margin: 20px 10px 50px 20px;
+  width: 342px;
+}
+
+#greeting-header h2 {
+  font-weight: bold;
+}

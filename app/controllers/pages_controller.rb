@@ -5,8 +5,13 @@ class PagesController < ApplicationController
     @events = Event.all
     @user_events = []
     @events.each do |event|
-      @user_events << event if current_user == event.user
+      event.users.each do |user|
+        @user_events << event if current_user == user || current_user == event.user
+      end
     end
+    # @events.each do |event|
+    #   @user_events << event if current_user == event.user
+    # end
 
   #   if params[:wizard][:morning]
   #     morning_events = Event.where(morning: true)
