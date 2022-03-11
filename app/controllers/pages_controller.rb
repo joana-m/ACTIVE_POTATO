@@ -3,12 +3,26 @@ class PagesController < ApplicationController
 
   def home
     @events = Event.all
-    @user_events = []
-    @events.each do |event|
-      event.users.each do |user|
-        @user_events << event if current_user == user || current_user == event.user
-      end
+    @past_events = []
+    @events_today = []
+    # @events.each do |event|
+    #   event.users.each do |user|
+    #     @user_events << event if current_user == user || current_user == event.user
+    #     @events_today << event if event.date == Date.today && current_user ==
+    #   end
+    # end
+
+   all_my_events =  @events.joins(:user_events).where(user_events: {user_id: current_user})
+   all_my_events.each do |event|
+    if event.date == Date.today
+      @events_today << event
+    elsif event.date.past?
+      @past_events << event
     end
+  end
+
+
+
     # @events.each do |event|
     #   @user_events << event if current_user == event.user
     # end
