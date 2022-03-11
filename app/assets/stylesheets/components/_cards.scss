@@ -49,8 +49,11 @@
 }
 
 .event-cards-container {
-  margin: 20px 10px 50px 20px;
+  margin: 20px 20px 50px 20px;
   width: 342px;
+  &.index {
+    width: unset;
+  }
 }
 
 .card-event {
@@ -147,6 +150,9 @@
   align-items: center;
   color:black;
   font-size: 16px;
+  &.index {
+    width: unset;
+  }
 }
 
 .card-message-username {
