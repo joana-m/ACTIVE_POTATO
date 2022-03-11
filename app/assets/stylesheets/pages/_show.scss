@@ -50,7 +50,15 @@
   align-items: center;
 }
 
+.event-details-wrapper {
+    width: 100%;
+    padding: 20px;
+}
+
 .join-btn {
   display: block;
-  margin-top: 180px;
+  margin-top: 30px;
+  text-decoration: none;
+  text-align: center;
+  padding-top: 7px;
 }

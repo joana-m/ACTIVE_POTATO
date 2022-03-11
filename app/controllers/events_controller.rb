@@ -21,5 +21,14 @@ class EventsController < ApplicationController
   def show
     @event = Event.find(params[:id])
     @event_users = @event.user_events.map {|user_event| user_event.user}
+    @event_map = Event.where(id: @event.id)
+    @markers = @event_map.geocoded.map do |event|
+      {
+        lat: event.latitude,
+        lng: event.longitude
+
+        # image_url: helpers.asset_url("REPLACE_THIS_WITH_YOUR_IMAGE_IN_ASSETS")
+      }
+    end
   end
 end

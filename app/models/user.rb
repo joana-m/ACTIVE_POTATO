@@ -18,6 +18,9 @@ class User < ApplicationRecord
   validates :user_name, length: { maximum: 9 }
   # validates :email, format: { with: /\A.*@.*\.com\z/ }
 
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
+
   def chatrooms
     my_events_chatrooms + joined_chatrooms
   end
