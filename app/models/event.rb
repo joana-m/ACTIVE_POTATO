@@ -9,6 +9,9 @@ class Event < ApplicationRecord
   validates :title, :sport, :address, :time_of_event, presence: true
   validates :description, length: { maximum: 50 }
 
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
+
   before_create :assign_time_of_day
 
   def assign_time_of_day
