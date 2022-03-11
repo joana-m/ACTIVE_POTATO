@@ -15,8 +15,10 @@
   <body>
     <div class="page-container">
       <%= render 'shared/flashes' %>
-      <%= yield %>
-      <%= render 'shared/navbar' %>
+        <%= yield %>
+      <% unless params[:controller] == "chatrooms" && params[:action] == "show" %>
+        <%= render 'shared/navbar' %>
+      <% end %>
     </div>
   </body>
 </html>
