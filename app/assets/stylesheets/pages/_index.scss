@@ -2,3 +2,9 @@
 @import "home";
 @import "form";
 @import "show";
+
+#date-header {
+  color: $blue;
+  font-weight: bold;
+  padding: 20px 10px 50px 20px;
+}
