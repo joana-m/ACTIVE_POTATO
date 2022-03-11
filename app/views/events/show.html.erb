@@ -20,7 +20,7 @@
           <%= image_tag event_user.avatar, class: "card-event-avatar" %>
         <% end %>
 
-        <%= link_to 'Join', chatrooms_path, class: "btn-purple join-btn" %>
+        <%= link_to 'Join', event_user_events_path(@event), method: :post, class: "btn-purple join-btn" %>
       </div>
 
     </div>
