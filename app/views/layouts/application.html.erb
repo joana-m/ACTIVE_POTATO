@@ -15,10 +15,10 @@
   <body>
     <div class="page-container">
       <%= render 'shared/flashes' %>
-      <% unless action_name == "message#create" %>
         <%= yield %>
+      <% unless params[:controller] == "chatrooms" && params[:action] == "show" %>
+        <%= render 'shared/navbar' %>
       <% end %>
-      <%= render 'shared/navbar' %>
     </div>
   </body>
 </html>
