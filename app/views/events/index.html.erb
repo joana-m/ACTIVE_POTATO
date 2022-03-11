@@ -1,5 +1,5 @@
 <div>
-<h1><%=@random_event.date.strftime("%-d/%m/%y")%></h1>
+<h1 id="date-header"><%=@random_event.date.strftime("%-d/%m/%y")%></h1>
 <% @grouped_events.each do |sport, events| %>
   <div class="event-cards-container">
     <div class="sport-type-header"><h3><%= sport %></h3></div>

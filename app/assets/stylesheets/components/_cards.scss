@@ -39,6 +39,7 @@
 
 .sport-type-header {
   margin-top: 20px;
+  margin-bottom: 20px;
   width: 342px;
 }
 
@@ -58,11 +59,11 @@
   background-color: white;
   border-radius: 8px;
   width: 342px;
-  height: 91px;
+  height: 100px;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  margin-bottom: 10px;
+  margin-bottom: 30px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -115,6 +116,10 @@
   // &.evening {
   //   background-image: asset-url('sun.png');
   // }
+}
+
+.card-message {
+  margin-top: 30px;
 }
 
 .card-event-location {
@@ -180,31 +185,40 @@
 }
 /* last event card design */
 
-#last-event-card {
+#last-event-card-empty-today {
+  color: white;
+  padding-left: 30px;
+}
+
+.last-event-card {
   font-family: 'Poppins', sans-serif;
   width: 342px;
-  height: 148px;
+  height: 350px;
   background-color: #FF8552;
   opacity: 0.8;
   border-radius: 8px;
   margin: 20px 10px 50px 20px;
 }
 
-#last-event-card-content {
-  padding: 30px;
+.last-event-card-content {
+  padding-left: 30px;
+  padding-bottom: 30px;
+  height: 100px
 }
 
-#last-event-card-header {
+.last-event-card-header {
+  padding: 30px;
   color: white;
   font-size: 18px;
   font-weight: bold;
   padding-bottom: 10px;
 }
 
-#last-event-card-titleandcount {
+.last-event-card-titleandcount {
   color: white;
+  width: 240px;
 }
 
-#last-event-card-date {
+.last-event-card-date {
   color: white;
 }

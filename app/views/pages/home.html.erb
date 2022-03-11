@@ -1,17 +1,23 @@
 
 <div id="greeting-header"><h2>Hello, <%= current_user.user_name %></h2></div>
 
-<div id="last-event-card">
-    <div id="last-event-card-content">
-      <div id="last-event-card-header">Your Last Event</div>
-      <div id="last-event-card-titleandcount"><%= @user_events.last.title %> | <%= @user_events.last.user_events.count %> attendees</div>
-      <div id="last-event-card-date"><%= @user_events.last.date.strftime("%-d/%m/%y") %></div>
-    </div>
-  </div>
+<div class="last-event-card">
+  <div class="last-event-card-header">Events Today</div>
+  <% if @events_today.empty? %>
+      <p id="last-event-card-empty-today">No events planned for today 😔</p>
+  <% else %>
+    <% @events_today.each do |event| %>
+      <div class="last-event-card-content">
+        <div class="last-event-card-titleandcount"><%= event.title %> <br> <%= event.user_events.count %> attendees</div>
+        <div class="last-event-card-date"><%=event.time_of_event.strftime("%-l:%M %P") %></div>
+      </div>
+    <% end %>
+  <% end %>
+</div>
 
 <div class="event-cards-container">
   <div id="past-events-header"><h3>Your Past Events</h3></div>
-  <% @user_events.each do |event| %>
+  <% @past_events.each do |event| %>
     <div class="card-event">
         <%= image_tag event.user.avatar, class: "card-event-avatar" %>
           <div class="card-event-textcontent">
