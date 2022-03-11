@@ -3,7 +3,7 @@
 
 <div id="last-event-card">
     <div id="last-event-card-content">
-      <div id="last-event-card-header">Your Last Event</div>
+      <div id="last-event-card-header">Events Today</div>
       <div id="last-event-card-titleandcount"><%= @user_events.last.title %> | <%= @user_events.last.user_events.count %> attendees</div>
       <div id="last-event-card-date"><%= @user_events.last.date.strftime("%-d/%m/%y") %></div>
     </div>
