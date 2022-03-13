@@ -39,6 +39,7 @@
 
 .sport-type-header {
   margin-top: 20px;
+  margin-bottom: 20px;
   width: 342px;
 }
 
@@ -49,8 +50,11 @@
 }
 
 .event-cards-container {
-  margin: 20px 10px 50px 20px;
+  margin: 20px 20px 50px 20px;
   width: 342px;
+  &.index {
+    width: unset;
+  }
 }
 
 .card-event {
@@ -58,11 +62,11 @@
   background-color: white;
   border-radius: 8px;
   width: 342px;
-  height: 91px;
+  height: 100px;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  margin-bottom: 10px;
+  margin-bottom: 30px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -117,6 +121,10 @@
   // }
 }
 
+.card-message {
+  margin-top: 30px;
+}
+
 .card-event-location {
   font-size: 14px;
 }
@@ -147,6 +155,9 @@
   align-items: center;
   color:black;
   font-size: 16px;
+  &.index {
+    width: unset;
+  }
 }
 
 .card-message-username {
@@ -170,33 +181,50 @@
 }
 
 
+.card-message:active {
+  transform: scale(0.98);
+  /* Scaling button to 0.98 to its original size */
+  /*box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);*/
+  box-shadow: inset 0 0 4px black;
+  /* Lowering the shadow */
+
+}
 /* last event card design */
 
-#last-event-card {
+#last-event-card-empty-today {
+  color: white;
+  padding-left: 30px;
+}
+
+.last-event-card {
   font-family: 'Poppins', sans-serif;
   width: 342px;
-  height: 148px;
+  height: 350px;
   background-color: #FF8552;
   opacity: 0.8;
   border-radius: 8px;
   margin: 20px 10px 50px 20px;
 }
 
-#last-event-card-content {
-  padding: 30px;
+.last-event-card-content {
+  padding-left: 30px;
+  padding-bottom: 30px;
+  height: 100px
 }
 
-#last-event-card-header {
+.last-event-card-header {
+  padding: 30px;
   color: white;
   font-size: 18px;
   font-weight: bold;
   padding-bottom: 10px;
 }
 
-#last-event-card-titleandcount {
+.last-event-card-titleandcount {
   color: white;
+  width: 240px;
 }
 
-#last-event-card-date {
+.last-event-card-date {
   color: white;
 }
