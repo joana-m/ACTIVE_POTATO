@@ -33,22 +33,23 @@
 
 .nav-plus {
   border-radius: 50%;
-  background: #555454;
-  height: 50px;
-  width: 50px;
+  background: $blue;
+  height: 65px;
+  width: 65px;
   margin-top: -8px;
   display: flex;
   align-items: center;
   justify-content: center;
+  border-style: solid;
+  border-color: white;
 }
 
 .nav-plus i {
   color: white;
-  padding-top: 23px;
 }
 
 .icon {
-  color:#555454;
+  color:#807d7d;
 }
 
 .page-container {
