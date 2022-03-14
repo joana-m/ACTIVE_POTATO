@@ -240,6 +240,10 @@
   opacity: 0.8;
   border-radius: 8px;
   margin: 20px 20px 10px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .profile-page-card p {
@@ -278,8 +282,14 @@ font-weight: bold;
   height: 91px;
   justify-content: center;
   align-items: center;
-  color:white;
-  font-size: 18px;
+  color: white;
+  font-size: 16px;
   font-weight: bold;
   margin-left: 24px;
+  display: flex;
+  flex-direction: column;
+}
+.card-profile-bottom h2 {
+  font-size: 16px;
+  font-weight: bold;
 }

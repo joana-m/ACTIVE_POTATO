@@ -7,20 +7,19 @@
   </div>
   <div class="card-profile-details">
     <h2 class="text-justify text-center mt-3"><%= @user.user_name %></h2>
-    <br/>
     <p class="text-justify text-center"><%= @user.bio %></p>
-    <br/>
     <div class="d-flex justify-content-center">
       <div class="profile-page-card p-1">
-        <h2 class="h4">Events attended <br/><br/><%= @user.joined_events.size %></h2>
+        <h2>Events attended </h2>
+        <%= @user.joined_events.size %>
       </div>
       <div class="profile-page-card p-1">
-        <h2 class="h4">Friends<br/><br/><%= @user.joined_events.size %></h2>
+        <h2>Friends</h2>
+        <%= @user.joined_events.size %>
       </div>
     </div>
     <div class="card-profile-bottom">
-        <h2 class="h4">Favorite Sport</h2>
-        <br/>
+        <h2 class="mt-3">Favorite Sport</h2>
         <p> Surf</p>
       </div>
   </div>
