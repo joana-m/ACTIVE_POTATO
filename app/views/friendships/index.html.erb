@@ -1,0 +1,25 @@
+<div class="class">
+<h1>Friends</h1>
+
+  <div>
+    <h2>Online <i class="fas fa-caret-down"></i></h2>
+    <% @friendships.each do |friendship|  %>
+      <div class="card-event">
+      <%= image_tag friendship.friend.avatar %>
+      <%= friendship.friend.user_name %>
+      <p class="online-btn"><i class="fas fa-circle"></i> Online</p>
+      <br>
+    </div>
+    <% end %>
+
+    <div class="people-you-may-know">
+      <h2>You may know</h2>
+      <% @non_friends.limit(3).each do |non_friend| %>
+        <div class="card-event">
+          <%= non_friend.user_name %>
+          <%= link_to 'Follow', user_friendships_path(non_friend), method: :post %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

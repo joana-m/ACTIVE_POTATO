@@ -112,3 +112,8 @@ chatroom_1 = Chatroom.create!(event_id: event_6.id)
 
 #messages
 message_1 = Message.create!(user_id: user_12.id, content: "hi", chatroom_id: chatroom_1.id)
+
+
+#friendship
+user_3.befriend user_2
+user_3.befriend user_4
