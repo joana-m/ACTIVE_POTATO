@@ -1,5 +1,5 @@
 <div class="card-profile">
-  <h2 class="profile mt-4">Profile Page</h2>
+  <h2 class="profile mt-3">Profile Page</h2>
 
   <div class="banner-profile mt-3">
     <%= image_tag @user.avatar, class: "card-event-avatar" %><br/><br/>
@@ -35,7 +35,7 @@
   </div>
 <% end %>
 
-<p>Delete my account <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+<p>Not happy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 
 <%= link_to "Log out", destroy_user_session_path, method: :delete %>
 <p class="mt-3"><%= link_to "Back", :back %></p>

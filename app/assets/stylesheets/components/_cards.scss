@@ -239,7 +239,7 @@
   background-color: #FF8552;
   opacity: 0.8;
   border-radius: 8px;
-  margin: 20px 20px 10px 20px;
+  margin: 10px 10px 10px 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -254,7 +254,7 @@
 .profile-page-card h2 {
   color: white;
   font-weight: bold;
-  font-size: 16px;
+  font-size: 24px;
 }
 
 .card-profile-details {
@@ -263,10 +263,9 @@ text-align: center;
 font-weight: bold;
 }
 
-.card-profile-details p {
-  font-size: 16px;
-  font-weight: lighter;
+.main-p {
   color: black;
+  font-weight: lighter;
 }
 .card-profile-bottom p {
   font-weight: bold;
@@ -278,14 +277,14 @@ font-weight: bold;
   background-color: #FF8552;
   opacity: 0.8;
   border-radius: 8px;
-  width: 342px;
+  width: 320px;
   height: 91px;
   justify-content: center;
   align-items: center;
   color: white;
   font-size: 16px;
   font-weight: bold;
-  margin-left: 24px;
+  margin-left: 34px;
   display: flex;
   flex-direction: column;
 }
