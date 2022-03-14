@@ -236,9 +236,14 @@
 .profile-page-card {
   font-family: 'Poppins', sans-serif;
   width: 148px;
-  height: 114px;
   background-color: #FF8552;
   opacity: 0.8;
   border-radius: 8px;
-  margin: 20px 10px 50px 20px;
+  margin: 20px 10px 20px 20px;
+}
+.card-profile-details p {
+  text-align: center;
+}
+.card-profile-details h2 {
+color: 454E9E;
 }

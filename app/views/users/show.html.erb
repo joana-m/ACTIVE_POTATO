@@ -1,23 +1,30 @@
-<div class="card-profile">
-  <h2 class="profile mt-4">Profile Page</h2>
-
-  <div class="banner-profile mt-3">
-    <%= image_tag @user.avatar, class: "card-event-avatar" %><br/><br/>
-    <%= @user.user_name %><br/>
-  </div>
-</div>
-<div class="container-profile">
-  <%= @user.user_name %><br/>
-  <%= @user.bio %><br/>
-  <div class="profile-page-card">
-  <h2>Events attended</h2>
-  </div>
-  <div class="profile-page-card">
-  <h2>Events attended</h2>
-</div>
 <div>
+  <div class="card-profile">
 
+    <div class="banner-profile mt-3">
+      <%= image_tag @user.avatar, class: "avatar-square" %>
+    </div>
+  </div>
+  <div class="card-profile-details">
+    <h2 class="text-justify text-center"><%= @user.user_name %></h2>
+    <br/>
+    <p class="text-justify"><%= @user.bio %></p>
+    <br/>
+    <div class="d-flex justify-content-center">
+      <div class="profile-page-card p-1">
+        <h2 class="h4">Events attended - <%= @user.joined_events.size %></h2>
+      </div>
+      <div class="profile-page-card p-1">
+        <h2 class="h4">Favorite Sports</h2>
+        <p class="text-start"> - Surf</p>
+        <p class="text-start"> - Hiking</p>
+      </div>
+    </div>
+  </div>
 
-<h2 class="btn-purple-long-unfilled">Add friend</h2>
+<div class="d-flex justify-content-center">
+  <h2 class="btn-purple join-btn">Add friend</h2>
+</div>
 
-<%= link_to "Back", :back %>
+  <%= link_to "Back", :back %>
+</div>
