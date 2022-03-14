@@ -29,7 +29,13 @@
   font-size: 28px;
   margin-left: 15px;
   margin-right: 15px;
+
+  &a:active {
+    color: black;
+  }
 }
+
+
 
 .nav-plus {
   border-radius: 50%;
