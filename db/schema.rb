@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_09_062703) do
+ActiveRecord::Schema.define(version: 2022_03_14_041313) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -67,6 +67,19 @@ ActiveRecord::Schema.define(version: 2022_03_09_062703) do
     t.float "latitude"
     t.float "longitude"
     t.index ["user_id"], name: "index_events_on_user_id"
+  end
+
+  create_table "friendships", force: :cascade do |t|
+    t.string "popular_model_type"
+    t.bigint "popular_model_id"
+    t.string "friend_type"
+    t.bigint "friend_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["friend_id", "friend_type"], name: "index_friendships_on_friend_id_and_friend_type"
+    t.index ["friend_type", "friend_id"], name: "index_friendships_on_friend"
+    t.index ["popular_model_id", "popular_model_type"], name: "index_friendships_on_popular_model_id_and_popular_model_type"
+    t.index ["popular_model_type", "popular_model_id"], name: "index_friendships_on_popular_model"
   end
 
   create_table "messages", force: :cascade do |t|

@@ -2,9 +2,17 @@
 @import "home";
 @import "form";
 @import "show";
+@import "friendspage";
 
 #date-header {
   color: $blue;
   font-weight: bold;
   padding: 20px 10px 50px 20px;
+}
+
+.index-content {
+  & h2 {
+    color: $blue;
+    font-weight: bold;
+  }
 }

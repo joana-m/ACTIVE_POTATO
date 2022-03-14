@@ -1,34 +1,49 @@
 
-<div id="greeting-header"><h2>Hello, <%= current_user.user_name %></h2></div>
+<div>
+  <%# <div class="image-logo"> %>
+    <%= image_tag 'logo.png', class:"image-logo" %>
+  <%# </div> %>
+  <h2 id="greeting-header">Hello, <%= current_user.user_name %></h2>
 
-<div class="last-event-card">
-  <div class="last-event-card-header">Events Today</div>
-  <% if @events_today.empty? %>
-      <p id="last-event-card-empty-today">No events planned for today 😔</p>
-  <% else %>
-    <% @events_today.each do |event| %>
-      <div class="last-event-card-content">
-        <div class="last-event-card-titleandcount"><%= event.title %> <br> <%= event.user_events.count %> attendees</div>
-        <div class="last-event-card-date"><%=event.time_of_event.strftime("%-l:%M %P") %></div>
-      </div>
-    <% end %>
-  <% end %>
-</div>
+  <div class="event-cards-container index">
+    <div class="past-events-header"><h3>Your Upcoming Events</h3></div>
+    <div class="upcoming-event-card">
+      <% if @events_today.empty? %>
+          <p id="upcoming-event-card-empty-today">No events planned for today 😔</p>
+      <% else %>
+        <% @events_today.each do |event| %>
+          <div class="upcoming-events-cards">
+            <div class="event-placeholder d-flex">
+              <div>
+                <div class="upcoming-event-card-title"><%= event.title %></div>
+                <div class="upcoming-event-card-time"><%=event.time_of_event.strftime("%-l:%M %P") %></div>
+              </div>
+              <div class="upcoming-event-card-cross"><i class="fas fa-times-circle"></i></div>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
 
-<div class="event-cards-container">
-  <div id="past-events-header"><h3>Your Past Events</h3></div>
-  <% @past_events.each do |event| %>
-    <div class="card-event">
-        <%= image_tag event.user.avatar, class: "card-event-avatar" %>
+  <div class="event-cards-container index">
+    <div class="past-events-header"><h3>Your Past Events</h3></div>
+    <% @past_events.each do |event| %>
+      <%= link_to event_path(event), class:"index mb-4" do %>
+        <div class="card-event">
+          <div>
+            <%= image_tag event.user.avatar, class: "card-event-avatar" %>
+          </div>
+          <div class="card-event-title"><%= event.title %></div>
           <div class="card-event-textcontent">
-            <div class="card-event-title"><%= event.title %></div>
-            <div class="card-event-useramount"><%= event.user_events.count %>/10 Potatoes Joining</div>
-            <div class="card-event-dateandtime"><%=event.date.strftime("%-d/%m/%y")%> | <%=event.time_of_event.strftime("%-l:%M %P") %></div>
+            <div class="card-event-useramount"><i class="fas fa-user-friends"></i>  <%= event.user_events.count %>/10 people</div>
+            <div class="card-event-dateandtime"><i class="fas fa-clock"></i>    <%=event.time_of_event.strftime("%-l:%M %P") %></div>
+            <div class="card-event-location"><i class="fas fa-map-marker-alt"></i>     <%=event.address%></div>
           </div>
-          <div class="card-event-locationandtimeofday">
-            <%= image_tag event.image_source, class: "card-event-timeofday-icon" %>
-            <div class="card-event-location">📍 <%=event.address%></div>
-          </div>
-      </div>
-  <% end %>
+            <%# <div class="card-event-locationandtimeofday"> %>
+            <%#= image_tag event.image_source, class: "card-event-timeofday-icon" %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
 </div>

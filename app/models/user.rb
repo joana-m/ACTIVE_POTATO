@@ -21,8 +21,14 @@ class User < ApplicationRecord
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
 
+  popular
+
   def chatrooms
     my_events_chatrooms + joined_chatrooms
+  end
+
+  def friends
+    Popular::Friendship.where(popular_model: self)
   end
 end
 
