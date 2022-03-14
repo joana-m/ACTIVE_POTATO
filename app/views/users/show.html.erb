@@ -1,0 +1,23 @@
+<div class="card-profile">
+  <h2 class="profile mt-4">Profile Page</h2>
+
+  <div class="banner-profile mt-3">
+    <%= image_tag @user.avatar, class: "card-event-avatar" %><br/><br/>
+    <%= @user.user_name %><br/>
+  </div>
+</div>
+<div class="container-profile">
+  <%= @user.user_name %><br/>
+  <%= @user.bio %><br/>
+  <div class="profile-page-card">
+  <h2>Events attended</h2>
+  </div>
+  <div class="profile-page-card">
+  <h2>Events attended</h2>
+</div>
+<div>
+
+
+<h2 class="btn-purple-long-unfilled">Add friend</h2>
+
+<%= link_to "Back", :back %>
