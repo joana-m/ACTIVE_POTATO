@@ -45,6 +45,7 @@ class PagesController < ApplicationController
   end
 
   def form
+    session[:wizard] = nil
     @model = :wizard
   end
 end

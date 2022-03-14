@@ -4,7 +4,7 @@
   <div class="event-cards-container index">
     <div class="sport-type-header"><h3><%= sport %></h3></div>
     <% events.each do |event| %>
-      <%= link_to event_path(event), class:"index mb-4" do %>
+      <%= link_to event_path(event, @param), class:"index mb-4"  do %>
         <div class="card-event">
           <div>
             <%= image_tag event.user.avatar, class: "card-event-avatar" %>
