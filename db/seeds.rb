@@ -7,6 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require "open-uri"
 
+Message.destroy_all
+Chatroom.destroy_all
 UserEvent.destroy_all
 Event.destroy_all
 User.destroy_all
@@ -27,21 +29,21 @@ file_12 = URI.open('https://ui-avatars.com/api/?name=ratna')
 # bios = ["New here, I would like to meet people to do sports with. Feel free to contact me!", "Hello, looking for buddies to do sports with :)"]
 
 # names.each do |name|
-#   User.create(user_name: name, email: "#{name}@gmail.com", bio: bios.sample, password: "123456", avatar: "https://ui-avatars.com/api/?name=#{name}", address: "Canggu")
+#   User.create(user_name: name, email: "#{name}@gmail.com", bio: bios.sample, password: "123456", avatar: "https://ui-avatars.com/api/?name=#{name}", address: "Canggu, Bali")
 # end
 
-user_1 = User.create!(email: "christina@gmail.com", user_name: "Christina", password: "123456", bio: "New here, I would like to meet people to do sports...", address: "Canggu")
-user_2 = User.create!(email: "ray@gmail.com", user_name: "Ray", password: "123456", bio: "New here, I would like to meet people to do sports...", address: "Canggu")
-user_3 = User.create!(email: "joana@gmail.com", user_name: "Joana", password: "123456", bio: "Hello, looking for buddies to do sports with.", address: "Canggu")
-user_4 = User.create!(email: "nasi@gmail.com", user_name: "Nasi", password: "123456", bio: "New here, I would like to meet people to do sports...", address: "Canggu")
-user_5 = User.create!(email: "andrey@gmail.com", user_name: "Andrey", password: "123456", bio: "New here, I would like to meet people to do sports...", address: "Canggu")
-user_6 = User.create!(email: "tory@gmail.com", user_name: "Tory", password: "123456", bio: "New here, I would like to meet people to do sports...", address: "Canggu")
-user_7 = User.create!(email: "jess@gmail.com", user_name: "Jess", password: "123456", bio: "New here, I would like to meet people to do sports...", address: "Canggu")
-user_8 = User.create!(email: "pooja@gmail.com", user_name: "Pooja", password: "123456", bio: "New here, I would like to meet people to do sports...", address: "Canggu")
-user_9 = User.create!(email: "shania@gmail.com", user_name: "Shania", password: "123456", bio: "New here, I would like to meet people to do sports...", address: "Canggu")
-user_10 = User.create!(email: "mel@gmail.com", user_name: "Mel", password: "123456", bio: "Hello, looking for buddies to do sports with.", address: "Canggu")
-user_11 = User.create!(email: "daniel@gmail.com", user_name: "Daniel", password: "123456", bio: "Hello, looking for buddies to do sports with.", address: "Canggu")
-user_12 = User.create!(email: "ratna@gmail.com", user_name: "Ratna", password: "123456", bio: "Hello, looking for buddies to do sports with.", address: "Canggu")
+user_1 = User.create!(email: "christina@gmail.com", user_name: "Chris", password: "123456", bio: "New here, I would like to meet people to do sports...", address: "Canggu, Bali")
+user_2 = User.create!(email: "ray@gmail.com", user_name: "Ray", password: "123456", bio: "New here, I would like to meet people to do sports...", address: "Canggu, Bali")
+user_3 = User.create!(email: "joana@gmail.com", user_name: "Joana", password: "123456", bio: "Hello, looking for buddies to do sports with.", address: "Canggu, Bali")
+user_4 = User.create!(email: "nasi@gmail.com", user_name: "Nasi", password: "123456", bio: "New here, I would like to meet people to do sports...", address: "Canggu, Bali")
+user_5 = User.create!(email: "andrey@gmail.com", user_name: "Andrey", password: "123456", bio: "New here, I would like to meet people to do sports...", address: "Canggu, Bali")
+user_6 = User.create!(email: "tory@gmail.com", user_name: "Tory", password: "123456", bio: "New here, I would like to meet people to do sports...", address: "Canggu, Bali")
+user_7 = User.create!(email: "jess@gmail.com", user_name: "Jess", password: "123456", bio: "New here, I would like to meet people to do sports...", address: "Canggu, Bali")
+user_8 = User.create!(email: "pooja@gmail.com", user_name: "Pooja", password: "123456", bio: "New here, I would like to meet people to do sports...", address: "Canggu, Bali")
+user_9 = User.create!(email: "shania@gmail.com", user_name: "Shania", password: "123456", bio: "New here, I would like to meet people to do sports...", address: "Canggu, Bali")
+user_10 = User.create!(email: "mel@gmail.com", user_name: "Mel", password: "123456", bio: "Hello, looking for buddies to do sports with.", address: "Canggu, Bali")
+user_11 = User.create!(email: "daniel@gmail.com", user_name: "Daniel", password: "123456", bio: "Hello, looking for buddies to do sports with.", address: "Canggu, Bali")
+user_12 = User.create!(email: "ratna@gmail.com", user_name: "Ratna", password: "123456", bio: "Hello, looking for buddies to do sports with.", address: "Canggu, Bali")
 
 user_1.avatar.attach(io: file_1, filename: 'nes.png', content_type: 'image/png')
 user_2.avatar.attach(io: file_2, filename: 'nes.png', content_type: 'image/png')
@@ -57,48 +59,56 @@ user_11.avatar.attach(io: file_11, filename: 'nes.png', content_type: 'image/png
 user_12.avatar.attach(io: file_12, filename: 'nes.png', content_type: 'image/png')
 # sports = %w[Surfing Boxing Yoga Crossfit Running Hiking]
 
-# sports.each do |sport|
+# spo`rts.each do |sport|
 #   Event.create(title: "#{sport} with#{user.user_name}", description: "Let's go #{sport} together!", sports: sport)
 # end
 
 #SURF AM
-event_1 = Event.create!(user_id: user_1.id, title: "Surf with #{user_1.user_name}", description: "Let's go surfing together", address: "Canggu", sport: "Surfing", date: Date.tomorrow, time_of_event: "8:00", number_of_participants: 4, morning: true)
+
+event_1 = Event.create!(user_id: user_1.id, title: "Surf with #{user_1.user_name}", description: "Let's go surfing together", address: "Canggu, Bali", sport: "Surfing", date: Date.today, time_of_event: "8:00", number_of_participants: 4, morning: true)
 user_event_1 = UserEvent.create!(user_id: user_2.id, event_id: event_1.id)
 user_event_2 = UserEvent.create!(user_id: user_3.id, event_id: event_1.id)
 user_event_3 = UserEvent.create!(user_id: user_4.id, event_id: event_1.id)
 user_event_4 = UserEvent.create!(user_id: user_7.id, event_id: event_1.id)
 
-event_4 = Event.create!(user_id: user_10.id, title: "Surf with #{user_10.user_name}", description: "Let's go and surf together", address: "Canggu", sport: "Surfing", date: Date.tomorrow, time_of_event: "10:00", number_of_participants: 3, morning: true)
+event_4 = Event.create!(user_id: user_10.id, title: "Surf with #{user_10.user_name}", description: "Let's go and surf together", address: "Canggu, Bali", sport: "Surfing", date: Date.tomorrow, time_of_event: "10:00", number_of_participants: 3, morning: true)
 user_event_7 = UserEvent.create!(user_id: user_11.id, event_id: event_4.id)
 user_event_8 = UserEvent.create!(user_id: user_12.id, event_id: event_4.id)
 
 #TENNIS AM
-event_2 = Event.create!(user_id: user_5.id, title: "Tennis with #{user_5.user_name}", description: "Let's go and play tennis together", address: "Canggu", sport: "Tennis", date: Date.tomorrow, time_of_event: "10:00", number_of_participants: 2, morning: true)
+event_2 = Event.create!(user_id: user_5.id, title: "Tennis with #{user_5.user_name}", description: "Let's go and play tennis together", address: "Canggu, Bali", sport: "Tennis", date: Date.today, time_of_event: "10:00", number_of_participants: 2, morning: true)
 user_event_5 = UserEvent.create!(user_id: user_6.id, event_id: event_2.id)
 
-event_3 = Event.create!(user_id: user_8.id, title: "Tennis with #{user_8.user_name}", description: "Let's go and play tennis together", address: "Canggu", sport: "Tennis", date: Date.tomorrow, time_of_event: "8:00", number_of_participants: 2, morning: true)
+event_3 = Event.create!(user_id: user_8.id, title: "Tennis with #{user_8.user_name}", description: "Let's go and play tennis together", address: "Canggu, Bali", sport: "Tennis", date: Date.tomorrow, time_of_event: "8:00", number_of_participants: 2, morning: true)
 user_event_6 = UserEvent.create!(user_id: user_9.id, event_id: event_3.id)
 
-
 #SURF PM
-event_5 = Event.create!(user_id: user_2.id, title: "Surf with #{user_2.user_name}", description: "Let's go surfing together", address: "Canggu", sport: "Surfing", date: Date.tomorrow, time_of_event: "16:00", number_of_participants: 4, afternoon: true)
+event_5 = Event.create!(user_id: user_2.id, title: "Surf with #{user_2.user_name}", description: "Let's go surfing together", address: "Canggu, Bali", sport: "Surfing", date: Date.tomorrow, time_of_event: "16:00", number_of_participants: 4, afternoon: true)
 user_event_9 = UserEvent.create!(user_id: user_1.id, event_id: event_5.id)
 user_event_10 = UserEvent.create!(user_id: user_3.id, event_id: event_5.id)
 user_event_11 = UserEvent.create!(user_id: user_4.id, event_id: event_5.id)
 user_event_12 = UserEvent.create!(user_id: user_7.id, event_id: event_5.id)
 
-event_6 = Event.create!(user_id: user_11.id, title: "Surf with #{user_11.user_name}", description: "Let's go and surf together", address: "Canggu", sport: "Surfing", date: Date.tomorrow, time_of_event: "15:00", number_of_participants: 3, afternoon: true)
+event_6 = Event.create!(user_id: user_11.id, title: "Surf with #{user_11.user_name}", description: "Let's go and surf together", address: "Canggu, Bali", sport: "Surfing", date: Date.tomorrow, time_of_event: "15:00", number_of_participants: 3, afternoon: true)
 user_event_13 = UserEvent.create!(user_id: user_10.id, event_id: event_6.id)
 user_event_14 = UserEvent.create!(user_id: user_12.id, event_id: event_6.id)
 
 #TENNIS PM
-event_7 = Event.create!(user_id: user_6.id, title: "Tennis with #{user_6.user_name}", description: "Let's go and play tennis together", address: "Canggu", sport: "Tennis", date: Date.tomorrow, time_of_event: "15:00", number_of_participants: 2, afternoon: true)
+event_7 = Event.create!(user_id: user_6.id, title: "Tennis with #{user_6.user_name}", description: "Let's go and play tennis together", address: "Canggu, Bali", sport: "Tennis", date: Date.tomorrow, time_of_event: "15:00", number_of_participants: 2, afternoon: true)
 user_event_15 = UserEvent.create!(user_id: user_5.id, event_id: event_7.id)
 
-event_8 = Event.create!(user_id: user_8.id, title: "Tennis with #{user_8.user_name}", description: "Let's go and play tennis together", address: "Canggu", sport: "Tennis", date: Date.tomorrow, time_of_event: "16:00", number_of_participants: 2, afternoon: true)
+event_8 = Event.create!(user_id: user_8.id, title: "Tennis with #{user_8.user_name}", description: "Let's go and play tennis together", address: "Canggu, Bali", sport: "Tennis", date: Date.tomorrow, time_of_event: "16:00", number_of_participants: 2, afternoon: true)
 
 #TENNIS EVENING
-event_9 = Event.create!(user_id: user_8.id, title: "Tennis with #{user_8.user_name}", description: "Let's go and play tennis together", address: "Canggu", sport: "Tennis", date: Date.tomorrow, time_of_event: "20:00", number_of_participants: 2, evening: true)
-user_event_16 = UserEvent.create!(user_id: user_7.id, event_id: event_9.id)
+event_9 = Event.create!(user_id: user_8.id, title: "Tennis with #{user_8.user_name}", description: "Let's go and play tennis together", address: "Canggu, Bali", sport: "Tennis", date: Date.yesterday, time_of_event: "20:00", number_of_participants: 2, evening: true)
 
-event_10 = Event.create!(user_id: user_2.id, title: "Tennis with #{user_2.user_name}", description: "Let's go and play tennis together", address: "Canggu", sport: "Tennis", date: Date.tomorrow, time_of_event: "20:00", number_of_participants: 2, evening: true)
+user_event_16 = UserEvent.create!(user_id: user_7.id, event_id: event_9.id)
+user_event_17 = UserEvent.create!(user_id: user_2.id, event_id: event_9.id)
+
+event_10 = Event.create!(user_id: user_2.id, title: "Tennis with #{user_2.user_name}", description: "Let's go and play tennis together", address: "Canggu, Bali", sport: "Tennis", date: Date.tomorrow, time_of_event: "20:00", number_of_participants: 2, evening: true)
+
+#chatrooms
+chatroom_1 = Chatroom.create!(event_id: event_6.id)
+
+#messages
+message_1 = Message.create!(user_id: user_12.id, content: "hi", chatroom_id: chatroom_1.id)

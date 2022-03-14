@@ -1,0 +1,37 @@
+<%# <div class="container"> %>
+<p class="back-btn"><%= link_to '< Back', events_path %></p>
+
+<div class="event-wrapper-with-button">
+  <div class="event-details-wrapper">
+    <div class="title-event">
+      <%= image_tag @event.user.avatar, class: "card-event-avatar" %>
+      <h2><%= @event.title %></h2>
+    </div>
+
+    <div class="info-bar">
+      <p>Time: <%= @event.time_of_event.strftime("%H:%M") %></p>
+      <%# <%= image_tag @event.image_source, class: "card-event-timeofday-icon" %>
+      <br>
+      <p>📍 <%= @event.address %></p>
+    </div>
+
+    <div class="description-event">
+      <p><%= @event.description %></p>
+      <p>Participants: </p>
+      <% @event_users.each do |event_user| %>
+        <%= image_tag event_user.avatar, class: "card-event-avatar" %>
+      <% end %>
+
+      <%= link_to 'Join', event_user_events_path(@event), method: :post, class: "btn-purple join-btn" %>
+    </div>
+
+  </div>
+
+    <div style="width: 100%; height: 300px; bottom: 0x"
+      data-controller="mapbox"
+      data-mapbox-markers-value="<%= @markers.to_json %>"
+      data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
+</div>
+
+<%# </div> %>

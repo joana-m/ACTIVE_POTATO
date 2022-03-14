@@ -1,12 +1,65 @@
+/* Style the navbar */
 .navbar-lewagon {
-  justify-content: space-between;
+
   background: white;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  height: 60px;
+
+  & a:hover {
+    color: grey;
+  }
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+/* Navbar links */
+.navbar-lewagon a {
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 10px;
+  text-decoration: none;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+/* Page content */
+.content {
+  justify-content: space-between;
+  display: flex;
+  color: #fafafa;
+  font-size: 28px;
+  margin-left: 15px;
+  margin-right: 15px;
+
+  &a:active {
+    color: black;
+  }
+}
+
+
+
+.nav-plus {
+  border-radius: 50%;
+  background: $blue;
+  height: 65px;
+  width: 65px;
+  margin-top: -8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-style: solid;
+  border-color: white;
+}
+
+.nav-plus i {
+  color: white;
+}
+
+.icon {
+  color:#807d7d;
+}
+
+.page-container {
+  display: grid;
+  min-height: 100vh;
+  grid-template-rows: auto 1fr auto;
 }

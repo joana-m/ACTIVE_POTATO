@@ -1,7 +1,17 @@
 // Import page-specific CSS files here.
 @import "home";
 @import "form";
+@import "show";
 
-.container {
-  margin: auto auto;
+#date-header {
+  color: $blue;
+  font-weight: bold;
+  padding: 20px 10px 50px 20px;
+}
+
+.index-content {
+  & h2 {
+    color: $blue;
+    font-weight: bold;
+  }
 }
