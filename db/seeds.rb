@@ -82,7 +82,6 @@ user_event_5 = UserEvent.create!(user_id: user_6.id, event_id: event_2.id)
 event_3 = Event.create!(user_id: user_8.id, title: "Tennis with #{user_8.user_name}", description: "Let's go and play tennis together", address: "Canggu, Bali", sport: "Tennis", date: Date.tomorrow, time_of_event: "8:00", number_of_participants: 2, morning: true)
 user_event_6 = UserEvent.create!(user_id: user_9.id, event_id: event_3.id)
 
-
 #SURF PM
 event_5 = Event.create!(user_id: user_2.id, title: "Surf with #{user_2.user_name}", description: "Let's go surfing together", address: "Canggu, Bali", sport: "Surfing", date: Date.tomorrow, time_of_event: "16:00", number_of_participants: 4, afternoon: true)
 user_event_9 = UserEvent.create!(user_id: user_1.id, event_id: event_5.id)

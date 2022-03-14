@@ -1,16 +1,16 @@
 <div class="navbar-lewagon">
   <div class="content">
    <%= link_to root_path do %><i class="fas fa-home icon"></i>
-   <% end %>
-  <%= link_to chatrooms_path do %><i class="fas fa-comment icon"></i>
-   <% end %>
-  <div class="nav-plus">
-   <%= link_to form_path do %><i class="fas fa-plus"></i>
-   <% end %>
-  </div>
-  <a href="#friends"><i class="fas fa-users icon"></i></a>
-  <%= link_to destroy_user_session_path, method: :delete do %>
-   <i class="far fa-circle icon"></i>
-  <% end %>
+    <% end %>
+    <%= link_to chatrooms_path do %><i class="far fa-comment icon"></i>
+    <% end %>
+    <div class="nav-plus">
+      <%= link_to form_path do %><i class="fas fa-plus icon"></i>
+        <% end %>
+    </div>
+    <a href="#friends"><i class="far fa-user-friends icon"></i></a>
+    <%= link_to destroy_user_session_path, method: :delete do %>
+    <i class="far fa-circle icon"></i>
+    <% end %>
   </div>
 </div>
