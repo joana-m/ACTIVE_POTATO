@@ -1,5 +1,5 @@
   <%# <div class="container"> %>
-<div class="show-page-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= image_path "#{@event.sport}.jpg" %>)">
+<div class="show-page-image" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(<%= image_path "#{@event.sport}.jpg" %>)">
   <p class="back-btn"><%= link_to '< Back', events_path %></p>
 
   <div class="event-wrapper-with-button">
@@ -26,13 +26,13 @@
       <%= link_to 'Join', event_user_events_path(@event), method: :post, class: "btn-purple join-btn" %>
 
     </div>
+    <div style="width: 100%; height: 300px; bottom: 0x"
+      data-controller="mapbox"
+      data-mapbox-markers-value="<%= @markers.to_json %>"
+      data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
   </div>
 
-  <div style="width: 100%; height: 300px; bottom: 0x"
-    data-controller="mapbox"
-    data-mapbox-markers-value="<%= @markers.to_json %>"
-    data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-  </div>
 </div>
 
 <%# </div> %>
