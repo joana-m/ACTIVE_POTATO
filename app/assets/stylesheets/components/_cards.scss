@@ -241,9 +241,27 @@
   border-radius: 8px;
   margin: 20px 10px 20px 20px;
 }
-.card-profile-details p {
-  text-align: center;
+
+.profile-page-card h2 {
+  color: white;
 }
+
 .card-profile-details h2 {
-color: 454E9E;
+color: #454E9E;
+text-align: center;
+font-weight: bold;
+}
+
+.card-profile-bottom {
+  font-family: 'Poppins', sans-serif;
+  background-color: #FF8552;
+  border-radius: 8px;
+  width: 342px;
+  height: 91px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color:white;
+  font-size: 16px;
+  margin-left: 30px;
 }
