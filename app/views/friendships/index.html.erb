@@ -8,7 +8,7 @@
         <% if chatroom %>
           <%= link_to chatroom_path(chatroom), class:"card-message" do%>
             <div class="card-event">
-              <%= image_tag friendship.friend.avatar, class:"avatar" %>
+              <%= image_tag friendship.friend.avatar, class:"card-event-avatar" %>
               <%= friendship.friend.user_name %>
               <p class="online-btn"><i class="fas fa-circle"></i> Online</p>
               <br>
@@ -17,7 +17,7 @@
         <% else %>
           <%= link_to user_chatrooms_path(friendship.friend), method: :post, class:"card-message" do%>
             <div class="card-event">
-              <%= image_tag friendship.friend.avatar, class:"avatar"%>
+              <%= image_tag friendship.friend.avatar, class:"card-event-avatar"%>
               <%= friendship.friend.user_name %>
               <p class="online-btn"><i class="fas fa-circle"></i> Online</p>
               <br>
