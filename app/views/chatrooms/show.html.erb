@@ -8,18 +8,15 @@
   <% else %>
     <%= link_to "< Back", chatrooms_path %><p>
   <% end %>
-  <h1><%= @chatroom.event.title %></h1>
+  <% if @chatroom.event %>
+    <h1><%= @chatroom.event.title %></h1>
+  <% else %>
+  <%# so,eti %>
+  <% end %>
 
   <div class="messages" data-chatroom-subscription-target="messages">
     <% @chatroom.messages.each do |message| %>
       <%= render "messages/message", message: message %>
-      <div id="message-<%= message.id %>">
-        <small>
-          <strong><%= message.user.user_name %></strong>
-          <i><%= message.created_at.strftime("%a %b %e at %l:%M %p") %></i>
-        </small>
-        <p><%= message.content %></p>
-      </div>
     <% end %>
   </div>
 </div>
@@ -29,7 +26,7 @@
 %>
   <%= f.input :content,
     label: false,
-    placeholder: "Message #{@chatroom.event.title}",
+    placeholder: "Message #{@chatroom.event ? @chatroom.event.title : @chatroom.other_person(current_user).user_name}",
     wrapper_html: {class: "flex-grow-1 no-mb message-formbox"},
     input_html: { class: "messagebox"}
   %>
