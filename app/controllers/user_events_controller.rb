@@ -14,5 +14,13 @@ class UserEventsController < ApplicationController
   end
 
   def destroy
+    @user_event = UserEvent.find(params[:id])
+    @user_event.destroy!
+
+    @event = Event.find(params[:event_id])
+    redirect_to event_path(@event)
+
   end
+
+
 end

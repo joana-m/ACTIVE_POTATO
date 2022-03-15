@@ -23,8 +23,11 @@
           <%= image_tag event_user.avatar, class: "card-event-avatar" %>
         <% end %>
       </div>
-      <%= link_to 'Join', event_user_events_path(@event), method: :post, class: "btn-purple join-btn" %>
-
+      <% if @event_user %>
+        <%= link_to 'Leave', event_user_event_path(@event, @event_user), method: :delete, class: "btn-purple join-btn" %>
+      <% else  %>
+        <%= link_to 'Join', event_user_events_path(@event), method: :post, class: "btn-purple join-btn" %>
+      <% end %>
     </div>
     <div style="width: 100%; height: 300px; bottom: 0x"
       data-controller="mapbox"
