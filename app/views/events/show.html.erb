@@ -13,7 +13,7 @@
         <p>Time: <%= @event.time_of_event.strftime("%H:%M") %></p>
         <%# <%= image_tag @event.image_source, class: "card-event-timeofday-icon" %>
         <br>
-        <p>📍 <%= @event.address %></p>
+        <p><i class="fas fa-map-marker-alt"></i> <%= @event.address %></p>
       </div>
 
       <div class="description-event">

@@ -16,7 +16,7 @@
     <div class="page-container">
       <%= render 'shared/flashes' %>
         <%= yield %>
-      <% unless params[:controller] == "chatrooms" && params[:action] == "show" %>
+      <% unless params[:controller] == "chatrooms" && params[:action] == "show" || params[:controller] == "devise/sessions" %>
         <%= render 'shared/navbar' %>
       <% end %>
     </div>

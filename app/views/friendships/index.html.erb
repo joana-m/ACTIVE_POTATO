@@ -1,37 +1,30 @@
-<div class="class">
+<div class="friendship-page">
 <h1>Friends</h1>
 
   <div>
-      <h2>Online <i class="fas fa-caret-down"></i></h2>
-      <% @friendships.each do |friendship| %>
-        <% chatroom = Chatroom.find_by(receiver: friendship.friend, sender: current_user) %>
-        <% if chatroom %>
-          <%= link_to chatroom_path(chatroom), class:"card-message" do%>
-            <div class="card-event">
-              <%= image_tag friendship.friend.avatar, class:"avatar" %>
-              <%= friendship.friend.user_name %>
-              <p class="online-btn"><i class="fas fa-circle"></i> Online</p>
-              <br>
-            </div>
-          <% end %>
-        <% else %>
-          <%= link_to user_chatrooms_path(friendship.friend), method: :post, class:"card-message" do%>
-            <div class="card-event">
-              <%= image_tag friendship.friend.avatar, class:"avatar"%>
-              <%= friendship.friend.user_name %>
-              <p class="online-btn"><i class="fas fa-circle"></i> Online</p>
-              <br>
-            </div>
-          <% end %>
-        <% end %>
-      <% end %>
+    <h2>Online <i class="fas fa-caret-down"></i></h2>
+    <% @friendships.each do |friendship|  %>
+      <div class="card-event">
+      <%= image_tag friendship.friend.avatar, class: "card-event-avatar friendship-avatar"%>
+      <div class="username-friendship">
+        <%= friendship.friend.user_name %>
+      </div>
+      <%# status = ["Online", "Offline"].sample %>
+      <p class="online-btn"><i class="fas fa-circle"></i> Online</p>
+      <br>
+    </div>
+    <% end %>
 
     <div class="people-you-may-know">
       <h2>You may know</h2>
       <% @non_friends.limit(3).each do |non_friend| %>
         <div class="card-event">
-          <%= non_friend.user_name %>
-          <%= link_to 'Follow', user_friendships_path(non_friend), method: :post %>
+          <%= image_tag non_friend.avatar, class: "card-event-avatar friendship-avatar"%>
+          <div class="username-friendship">
+            <%= non_friend.user_name%>
+          </div>
+          <%= link_to 'Follow', user_friendships_path(non_friend), method: :post, remote: true, class:'btn-purple-small follow-btn' %>
+          <br>
         </div>
       <% end %>
     </div>
