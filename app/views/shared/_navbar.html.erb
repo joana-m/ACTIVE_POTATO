@@ -8,9 +8,11 @@
       <%= link_to form_path do %><i class="fas fa-plus icon"></i>
         <% end %>
     </div>
-    <a href="#friends"><i class="far fa-user-friends icon"></i></a>
-    <%= link_to destroy_user_session_path, method: :delete do %>
-    <i class="far fa-circle icon"></i>
+    <%= link_to friendships_path do %>
+    <i class="fas fa-user-friends icon"></i>
+    <% end %>
+    <%= link_to edit_user_registration_path, class: "m-0" do %>
+      <%= image_tag current_user.avatar, class: "avatar-navbar" %>
     <% end %>
   </div>
 </div>

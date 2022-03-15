@@ -2,15 +2,29 @@
 <h1>Friends</h1>
 
   <div>
-    <h2>Online <i class="fas fa-caret-down"></i></h2>
-    <% @friendships.each do |friendship|  %>
-      <div class="card-event">
-      <%= image_tag friendship.friend.avatar %>
-      <%= friendship.friend.user_name %>
-      <p class="online-btn"><i class="fas fa-circle"></i> Online</p>
-      <br>
-    </div>
-    <% end %>
+      <h2>Online <i class="fas fa-caret-down"></i></h2>
+      <% @friendships.each do |friendship| %>
+        <% chatroom = Chatroom.find_by(receiver: friendship.friend, sender: current_user) %>
+        <% if chatroom %>
+          <%= link_to chatroom_path(chatroom), class:"card-message" do%>
+            <div class="card-event">
+              <%= image_tag friendship.friend.avatar, class:"avatar" %>
+              <%= friendship.friend.user_name %>
+              <p class="online-btn"><i class="fas fa-circle"></i> Online</p>
+              <br>
+            </div>
+          <% end %>
+        <% else %>
+          <%= link_to user_chatrooms_path(friendship.friend), method: :post, class:"card-message" do%>
+            <div class="card-event">
+              <%= image_tag friendship.friend.avatar, class:"avatar"%>
+              <%= friendship.friend.user_name %>
+              <p class="online-btn"><i class="fas fa-circle"></i> Online</p>
+              <br>
+            </div>
+          <% end %>
+        <% end %>
+      <% end %>
 
     <div class="people-you-may-know">
       <h2>You may know</h2>

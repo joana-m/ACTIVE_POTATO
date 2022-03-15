@@ -19,5 +19,6 @@ Rails.application.routes.draw do
   resources :users, only: [] do
     resources :friendships, only: [:create]
     delete "/unfriend", to: "friendships#destroy"
+    resources :chatrooms, only: [:create]
   end
 end
