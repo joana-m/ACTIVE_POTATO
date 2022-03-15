@@ -2,8 +2,13 @@
   data-controller="chatroom-subscription"
   data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>"
 >
-  <p class="mt-3"><%= link_to "< Back", chatrooms_path %><p>
-  <h1>#<%= @chatroom.event.title %></h1>
+  <p class="mt-3">
+  <% if @chatroom == nil %>
+    <%= link_to "< Back", event_path(@event)  %>
+  <% else %>
+    <%= link_to "< Back", chatrooms_path %><p>
+  <% end %>
+  <h1><%= @chatroom.event.title %></h1>
 
   <div class="messages" data-chatroom-subscription-target="messages">
     <% @chatroom.messages.each do |message| %>
@@ -24,7 +29,7 @@
 %>
   <%= f.input :content,
     label: false,
-    placeholder: "Message ##{@chatroom.event.title}",
+    placeholder: "Message #{@chatroom.event.title}",
     wrapper_html: {class: "flex-grow-1 no-mb message-formbox"},
     input_html: { class: "messagebox"}
   %>
