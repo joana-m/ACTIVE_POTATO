@@ -28,6 +28,42 @@
   border: white 1px solid;
 }
 
+
 .friendship-avatar {
   margin-left: -30px !important;
+
+  
+.active-bars {
+  width: 300px;
+  height: 180px;
+  display: flex;
+  justify-content: center;
+  // align-items: center;
+}
+
+.active-image {
+  height: 70px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.bar-image {
+  height: 60px;
+}
+
+.active-header {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.profile-line {
+  border-top: 3px solid $blue;
+  padding-top: 5px;
+  font-size: 16px;
+}
+
+.profile-number {
+  font-size: 30px;
+  color: black;
+  font-weight: bolder;
 }

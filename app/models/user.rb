@@ -30,7 +30,7 @@ class User < ApplicationRecord
   end
 
   def friends
-    Popular::Friendship.where(popular_model: self)
+    Popular::Friendship.where(popular_model: self).or(Popular::Friendship.where(friend: self))
   end
 end
 

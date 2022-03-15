@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
   get '/form', to: 'pages#form'
-  resources :friendships, only: [:index, :destroy]
+  resources :friendships, only: [:index]
   # destroy '/friends', to: 'pages#friends'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :events do
@@ -18,6 +18,7 @@ Rails.application.routes.draw do
 
   resources :users, only: [] do
     resources :friendships, only: [:create]
+    delete "/unfriend", to: "friendships#destroy"
     resources :chatrooms, only: [:create]
   end
 end
