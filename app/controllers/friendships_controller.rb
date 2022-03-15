@@ -10,6 +10,7 @@ class FriendshipsController < ApplicationController
     # @non_friends = User.where.not(id: @friendships.pluck(:friend_id))
     friend = User.find(params[:user_id])
     @friendship = current_user.befriend(friend)
+    redirect_to request.referrer
   end
 
   def destroy
