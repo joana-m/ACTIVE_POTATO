@@ -2,7 +2,10 @@
   <div class="content">
    <%= link_to root_path do %><i class="fas fa-home icon <%= 'icon-black' if params[:action] == "home" %> "></i>
     <% end %>
-    <%= link_to chatrooms_path do %><i class="far fa-comment icon <%= 'icon-black' if params[:controller] == "chatrooms" %>"></i>
+    <%= link_to chatrooms_path, data: { controller: "notification", notification_user_id_value: current_user.id  }, class:"position-relative" do %>
+      <i class="far fa-comment icon <%= 'icon-black' if params[:controller] == "chatrooms" %>">
+      </i>
+      <span data-notification-target="counter" class="notification <%= 'empty' if current_user.unread_messages.zero? %>"><%= current_user.unread_messages %></span>
     <% end %>
     <div class="nav-plus <%= 'icon-background-black' if params[:controller] == "pages" && params[:action] == "form" %>">
       <%= link_to form_path do %><i class="fas fa-plus icon "></i>

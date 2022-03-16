@@ -1,0 +1,22 @@
+.notification {
+  background-color: $blue;
+  color: #fafafa;
+  padding: 2px 5px;
+  position: absolute;
+  top: 8px;
+  right: -1px;
+  font-size: 15px;
+  font-weight: bold;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &.empty {
+    width: 0;
+    height: 0;
+    padding: 0;
+  }
+}

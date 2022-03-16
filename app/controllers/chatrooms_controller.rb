@@ -7,6 +7,9 @@ class ChatroomsController < ApplicationController
     @chatrooms = current_user.chatrooms
     @chatroom = Chatroom.includes(:messages).find(params[:id])
     @message = Message.new
+    other_person = @chatroom.other_person(current_user)
+    @messages = @chatroom.messages.where(user: other_person)
+    @messages.update_all(read: true)
   end
 
   def create
