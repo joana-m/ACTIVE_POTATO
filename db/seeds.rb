@@ -35,6 +35,8 @@ file_19 = URI.open('https://images.pexels.com/photos/3222422/pexels-photo-322242
 file_20 = URI.open('https://images.pexels.com/photos/7276648/pexels-photo-7276648.jpeg?auto=compress&cs=tinysrgb&w=800')
 file_21 = URI.open('https://images.pexels.com/photos/2291874/pexels-photo-2291874.jpeg?auto=compress&cs=tinysrgb&w=800')
 file_22 = URI.open('https://images.pexels.com/photos/347134/pexels-photo-347134.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')
+file_23 = URI.open('https://images.pexels.com/photos/7967346/pexels-photo-7967346.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')
+file_24 = URI.open('https://images.pexels.com/photos/4401645/pexels-photo-4401645.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260')
 # names = %w[Christina Ray Joana Nasi Pooja Andrey Mel Daniel Tory Jess Ratna Shania]
 # bios = ["New here, I would like to meet people to do sports with. Feel free to contact me!", "Hello, looking for buddies to do sports with :)"]
 
@@ -64,6 +66,8 @@ ethan = User.create!(email: "ethan@gmail.com", user_name: "Ethan", password: "12
 matteo = User.create!(email: "matteo@gmail.com", user_name: "Matteo", password: "123456", bio: "Hello, looking for buddies to do sports with.", address: "Canggu, Bali")
 lauren = User.create!(email: "lauren@gmail.com", user_name: "Lauren", password: "123456", bio: "Hello, looking for buddies to do sports with.", address: "Canggu, Bali")
 rachel = User.create!(email: "rachel@gmail.com", user_name: "Rachel", password: "123456", bio: "Hello, looking for buddies to do sports with.", address: "Canggu, Bali")
+monica = User.create!(email: "monica@gmail.com", user_name: "Monica", password: "123456", bio: "Hello, looking for buddies to do sports with.", address: "Canggu, Bali")
+antoni = User.create!(email: "antoni@gmail.com", user_name: "Antoni", password: "123456", bio: "New here, I would like to meet people to do sports...", address: "Canggu, Bali")
 
 
 chris.avatar.attach(io: file_1, filename: 'nes.png', content_type: 'image/png')
@@ -88,7 +92,8 @@ ethan.avatar.attach(io: file_19, filename:'nes.png', content_type: 'image/png')
 matteo.avatar.attach(io: file_20, filename:'nes.png', content_type: 'image/png')
 lauren.avatar.attach(io: file_21, filename:'nes.png', content_type: 'image/png')
 rachel.avatar.attach(io: file_22, filename:'nes.png', content_type: 'image/png')
-
+monica.avatar.attach(io: file_23, filename:'nes.png', content_type: 'image/png')
+antoni.avatar.attach(io: file_24, filename:'nes.png', content_type: 'image/png')
 # sports = %w[Surfing Boxing Yoga Crossfit Running Hiking]
 
 # spo`rts.each do |sport|
@@ -186,6 +191,22 @@ user_event_35 = UserEvent.create!(user_id: rachel.id, event_id: event_21.id)
 # Running Evening
 event_22 = Event.create!(user_id: rachel.id, title: "Evening run with #{rachel.user_name}", description: "Sunset runner is here", address: "Canggu, Bali", sport: "Running", date: Date.tomorrow, time_of_event: "17:30", number_of_participants: 1, evening: true)
 
+#Surf evening
+
+event_23 = Event.create!(user_id: monica.id, title: "Sunset surf with #{rachel.user_name}", description: "Sunset is the best for surfing", address: "Canggu, Bali", sport: "Surfing", date: Date.tomorrow, time_of_event: "17:30", number_of_participants: 1, evening: true)
+
+# YOGA afternoon
+event_24 = Event.create!(user_id: monica.id, title: "Vinyasa yoga with #{rachel.user_name}", description: "Yoga for everyone!", address: "Canggu, Bali", sport: "Yoga", date: Date.today, time_of_event: "13:30", number_of_participants: 2, afternoon: true)
+user_event_36 = UserEvent.create!(user_id: ethan.id, event_id: event_24.id)
+
+# Swimming afternoon
+event_25 = Event.create!(user_id: lauren.id, title: "Swimming with #{rachel.user_name}", description: "All levels are welcome", address: "Canggu, Bali", sport: "Swimming", date: Date.tomorrow, time_of_event: "13:30", number_of_participants: 1, afternoon: true)
+
+# boxing afternoon
+event_26 = Event.create!(user_id: antoni.id, title: "Boxing with #{antoni.user_name}", description: "All levels are welcome", address: "Canggu, Bali", sport: "Boxing", date: Date.yesterday, time_of_event: "13:30", number_of_participants: 2, afternoon: true)
+user_event_37 = UserEvent.create!(user_id: joana.id, event_id: event_26.id)
+user_event_38 = UserEvent.create!(user_id: melike.id, event_id: event_26.id)
+
 #chatrooms
 chatroom_1 = Chatroom.create!(event_id: event_1.id)
 chatroom_2 = Chatroom.create!(event_id: event_2.id)
@@ -201,13 +222,6 @@ chatroom_11 = Chatroom.create!(event_id: event_11.id)
 chatroom_12 = Chatroom.create!(event_id: event_12.id)
 chatroom_13 = Chatroom.create!(event_id: event_13.id)
 chatroom_14 = Chatroom.create!(event_id: event_14.id)
-chatroom_15 = Chatroom.create!(event_id: event_15.id)
-chatroom_16 = Chatroom.create!(event_id: event_16.id)
-chatroom_17 = Chatroom.create!(event_id: event_17.id)
-chatroom_18 = Chatroom.create!(event_id: event_18.id)
-chatroom_19 = Chatroom.create!(event_id: event_19.id)
-chatroom_20 = Chatroom.create!(event_id: event_20.id)
-chatroom_21 = Chatroom.create!(event_id: event_21.id)
 
 #messages
 message_1 = Message.create!(user_id: joana.id, content: "hi", chatroom_id: chatroom_1.id)
