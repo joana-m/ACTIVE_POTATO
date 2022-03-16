@@ -21,11 +21,11 @@ export default class extends Controller {
             <div class="l-5 letter">i</div>
             <div class="l-6 letter">n</div>
             <div class="l-7 letter">g</div>
-            <div class="l-8 letter">ma</div>
+            <div class="l-8 letter">&nbsp;</div>
             <div class="l-9 letter">t</div>
             <div class="l-10 letter">h</div>
             <div class="l-11 letter">e</div>
-            <div class="l-11 letter">ma</div>
+            <div class="l-11 letter">&nbsp;</div>
             <div class="l-12 letter">p</div>
             <div class="l-13 letter">o</div>
             <div class="l-14 letter">t</div>
@@ -43,6 +43,6 @@ export default class extends Controller {
     document.body.insertAdjacentHTML("beforeend", template);
     setTimeout(() => {
       this.element.submit();
-    }, 10000);
+    }, 2500);
   }
 }
