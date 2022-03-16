@@ -27,7 +27,9 @@
       <h2>You may know</h2>
       <% @non_friends.limit(3).each do |non_friend| %>
         <div class="card-event">
-          <%= image_tag non_friend.avatar, class: "card-event-avatar friendship-avatar"%>
+          <%= link_to user_path(non_friend) do  %>
+            <%= image_tag non_friend.avatar, class: "card-event-avatar friendship-avatar"%>
+          <% end %>
           <div class="username-friendship">
             <%= non_friend.user_name%>
           </div>
