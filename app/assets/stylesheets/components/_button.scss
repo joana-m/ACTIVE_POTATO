@@ -57,6 +57,10 @@
   width: 95px;
   height: 25px;
   font-weight: bold;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .btn-white-small {
@@ -70,6 +74,10 @@
   height: 25px;
   cursor: pointer;
   font-weight: bold;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .btn-purple-long-unfilled {

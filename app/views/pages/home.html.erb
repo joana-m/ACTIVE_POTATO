@@ -37,14 +37,22 @@
           <%# <%= link_to event_path(event, @param), class:"index mb-4"  do %>
           <div class="friend-scroll-cards">
               <div class="card-event">
-                  <%= image_tag friendship.friend.avatar, class: "card-event-avatar friendship-avatar"%>
-                  <div class="username-friendship">
-                    <%= friendship.friend.user_name %>
-                  </div>
-                  <%# status = ["Online", "Offline"].sample %>
-                  <p class="online-btn"><i class="fas fa-circle"></i> Online</p>
-                  <br>
-              </div>
+          <%= link_to user_path(friendship.friend) do  %>
+            <%= image_tag friendship.friend.avatar, class: "card-event-avatar friendship-avatar"%>
+          <% end %>
+          <div class="username-friendship">
+            <%= friendship.friend.user_name %>
+          </div>
+          <p class="online-btn"><i class="fas fa-circle"></i> Online</p>
+          <div>
+            <% chatroom = Chatroom.find_by(receiver: friendship.friend, sender: current_user) %>
+            <% if chatroom %>
+              <%= link_to 'Message', chatroom_path(chatroom), class: "btn-purple-small follow-btn"%>
+            <% else %>
+              <%= link_to 'Message', user_chatrooms_path(friendship.friend), method: :post, class: 'btn-purple-small follow-btn' %>
+            <% end %>
+          </div>
+        </div>
           </div>
           <%# <% end %>
         <% end %>
