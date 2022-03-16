@@ -27,6 +27,31 @@
     </div>
   </div>
 
+    <div class="event-cards-container index">
+    <div class="past-events-header"><h3>Your Friends</h3></div>
+    <div class="friend-scroll-cards">
+      <% if @user_friends.empty? %>
+          <p id="upcoming-event-card-empty-today">No events planned for today 😔</p>
+      <% else %>
+        <% @user_friends.each do |friend| %>
+          <%# <%= link_to event_path(event, @param), class:"index mb-4"  do %>
+          <div class="friend-scroll-cards">
+              <div class="card-event">
+                  <%= image_tag friend.avatar, class: "card-event-avatar friendship-avatar"%>
+                  <div class="username-friendship">
+                    <%= friend.user_name %>
+                  </div>
+                  <%# status = ["Online", "Offline"].sample %>
+                  <p class="online-btn"><i class="fas fa-circle"></i> Online</p>
+                  <br>
+              </div>
+          </div>
+          <%# <% end %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+
   <div class="event-cards-container index">
     <div class="past-events-header"><h3>Your Past Events</h3></div>
     <% @past_events.each do |event| %>
