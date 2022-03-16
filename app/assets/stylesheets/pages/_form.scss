@@ -81,6 +81,11 @@
   transition: 0.3s;
 }
 
+.sport-form-container {
+  display: flex;
+  flex-direction: column;
+}
+
 .sport-page-wrapper > h1 {
   color: $blue;
   margin-bottom: 20px;
@@ -135,7 +140,6 @@
 .btn-sport {
   width: 330px;
   margin: 25px;
-  margin-left: 42px;
 
   & input {
     color: white;
