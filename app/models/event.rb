@@ -1,12 +1,14 @@
 class Event < ApplicationRecord
   SPORTS = ['Surfing', 'Yoga', 'Swimming', 'Boxing', 'Hiking', 'Tennis', 'Crossfit', 'Running']
+  PARTICIPANTNUM = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
   belongs_to :user
   has_many :user_events
   has_many :users, through: :user_events
   has_one :chatroom
 
   validates :sport, inclusion: {in: SPORTS}
-  validates :title, :sport, :address, :time_of_event, presence: true
+  validates :number_of_participants, inclusion: {in: PARTICIPANTNUM}
+  validates :title, :sport, :address, :time_of_event, :number_of_participants, presence: true
   validates :description, length: { maximum: 50 }
 
   geocoded_by :address

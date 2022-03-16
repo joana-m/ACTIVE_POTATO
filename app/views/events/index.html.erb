@@ -1,5 +1,10 @@
 
 <div class="index-content">
+
+<h2 class="mt-4 ms-4"><%=@random_event.date.strftime("%A, %d %B ")%></h1>
+
+<%= link_to '+ Create', new_event_path, class: "btn-purple join-btn btn-create" %>
+
 <h2 class="mt-4 ms-4"><%=@random_event ? @random_event.date.strftime("%A, %d %B ") : "No events for selected time" %></h1>
 <% @grouped_events.each do |sport, events| %>
   <div class="event-cards-container index">

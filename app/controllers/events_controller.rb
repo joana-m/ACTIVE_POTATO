@@ -29,6 +29,7 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
     @event_users = @event.users
     @event_map = Event.where(id: @event.id)
+    @event_user = UserEvent.find_by(user: current_user, event: @event)
     @markers = @event_map.geocoded.map do |event|
       {
         lat: event.latitude,
@@ -37,10 +38,24 @@ class EventsController < ApplicationController
         # image_url: helpers.asset_url("REPLACE_THIS_WITH_YOUR_IMAGE_IN_ASSETS")
       }
     end
-
-    @event_user = UserEvent.find_by(user: current_user, event: @event)
   end
 
+  def create
+    @event = Event.new(event_params)
+    @event.user = current_user
+    if @event.save
+      redirect_to root_path
+    else
+      render :new
+    end
+  end
+
+  def new
+    @event = Event.new
+    @morning = session[:wizard]["morning"]
+    @afternoon = session[:wizard]["afternoon"]
+    @evening = session[:wizard]["evening"]
+  end
 
   private
 
@@ -52,5 +67,9 @@ class EventsController < ApplicationController
     session[:wizard]["morning"] ||= params[:wizard].try(:[], :morning)
     session[:wizard]["afternoon"] ||= params[:wizard].try(:[], :afternoon)
     session[:wizard]["evening"] ||= params[:wizard].try(:[], :evening)
+  end
+
+  def event_params
+    params.require(:event).permit(:title, :description, :sport, :address, :date, :time_of_event, :number_of_participants, :morning, :evening, :afternoon)
   end
 end

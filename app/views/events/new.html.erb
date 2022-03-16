@@ -1,0 +1,42 @@
+<div>
+<div class="container">
+<%= simple_form_for @event, url: events_path do |f| %>
+<%= f.input :title %>
+<%= f.input :description %>
+<%= f.input :sport, collection: Event::SPORTS %>
+<%= f.input :number_of_participants, collection: Event::PARTICIPANTNUM %>
+<%= f.input :address %>
+<%= f.input :date, value: Date.tomorrow, as: :date, html5: true %>
+<%= f.input :time_of_event, as: :time, html5: true %>
+<div>
+<%= f.input :morning,
+                          as: :boolean,
+                          checked_value: true,
+                          unchecked_value: false,
+                          collection_wrapper_tag: 'div',
+                          collection_wrapper_class: 'category-time-wrapper',
+                          item_wrapper_class: 'category-time-item',
+                          input_html: {class: 'category-time-selector'} %>
+
+            <%= f.input :afternoon,
+                        as: :boolean,
+                        checked_value: true,
+                        unchecked_value: false,
+                        collection_wrapper_tag: 'div',
+                        collection_wrapper_class: 'category-time-wrapper',
+                        item_wrapper_class: 'category-time-item',
+                        input_html: {class: 'category-time-selector'} %>
+            <%= f.input :evening,
+                        as: :boolean,
+                        checked_value: true,
+                        unchecked_value: false,
+                        collection_wrapper_tag: 'div',
+                        collection_wrapper_class: 'category-time-wrapper',
+                        item_wrapper_class: 'category-time-item',
+                        input_html: {class: 'category-time-selector'} %>
+  </div>
+<%= f.button :submit, 'Create', class:"btn-orange" %>
+<% end %>
+</div>
+<div style="height: 90px;"></div>
+</div>
