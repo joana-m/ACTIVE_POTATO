@@ -1,8 +1,6 @@
 <!-- app/views/events/show.html.erb -->
 <% content_for :meta_title, "#{@event.name} is on #{DEFAULT_META["meta_product_name"]}" %>
 <% content_for :meta_description, @event.description %>
-<% content_for :meta_image, cl_image_path(@event.photo.path) %>
-
 
   <%# <div class="container"> %>
 <div class="show-page-image" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(<%= image_path "#{@event.sport}.jpg" %>)">
