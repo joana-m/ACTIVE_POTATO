@@ -69,6 +69,7 @@
   margin-bottom: 30px;
   margin-left: auto;
   margin-right: auto;
+  position: relative;
 }
 
 .card-event-avatar {
@@ -78,6 +79,7 @@
   border-radius: 50%;
   padding: 2px;
   margin-left: 12px;
+  object-fit: cover;
 }
 
 .card-event-textcontent {
@@ -194,4 +196,63 @@
   box-shadow: inset 0 0 4px black;
   /* Lowering the shadow */
 
+}
+
+.card-profile {
+  background-color: rgba(69,78,158,0.06);
+}
+
+.profile-page-card {
+  font-family: 'Poppins', sans-serif;
+  width: 148px;
+  background-color: white;
+  opacity: 0.8;
+  border-radius: 8px;
+  margin: 10px 10px 10px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-page-card p {
+  color: black;
+  font-size: 14px;
+}
+
+
+.card-profile-details {
+color: #454E9E;
+text-align: center;
+font-weight: bold;
+}
+
+.main-p {
+  color: black;
+  font-weight: lighter;
+}
+.card-profile-bottom p {
+  font-weight: bold;
+  font-size: 16px;
+  color: black;
+}
+
+.card-profile-bottom {
+  background-color: white;
+  opacity: 0.8;
+  border-radius: 8px;
+  width: 320px;
+  height: 120px;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  font-size: 16px;
+  font-weight: bold;
+  margin-left: 34px;
+  display: flex;
+  flex-direction: column;
+}
+.card-profile-bottom h2 {
+  font-size: 16px;
+  font-weight: bold;
 }

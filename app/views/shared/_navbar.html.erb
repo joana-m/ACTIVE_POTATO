@@ -1,16 +1,18 @@
 <div class="navbar-lewagon">
   <div class="content">
-   <%= link_to root_path do %><i class="fas fa-home icon"></i>
+   <%= link_to root_path do %><i class="fas fa-home icon <%= 'icon-orange' if params[:action] == "home" %> "></i>
     <% end %>
-    <%= link_to chatrooms_path do %><i class="far fa-comment icon"></i>
+    <%= link_to chatrooms_path do %><i class="far fa-comment icon <%= 'icon-orange' if params[:controller] == "chatrooms" %>"></i>
     <% end %>
-    <div class="nav-plus">
-      <%= link_to form_path do %><i class="fas fa-plus icon"></i>
+    <div class="nav-plus <%= 'icon-background-orange' if params[:controller] == "pages" && params[:action] == "form" %>">
+      <%= link_to form_path do %><i class="fas fa-plus icon "></i>
         <% end %>
     </div>
-    <a href="#friends"><i class="far fa-user-friends icon"></i></a>
-    <%= link_to destroy_user_session_path, method: :delete do %>
-    <i class="far fa-circle icon"></i>
+    <%= link_to friendships_path do %>
+    <i class="fas fa-user-friends icon <%= 'icon-orange' if params[:controller] == "friendships" && params[:action] == "index" %>  "></i>
+    <% end %>
+    <%= link_to edit_user_registration_path, class: "m-0" do %>
+      <%= image_tag current_user.avatar, class: "avatar-navbar " %>
     <% end %>
   </div>
 </div>

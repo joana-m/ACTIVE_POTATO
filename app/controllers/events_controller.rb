@@ -20,12 +20,14 @@ class EventsController < ApplicationController
     events = events_a.flatten.compact.sort_by { |event| event.time_of_event}
     @grouped_events = events.group_by { |event| event.sport }
     type = @grouped_events.keys[0]
-    @random_event = @grouped_events[type][0]
+    unless @grouped_events.empty?
+      @random_event = @grouped_events[type][0]
+    end
   end
 
   def show
     @event = Event.find(params[:id])
-    @event_users = @event.user_events.map {|user_event| user_event.user}
+    @event_users = @event.users
     @event_map = Event.where(id: @event.id)
     @markers = @event_map.geocoded.map do |event|
       {
@@ -35,7 +37,10 @@ class EventsController < ApplicationController
         # image_url: helpers.asset_url("REPLACE_THIS_WITH_YOUR_IMAGE_IN_ASSETS")
       }
     end
+
+    @event_user = UserEvent.find_by(user: current_user, event: @event)
   end
+
 
   private
 
