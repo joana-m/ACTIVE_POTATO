@@ -32,6 +32,10 @@ class User < ApplicationRecord
   def friends
     Popular::Friendship.where(popular_model: self).or(Popular::Friendship.where(friend: self))
   end
+
+  def top_3_friends
+    self.friends.first(3)
+  end
 end
 
 # User.create(user_name: "nasimul", email: "nasimulrahman@gmail.com", password:"fire.wall", bio: "Hello!", address: "Canggu")

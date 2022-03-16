@@ -20,11 +20,11 @@ class PagesController < ApplicationController
       @past_events << event
     end
 
-    @user_friends = []
-
-    current_user.friends.each do |friend|
-      @user_friends << User.find(friend.friend_id)
-    end
+    # @user_friends = []
+    @user_friends = current_user.top_3_friends
+    # current_user.friends.first(3) do |friend|
+    #   @user_friends << User.find(friend.friend_id)
+    # end
   end
 
 
