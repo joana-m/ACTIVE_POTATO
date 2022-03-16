@@ -1,5 +1,5 @@
 .form {
-  display:block;
+  display: block;
   text-align: center;
   margin-top: 25%;
 }
@@ -11,13 +11,13 @@
 }
 
 .form > h1 {
-  color: #FF8552;
+  color: #ff8552;
 }
 
 .form-check {
   padding: 0px;
   justify-content: center;
-  display:flex;
+  display: flex;
 }
 
 .selections {
@@ -25,7 +25,7 @@
 }
 
 .time-page-wrapper > h1 {
-  color:#FF8552;
+  color: #ff8552;
   margin-bottom: 20px;
 }
 
@@ -52,7 +52,7 @@
 
 .category-time-selector + label {
   cursor: pointer;
-  background-color: #FAFAFA;
+  background-color: #fafafa;
   border-radius: 8px;
   // border: 1px solid #FF8552;
   width: 257px;
@@ -60,7 +60,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #FF8552;
+  color: #ff8552;
   // font-weight: bold;
   font-size: 16px;
   transition: 0.3s;
@@ -68,8 +68,8 @@
 }
 
 .category-time-selector:checked + label {
-  background-color: #FF8552;
-  color: #FAFAFA;
+  background-color: #ff8552;
+  color: #fafafa;
   // font-weight: bold;
   font-size: 16px;
   border-radius: 8px;
@@ -84,6 +84,7 @@
 .sport-form-container {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 .sport-page-wrapper > h1 {
@@ -110,10 +111,10 @@
   cursor: pointer;
   background-color: white;
   box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.1), 0 1px 1px 0 rgba(0, 0, 0, 0.1);
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   border-radius: 8px;
   border: none;
-  color: #454E9E;
+  color: #454e9e;
   font-size: 16px;
   width: 147px;
   height: 67px;
@@ -125,8 +126,8 @@
 }
 
 .category-sport-selector:checked + label {
-  background-color: #454E9E;
-  font-family: 'Poppins', sans-serif;
+  background-color: #454e9e;
+  font-family: "Poppins", sans-serif;
   border-radius: 8px;
   border: none;
   color: white;
