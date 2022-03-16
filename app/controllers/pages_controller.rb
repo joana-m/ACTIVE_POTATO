@@ -19,6 +19,12 @@ class PagesController < ApplicationController
     elsif event.date.past?
       @past_events << event
     end
+
+    # @user_friends = []
+    @user_friends = current_user.top_3_friends
+    # current_user.friends.first(3) do |friend|
+    #   @user_friends << User.find(friend.friend_id)
+    # end
   end
 
 

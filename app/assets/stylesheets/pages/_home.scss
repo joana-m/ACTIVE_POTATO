@@ -23,7 +23,7 @@
 }
 
 #upcoming-event-card-empty-today {
-  color: white;
+  color: $blue;
   padding-left: 10px;
 }
 
@@ -82,4 +82,19 @@
   // margin-bottom: 20px;
   width: 150px;
   // height: 120px;
+}
+
+/* friends section */
+
+.friend-scroll-card {
+  font-family: 'Poppins', sans-serif;
+  width: 365px;
+  height: 180px;
+  // background-color: #FF8552;
+  border-radius: 8px;
+  margin-bottom: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+  overflow-y: scroll;
 }
