@@ -15,10 +15,10 @@ User.destroy_all
 
 file_1 = URI.open('https://images.pexels.com/photos/995978/pexels-photo-995978.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260')
 file_2 = URI.open('https://images.pexels.com/photos/839011/pexels-photo-839011.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260')
-file_3 = URI.open('https://images.pexels.com/photos/5794559/pexels-photo-5794559.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500')
+file_3 = URI.open('https://res.cloudinary.com/dbhyilorl/image/upload/v1645760766/cld-sample.jpg')
 file_4 = URI.open('https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260')
-file_5 = URI.open('https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260')
-file_6 = URI.open('https://images.pexels.com/photos/769772/pexels-photo-769772.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260')
+file_5 = URI.open('https://res.cloudinary.com/dbhyilorl/image/upload/v1647386492/UNADJUSTEDNONRAW_thumb_33e1_dmfqhp.jpg')
+file_6 = URI.open('https://res.cloudinary.com/dbhyilorl/image/upload/v1647386400/UNADJUSTEDNONRAW_mini_33da_wqks5c.jpg')
 file_7 = URI.open('https://images.pexels.com/photos/1878522/pexels-photo-1878522.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260')
 file_8 = URI.open('https://images.pexels.com/photos/4992382/pexels-photo-4992382.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260')
 file_9 = URI.open('https://images.pexels.com/photos/1832959/pexels-photo-1832959.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500')
@@ -99,17 +99,14 @@ rachel.avatar.attach(io: file_22, filename:'nes.png', content_type: 'image/png')
 
 event_1 = Event.create!(user_id: chris.id, title: "Surf with #{chris.user_name}", description: "Let's go surfing together", address: "Canggu, Bali", sport: "Surfing", date: Date.today, time_of_event: "8:00", number_of_participants: 5, morning: true)
 user_event_1 = UserEvent.create!(user_id: ray.id, event_id: event_1.id)
-user_event_2 = UserEvent.create!(user_id: joana.id, event_id: event_1.id)
 user_event_3 = UserEvent.create!(user_id: nasi.id, event_id: event_1.id)
 user_event_4 = UserEvent.create!(user_id: jess.id, event_id: event_1.id)
 
 event_4 = Event.create!(user_id: mel.id, title: "Surf with #{mel.user_name}", description: "Let's go and surf together", address: "Canggu, Bali", sport: "Surfing", date: Date.tomorrow, time_of_event: "10:00", number_of_participants: 3, morning: true)
 user_event_7 = UserEvent.create!(user_id: daniel.id, event_id: event_4.id)
-user_event_8 = UserEvent.create!(user_id: ratna.id, event_id: event_4.id)
 
 #TENNIS AM
 event_2 = Event.create!(user_id: andrey.id, title: "Tennis with #{andrey.user_name}", description: "Let's go and play tennis together", address: "Canggu, Bali", sport: "Tennis", date: Date.today, time_of_event: "10:00", number_of_participants: 2, morning: true)
-user_event_5 = UserEvent.create!(user_id: tory.id, event_id: event_2.id)
 
 event_3 = Event.create!(user_id: pooja.id, title: "Tennis with #{pooja.user_name}", description: "Let's go and play tennis together", address: "Canggu, Bali", sport: "Tennis", date: Date.tomorrow, time_of_event: "8:00", number_of_participants: 2, morning: true)
 user_event_6 = UserEvent.create!(user_id: shania.id, event_id: event_3.id)
@@ -117,7 +114,6 @@ user_event_6 = UserEvent.create!(user_id: shania.id, event_id: event_3.id)
 #SURF PM
 event_5 = Event.create!(user_id: ray.id, title: "Surf with #{ray.user_name}", description: "Let's go surfing together", address: "Canggu, Bali", sport: "Surfing", date: Date.tomorrow, time_of_event: "16:00", number_of_participants: 5, afternoon: true)
 user_event_9 = UserEvent.create!(user_id: chris.id, event_id: event_5.id)
-user_event_10 = UserEvent.create!(user_id: joana.id, event_id: event_5.id)
 user_event_11 = UserEvent.create!(user_id: nasi.id, event_id: event_5.id)
 user_event_12 = UserEvent.create!(user_id: jess.id, event_id: event_5.id)
 
@@ -127,13 +123,11 @@ user_event_14 = UserEvent.create!(user_id: ratna.id, event_id: event_6.id)
 
 #TENNIS PM
 event_7 = Event.create!(user_id: tory.id, title: "Tennis with #{tory.user_name}", description: "Let's go and play tennis together", address: "Canggu, Bali", sport: "Tennis", date: Date.tomorrow, time_of_event: "15:00", number_of_participants: 2, afternoon: true)
-user_event_15 = UserEvent.create!(user_id: andrey.id, event_id: event_7.id)
 
-event_8 = Event.create!(user_id: pooja.id, title: "Tennis with #{pooja.user_name}", description: "Let's go and play tennis together", address: "Canggu, Bali", sport: "Tennis", date: Date.tomorrow, time_of_event: "16:00", number_of_participants: 1, afternoon: true)
+event_8 = Event.create!(user_id: nasi.id, title: "Tennis with #{nasi.user_name}", description: "Let's go and play tennis together", address: "Canggu, Bali", sport: "Tennis", date: Date.tomorrow, time_of_event: "16:00", number_of_participants: 1, afternoon: true)
 
 #TENNIS EVENING
-event_9 = Event.create!(user_id: pooja.id, title: "Tennis with #{pooja.user_name}", description: "Let's go and play tennis together", address: "Canggu, Bali", sport: "Tennis", date: Date.yesterday, time_of_event: "20:00", number_of_participants: 2, evening: true)
-
+event_9 = Event.create!(user_id: ratna.id, title: "Tennis with #{ratna.user_name}", description: "Let's go and play tennis together", address: "Canggu, Bali", sport: "Tennis", date: Date.yesterday, time_of_event: "20:00", number_of_participants: 2, evening: true)
 user_event_16 = UserEvent.create!(user_id: jess.id, event_id: event_9.id)
 
 event_10 = Event.create!(user_id: ray.id, title: "Tennis with #{ray.user_name}", description: "Let's go and play tennis together", address: "Canggu, Bali", sport: "Tennis", date: Date.yesterday, time_of_event: "20:00", number_of_participants: 2, evening: true)
@@ -142,12 +136,9 @@ user_event_17 = UserEvent.create!(user_id: ray.id, event_id: event_10.id)
 # YOGA AM
 
 event_11 = Event.create!(user_id: maria.id, title: "Yoga with #{maria.user_name}", description: "Let's do Yoga!", address: "Canggu, Bali", sport: "Yoga", date: Date.tomorrow, time_of_event: "08:00", number_of_participants: 3, morning: true)
-
-user_event_18 = UserEvent.create!(user_id: pooja.id, event_id: event_11.id)
-user_event_19 = UserEvent.create!(user_id: joana.id, event_id: event_11.id)
+user_event_18 = UserEvent.create!(user_id: joana.id, event_id: event_11.id)
 
 event_12 = Event.create!(user_id: mel.id, title: "Yoga with #{mel.user_name}", description: "Yoga for beginners", address: "Canggu, Bali", sport: "Yoga", date: Date.tomorrow, time_of_event: "08:00", number_of_participants: 4, morning: true)
-
 user_event_20 = UserEvent.create!(user_id: ratna.id, event_id: event_12.id)
 user_event_21 = UserEvent.create!(user_id: andrey.id, event_id: event_12.id)
 user_event_22 = UserEvent.create!(user_id: chris.id, event_id: event_12.id)
