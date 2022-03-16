@@ -8,7 +8,7 @@
     <% @chatrooms.each do |chatroom| %>
     <% if chatroom.messages.empty? %>
     <% else %>
-      <%= link_to chatroom_path(chatroom), class:"card-message" do%>
+      <%= link_to chatroom_path(chatroom), class:"card-message position-relative", id: "chatroom-#{chatroom.id}" do%>
         <% if chatroom.event %>
           <%= cl_image_tag chatroom.event.user.avatar.key, class: "card-message-avatar" %>
           <div class="card-event-textcontent">
@@ -28,6 +28,7 @@
             <div class="card-message-date"><%=chatroom.messages.last.created_at.strftime("%-d/%m/%y")%></div>
           </div>
         <% end %>
+        <div class="notification <%= 'empty' if chatroom.messages.where(read: false).where.not(user: current_user).count.zero? %>"><%= chatroom.messages.where(read: false).where.not(user: current_user).count %></div>
       <% end %>
     <% end %>
   <% end %>

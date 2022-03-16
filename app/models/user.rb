@@ -32,6 +32,10 @@ class User < ApplicationRecord
   def friends
     Popular::Friendship.where(popular_model: self).or(Popular::Friendship.where(friend: self))
   end
+
+  def unread_messages
+    Message.joins(:chatroom).where(read: false, chatrooms: { receiver: self }).or(Message.joins(:chatroom).where(read: false, chatrooms: { sender: self })).count
+  end
 end
 
 # User.create(user_name: "nasimul", email: "nasimulrahman@gmail.com", password:"fire.wall", bio: "Hello!", address: "Canggu")
