@@ -5,7 +5,9 @@
   <div class="event-wrapper-with-button">
     <div class="event-details-wrapper">
       <div class="title-event">
-        <%= image_tag @event.user.avatar, class: "card-event-avatar" %>
+        <%= link_to user_path(@event.user) do %>
+          <%= image_tag @event.user.avatar, class: "card-event-avatar" %>
+         <% end %>
         <h2><%= @event.title %></h2>
       </div>
 
