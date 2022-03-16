@@ -10,6 +10,8 @@ class User < ApplicationRecord
   has_many :joined_events, through: :user_events, foreign_key: "user_id", source: :event # events I joined
   has_many :my_events_chatrooms, through: :events, foreign_key: "user_id", source: :chatroom # Chatroom that User acts as owner
   has_many :joined_chatrooms, through: :joined_events, foreign_key: "user_id", source: :chatroom # Chatroom that User joined an event
+  has_many :sender_chatrooms, foreign_key: "sender_id", class_name: "Chatroom"
+  has_many :receiver_chatrooms, foreign_key: "receiver_id", class_name: "Chatroom"
 
   has_one_attached :avatar
   validates :user_name, :address, :email, presence: true
@@ -24,11 +26,11 @@ class User < ApplicationRecord
   popular
 
   def chatrooms
-    my_events_chatrooms + joined_chatrooms
+    my_events_chatrooms + joined_chatrooms + sender_chatrooms + receiver_chatrooms
   end
 
   def friends
-    Popular::Friendship.where(popular_model: self)
+    Popular::Friendship.where(popular_model: self).or(Popular::Friendship.where(friend: self))
   end
 end
 

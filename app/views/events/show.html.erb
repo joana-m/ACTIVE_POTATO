@@ -13,14 +13,16 @@
         <p>Time: <%= @event.time_of_event.strftime("%H:%M") %></p>
         <%# <%= image_tag @event.image_source, class: "card-event-timeofday-icon" %>
         <br>
-        <p>📍 <%= @event.address %></p>
+        <p><i class="fas fa-map-marker-alt"></i> <%= @event.address %></p>
       </div>
 
       <div class="description-event">
         <p><%= @event.description %></p>
         <p>Participants: </p>
         <% @event_users.each do |event_user| %>
-          <%= image_tag event_user.avatar, class: "card-event-avatar" %>
+          <%= link_to user_path(event_user) do %>
+            <%= image_tag event_user.avatar, class: "card-event-avatar" %>
+          <% end %>
         <% end %>
       </div>
       <% if @event_user %>

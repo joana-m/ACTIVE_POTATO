@@ -69,6 +69,7 @@
   margin-bottom: 30px;
   margin-left: auto;
   margin-right: auto;
+  position: relative;
 }
 
 .card-event-avatar {
@@ -78,6 +79,7 @@
   border-radius: 50%;
   padding: 2px;
   margin-left: 12px;
+  object-fit: cover;
 }
 
 .card-event-textcontent {
@@ -127,6 +129,8 @@
 
 .card-message {
   margin-top: 30px;
+  width: 90% !important;
+  margin-left: 20px;
 }
 
 .card-event-location {
@@ -201,7 +205,7 @@
 .profile-page-card {
   font-family: 'Poppins', sans-serif;
   width: 148px;
-  background-color: #FF8552;
+  background-color: white;
   opacity: 0.8;
   border-radius: 8px;
   margin: 10px 10px 10px 10px;
@@ -212,15 +216,10 @@
 }
 
 .profile-page-card p {
-  color: white;
+  color: black;
   font-size: 14px;
 }
 
-.profile-page-card h2 {
-  color: white;
-  font-weight: bold;
-  font-size: 24px;
-}
 
 .card-profile-details {
 color: #454E9E;
@@ -235,18 +234,18 @@ font-weight: bold;
 .card-profile-bottom p {
   font-weight: bold;
   font-size: 16px;
-  color: white;
+  color: black;
 }
 
 .card-profile-bottom {
-  background-color: #FF8552;
+  background-color: white;
   opacity: 0.8;
   border-radius: 8px;
   width: 320px;
-  height: 91px;
+  height: 120px;
   justify-content: center;
   align-items: center;
-  color: white;
+  color: black;
   font-size: 16px;
   font-weight: bold;
   margin-left: 34px;
