@@ -1,7 +1,7 @@
 <div class="form">
   <%= image_tag 'logo.png' %>
   <div data-controller="wizard">
-    <%= simple_form_for @model, url: events_path, method: :get do |f|  %>
+    <%= simple_form_for @model, url: events_path, method: :get, data: { controller: "loading-page", action:"submit->loading-page#load"} do |f|  %>
       <div data-wizard-target="step" class="selections">
         <div class="time-page-wrapper">
           <h1>When are you available tomorrow?</h1>
@@ -119,7 +119,7 @@
           } %>
 
         <div class="btn-purple btn-sport">
-          <%= f.button :submit, value: "See events" %>
+          <%= f.button :submit, "See events" %>
         </div>
       </div>
       </div>
