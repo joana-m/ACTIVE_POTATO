@@ -241,6 +241,6 @@ user_event_40 = UserEvent.create!(user_id: joana.id, event_id: event_1.id)
 
 
 #friendship
-joana.befriend ray
-joana.befriend nasi
-joana.befriend ratna
+joana.befriend antoni
+joana.befriend melike
+joana.befriend andrey
