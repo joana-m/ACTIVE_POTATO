@@ -140,7 +140,7 @@ user_event_17 = UserEvent.create!(user_id: shania.id, event_id: event_10.id)
 
 # YOGA AM
 
-event_11 = Event.create!(user_id: maria.id, title: "Yoga with #{maria.user_name}", description: "Let's do Yoga!", address: "Canggu, Bali", sport: "Yoga", date: Date.tomorrow, time_of_event: "08:00", number_of_participants: 3, morning: true)
+event_11 = Event.create!(user_id: maria.id, title: "Yoga with #{maria.user_name}", description: "Let's do Yoga!", address: "Canggu, Bali", sport: "Yoga", date: Date.today, time_of_event: "20:00", number_of_participants: 2, evening: true)
 user_event_18 = UserEvent.create!(user_id: joana.id, event_id: event_11.id)
 
 event_12 = Event.create!(user_id: mel.id, title: "Yoga with #{mel.user_name}", description: "Yoga for beginners", address: "Canggu, Bali", sport: "Yoga", date: Date.tomorrow, time_of_event: "08:00", number_of_participants: 4, morning: true)
