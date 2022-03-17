@@ -1,6 +1,7 @@
 <div class="navbar-lewagon">
   <div class="content">
-   <%= link_to root_path do %><i class="fas fa-home icon <%= 'icon-black' if params[:action] == "home" %> "></i>
+    <%= link_to root_path do %>
+      <i class="fas fa-home icon <%= 'icon-black' if params[:action] == "home" %> "></i>
     <% end %>
     <% if user_signed_in? %>
       <%= link_to chatrooms_path, data: { controller: "notification", notification_user_id_value: current_user.id  }, class:"position-relative" do %>
@@ -10,12 +11,15 @@
       <% end %>
     <% end %>
     <div class="nav-plus <%= 'icon-background-black' if params[:controller] == "pages" && params[:action] == "form" %>">
-      <%= link_to form_path do %><i class="fas fa-plus icon "></i>
-        <% end %>
+      <%= link_to form_path do %>
+        <i class="fas fa-plus icon "></i>
+      <% end %>
     </div>
+
     <%= link_to friendships_path do %>
-    <i class="fas fa-user-friends icon <%= 'icon-black' if params[:controller] == "friendships" && params[:action] == "index" %>  "></i>
+      <i class="fas fa-user-friends icon <%= 'icon-black' if params[:controller] == "friendships" && params[:action] == "index" %>  "></i>
     <% end %>
+
     <% if user_signed_in? %>
       <%= link_to user_path(current_user), class: "m-0" do %>
         <%= image_tag current_user.avatar, class: "avatar-navbar " %>
