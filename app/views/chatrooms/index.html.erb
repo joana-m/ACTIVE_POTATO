@@ -1,9 +1,10 @@
 <div class="chatrooms-page">
-  <h1>Messages</h1>
+  <h1>Inbox</h1>
 
-  <%if @chatrooms.empty? %>
-    <%= "You have no messages" %>
-  <% end %>
+    <% if @chatrooms.empty? %>
+      <h3> You have no messages </h3>
+      <%= link_to "Check your online friends", friendships_path %>
+    <% end %>
 
     <% @chatrooms.each do |chatroom| %>
     <% if chatroom.messages.empty? %>

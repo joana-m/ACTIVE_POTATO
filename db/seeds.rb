@@ -208,23 +208,23 @@ user_event_37 = UserEvent.create!(user_id: joana.id, event_id: event_26.id)
 user_event_38 = UserEvent.create!(user_id: melike.id, event_id: event_26.id)
 
 #chatrooms
-chatroom_1 = Chatroom.create!(event_id: event_1.id)
-chatroom_2 = Chatroom.create!(event_id: event_2.id)
-chatroom_3 = Chatroom.create!(event_id: event_3.id)
-chatroom_4 = Chatroom.create!(event_id: event_4.id)
-chatroom_5 = Chatroom.create!(event_id: event_5.id)
-chatroom_6 = Chatroom.create!(event_id: event_6.id)
-chatroom_7 = Chatroom.create!(event_id: event_7.id)
-chatroom_8 = Chatroom.create!(event_id: event_8.id)
-chatroom_9 = Chatroom.create!(event_id: event_9.id)
-chatroom_10 = Chatroom.create!(event_id: event_10.id)
-chatroom_11 = Chatroom.create!(event_id: event_11.id)
-chatroom_12 = Chatroom.create!(event_id: event_12.id)
-chatroom_13 = Chatroom.create!(event_id: event_13.id)
-chatroom_14 = Chatroom.create!(event_id: event_14.id)
+# chatroom_1 = Chatroom.create!(event_id: event_1.id)
+# chatroom_2 = Chatroom.create!(event_id: event_2.id)
+# chatroom_3 = Chatroom.create!(event_id: event_3.id)
+# chatroom_4 = Chatroom.create!(event_id: event_4.id)
+# chatroom_5 = Chatroom.create!(event_id: event_5.id)
+# chatroom_6 = Chatroom.create!(event_id: event_6.id)
+# chatroom_7 = Chatroom.create!(event_id: event_7.id)
+# chatroom_8 = Chatroom.create!(event_id: event_8.id)
+# chatroom_9 = Chatroom.create!(event_id: event_9.id)
+# chatroom_10 = Chatroom.create!(event_id: event_10.id)
+# chatroom_11 = Chatroom.create!(event_id: event_11.id)
+# chatroom_12 = Chatroom.create!(event_id: event_12.id)
+# chatroom_13 = Chatroom.create!(event_id: event_13.id)
+# chatroom_14 = Chatroom.create!(event_id: event_14.id)
 
 #messages
-message_1 = Message.create!(user_id: joana.id, content: "hi", chatroom_id: chatroom_1.id)
+# message_1 = Message.create!(user_id: joana.id, content: "hi", chatroom_id: chatroom_1.id)
 
 
 #friendship
