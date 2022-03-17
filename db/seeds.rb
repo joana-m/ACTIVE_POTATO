@@ -14,7 +14,7 @@ Event.destroy_all
 User.destroy_all
 
 file_1 = URI.open('https://images.pexels.com/photos/995978/pexels-photo-995978.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260')
-file_2 = URI.open('https://images.pexels.com/photos/839011/pexels-photo-839011.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260')
+file_2 = URI.open('https://res.cloudinary.com/dbhyilorl/image/upload/v1647386438/UNADJUSTEDNONRAW_thumb_338b_ec5l63.jpg')
 file_3 = URI.open('https://res.cloudinary.com/dbhyilorl/image/upload/v1647473775/UNADJUSTEDNONRAW_thumb_3299_ksetet.jpg')
 file_4 = URI.open('https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260')
 file_5 = URI.open('https://res.cloudinary.com/dbhyilorl/image/upload/v1647386492/UNADJUSTEDNONRAW_thumb_33e1_dmfqhp.jpg')
@@ -45,8 +45,8 @@ file_24 = URI.open('https://images.pexels.com/photos/4401645/pexels-photo-440164
 # end
 
 chris = User.create!(email: "christina@gmail.com", user_name: "Chris", password: "123456", bio: "New here, I would like to meet people to do sports...", address: "Canggu, Bali")
-ray = User.create!(email: "ray@gmail.com", user_name: "Ray", password: "123456", bio: "New here, I would like to meet people to do sports...", address: "Canggu, Bali")
-joana = User.create!(email: "joana@gmail.com", user_name: "Joana", password: "123456", bio: "Hello, looking for buddies to do sports with.", address: "Canggu, Bali")
+ray = User.create!(email: "ray@gmail.com", user_name: "Ray", password: "123456", bio: "Hey there. I’m Ray, a web developer, I love coding but also going out and surfing. I’m a real pro!", address: "Canggu, Bali")
+joana = User.create!(email: "joana@gmail.com", user_name: "Joana", password: "123456", bio: "I just arrived in Bali 2 months ago to learn coding. Looking for buddies to do sports with.", address: "Canggu, Bali")
 nasi = User.create!(email: "nasi@gmail.com", user_name: "Nasi", password: "123456", bio: "New here, I would like to meet people to do sports...", address: "Canggu, Bali")
 andrey = User.create!(email: "andrey@gmail.com", user_name: "Andrey", password: "123456", bio: "New here, I would like to meet people to do sports...", address: "Canggu, Bali")
 tory = User.create!(email: "tory@gmail.com", user_name: "Tory", password: "123456", bio: "New here, I would like to meet people to do sports...", address: "Canggu, Bali")
@@ -208,23 +208,23 @@ user_event_37 = UserEvent.create!(user_id: joana.id, event_id: event_26.id)
 user_event_38 = UserEvent.create!(user_id: melike.id, event_id: event_26.id)
 
 #chatrooms
-chatroom_1 = Chatroom.create!(event_id: event_1.id)
-chatroom_2 = Chatroom.create!(event_id: event_2.id)
-chatroom_3 = Chatroom.create!(event_id: event_3.id)
-chatroom_4 = Chatroom.create!(event_id: event_4.id)
-chatroom_5 = Chatroom.create!(event_id: event_5.id)
-chatroom_6 = Chatroom.create!(event_id: event_6.id)
-chatroom_7 = Chatroom.create!(event_id: event_7.id)
-chatroom_8 = Chatroom.create!(event_id: event_8.id)
-chatroom_9 = Chatroom.create!(event_id: event_9.id)
-chatroom_10 = Chatroom.create!(event_id: event_10.id)
-chatroom_11 = Chatroom.create!(event_id: event_11.id)
-chatroom_12 = Chatroom.create!(event_id: event_12.id)
-chatroom_13 = Chatroom.create!(event_id: event_13.id)
-chatroom_14 = Chatroom.create!(event_id: event_14.id)
+# chatroom_1 = Chatroom.create!(event_id: event_1.id)
+# chatroom_2 = Chatroom.create!(event_id: event_2.id)
+# chatroom_3 = Chatroom.create!(event_id: event_3.id)
+# chatroom_4 = Chatroom.create!(event_id: event_4.id)
+# chatroom_5 = Chatroom.create!(event_id: event_5.id)
+# chatroom_6 = Chatroom.create!(event_id: event_6.id)
+# chatroom_7 = Chatroom.create!(event_id: event_7.id)
+# chatroom_8 = Chatroom.create!(event_id: event_8.id)
+# chatroom_9 = Chatroom.create!(event_id: event_9.id)
+# chatroom_10 = Chatroom.create!(event_id: event_10.id)
+# chatroom_11 = Chatroom.create!(event_id: event_11.id)
+# chatroom_12 = Chatroom.create!(event_id: event_12.id)
+# chatroom_13 = Chatroom.create!(event_id: event_13.id)
+# chatroom_14 = Chatroom.create!(event_id: event_14.id)
 
 #messages
-message_1 = Message.create!(user_id: joana.id, content: "hi", chatroom_id: chatroom_1.id)
+# message_1 = Message.create!(user_id: joana.id, content: "hi", chatroom_id: chatroom_1.id)
 
 
 #friendship
