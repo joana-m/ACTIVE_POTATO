@@ -71,7 +71,7 @@
           </div>
           <div class="card-event-title"><%= event.title %></div>
           <div class="card-event-textcontent">
-            <div class="card-event-useramount"><i class="fas fa-user-friends"></i>  <%= event.user_events.count %>/10 people</div>
+            <div class="card-event-useramount"><i class="fas fa-user-friends"></i>  <%= event.user_events.count %>/<%= event.number_of_participantsg %> people</div>
             <div class="card-event-dateandtime"><i class="fas fa-clock"></i>    <%=event.time_of_event.strftime("%-l:%M %P") %></div>
             <div class="card-event-location"><i class="fas fa-map-marker-alt"></i>     <%=event.address%></div>
           </div>
