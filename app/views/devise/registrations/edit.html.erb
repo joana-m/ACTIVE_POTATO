@@ -6,7 +6,7 @@
     <h2 class="profile mt-3">Profile Page</h2>
 
     <div class="banner-profile mt-3">
-      <%= image_tag @user.avatar, class: "card-event-avatar" %><br/><br/>
+      <%= cl_image_tag @user.avatar.key, class: "card-event-avatar" %><br/><br/>
       <%= @user.user_name %> <i class="fas fa-pencil-alt"></i><br/>
     </div>
   </div>

@@ -9,7 +9,7 @@
       <%= link_to event_path(event, @param), class:"index mb-4"  do %>
         <div class="card-event">
           <div>
-            <%= image_tag event.user.avatar, class: "card-event-avatar" %>
+            <%= cl_image_tag event.user.avatar.key, class: "card-event-avatar" %>
           </div>
             <div class="card-event-title"><%= event.title %></div>
           <div class="card-event-textcontent">

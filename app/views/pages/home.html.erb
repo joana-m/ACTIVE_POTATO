@@ -39,7 +39,7 @@
           <div class="friend-scroll-cards">
             <div class="card-event">
               <%= link_to user_path(friendship.friend) do  %>
-                <%= image_tag friendship.friend.avatar, class: "card-event-avatar friendship-avatar"%>
+                <%= cl_image_tag friendship.friend.avatar.key, class: "card-event-avatar friendship-avatar"%>
               <% end %>
               <div class="username-friendship">
                 <%= friendship.friend.user_name %>
@@ -66,7 +66,7 @@
       <%= link_to event_path(event), class:"index mb-4" do %>
         <div class="card-event">
           <div>
-            <%= image_tag event.user.avatar, class: "card-event-avatar" %>
+            <%= cl_image_tag event.user.avatar.key, class: "card-event-avatar" %>
           </div>
           <div class="card-event-title"><%= event.title %></div>
           <div class="card-event-textcontent">
@@ -80,7 +80,7 @@
                 <%= link_to event_path(event), class:"index mb-4" do %>
                   <div class="card-event">
                     <div>
-                      <%= image_tag event.user.avatar, class: "card-event-avatar" %>
+                      <%= cl_image_tag event.user.avatar.key, class: "card-event-avatar" %>
                     </div>
                     <div class="card-event-title"><%= event.title %></div>
                     <div class="card-event-textcontent">
