@@ -8,7 +8,10 @@
     <div class="past-events-header"><h3>Your Upcoming Events</h3></div>
     <div class="upcoming-event-card">
       <% if @events_today.empty? %>
+        <div>
           <p id="upcoming-event-card-empty-today">No events planned for today 😔</p>
+          <%= link_to '+ Create', new_event_path, class: "btn-purple join-btn btn-create" %>
+        </div>
       <% else %>
         <% @events_today.each do |event| %>
           <%= link_to event_path(event, @param), class:"index mb-4"  do %>
@@ -80,3 +83,4 @@
     <% end %>
   </div>
 </div>
+<div style="height: 90px;"></div>
