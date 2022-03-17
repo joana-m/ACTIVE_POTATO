@@ -24,13 +24,13 @@
 
 #upcoming-event-card-empty-today {
   color: $blue;
+  height: 50px;
 }
 
 .upcoming-event-card {
   font-family: 'Poppins', sans-serif;
   display: flex;
   width: 365px;
-  height: 180px;
   // background-color: #FF8552;
   border-radius: 8px;
   margin-bottom: 30px;

@@ -14,7 +14,7 @@ class PagesController < ApplicationController
 
    all_my_events =  @events.joins(:user_events).where(user_events: {user_id: current_user})
    all_my_events.each do |event|
-    if event.date == Date.today
+    if event.date == Date.today || Date.tomorrow
       @events_today << event
     elsif event.date.past?
       @past_events << event
