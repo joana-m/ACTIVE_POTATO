@@ -43,6 +43,17 @@ class EventsController < ApplicationController
   def create
     @event = Event.new(event_params)
     @event.user = current_user
+    @event.date = Date.tomorrow
+    @event.morning = false
+    @event.afternoon = false
+    @event.evening = false
+    if @event.time_of_event.hour > 4 && @event.time_of_event.hour < 12
+      @event.morning = true
+    elsif @event.time_of_event.hour > 12 && @event.time_of_event.hour < 18
+      @event.afternoon = true
+    else
+      @event.evening = true
+    end
     if @event.save
       redirect_to root_path
     else
