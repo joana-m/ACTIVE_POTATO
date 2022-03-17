@@ -45,8 +45,8 @@ file_24 = URI.open('https://images.pexels.com/photos/4401645/pexels-photo-440164
 # end
 
 chris = User.create!(email: "christina@gmail.com", user_name: "Chris", password: "123456", bio: "New here, I would like to meet people to do sports...", address: "Canggu, Bali")
-ray = User.create!(email: "ray@gmail.com", user_name: "Ray", password: "123456", bio: "New here, I would like to meet people to do sports...", address: "Canggu, Bali")
-joana = User.create!(email: "joana@gmail.com", user_name: "Joana", password: "123456", bio: "Hello, looking for buddies to do sports with.", address: "Canggu, Bali")
+ray = User.create!(email: "ray@gmail.com", user_name: "Ray", password: "123456", bio: "Hey there. I’m Ray, a web developer, I love coding but also going out and surfing. I’m a real pro!", address: "Canggu, Bali")
+joana = User.create!(email: "joana@gmail.com", user_name: "Joana", password: "123456", bio: "I just arrived in Bali 2 months ago to learn coding. Looking for buddies to do sports with.", address: "Canggu, Bali")
 nasi = User.create!(email: "nasi@gmail.com", user_name: "Nasi", password: "123456", bio: "New here, I would like to meet people to do sports...", address: "Canggu, Bali")
 andrey = User.create!(email: "andrey@gmail.com", user_name: "Andrey", password: "123456", bio: "New here, I would like to meet people to do sports...", address: "Canggu, Bali")
 tory = User.create!(email: "tory@gmail.com", user_name: "Tory", password: "123456", bio: "New here, I would like to meet people to do sports...", address: "Canggu, Bali")
