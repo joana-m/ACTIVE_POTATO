@@ -52,9 +52,6 @@ class EventsController < ApplicationController
 
   def new
     @event = Event.new
-    @morning = session[:wizard]["morning"]
-    @afternoon = session[:wizard]["afternoon"]
-    @evening = session[:wizard]["evening"]
   end
 
   private

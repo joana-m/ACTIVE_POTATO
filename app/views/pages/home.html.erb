@@ -8,10 +8,7 @@
     <div class="past-events-header"><h3>Your Upcoming Events</h3></div>
     <div class="upcoming-event-card">
       <% if @events_today.empty? %>
-        <div>
           <p id="upcoming-event-card-empty-today">No events planned for today 😔</p>
-          <%= link_to '+ Create', new_event_path, class: "btn-purple join-btn btn-create" %>
-        </div>
       <% else %>
         <% @events_today.each do |event| %>
           <%= link_to event_path(event, @param), class:"index mb-4"  do %>
@@ -19,6 +16,7 @@
             <div class="event-placeholder d-flex">
               <div>
                 <div class="upcoming-event-card-title"><%= event.title %></div>
+                <div class="upcoming-event-card-time"><%=event.date.strftime("%D") %></div>
                 <div class="upcoming-event-card-time"><%=event.time_of_event.strftime("%-l:%M %P") %></div>
               </div>
             </div>
@@ -27,6 +25,7 @@
         <% end %>
       <% end %>
     </div>
+    <%= link_to '+ Create', new_event_path, class: "btn-purple join-btn btn-create" %>
   </div>
 
     <div class="event-cards-container index">
@@ -64,6 +63,17 @@
 
   <div class="event-cards-container index">
     <div class="past-events-header"><h3>Your Past Events</h3></div>
+    <% @past_events.each do |event| %>
+      <%= link_to event_path(event), class:"index mb-4" do %>
+        <div class="card-event">
+          <div>
+            <%= image_tag event.user.avatar, class: "card-event-avatar" %>
+          </div>
+          <div class="card-event-title"><%= event.title %></div>
+          <div class="card-event-textcontent">
+            <div class="card-event-useramount"><i class="fas fa-user-friends"></i>  <%= event.user_events.count %>/<%= event.number_of_participantsg %> people</div>
+            <div class="card-event-dateandtime"><i class="fas fa-clock"></i>    <%=event.time_of_event.strftime("%-l:%M %P") %></div>
+            <div class="card-event-location"><i class="fas fa-map-marker-alt"></i>     <%=event.address%></div>
       <% if @past_events.empty? %>
         <p id="upcoming-event-card-empty-today">You have no past events.</p>
       <% else %>
