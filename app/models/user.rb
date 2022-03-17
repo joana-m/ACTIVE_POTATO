@@ -33,8 +33,34 @@ class User < ApplicationRecord
     Popular::Friendship.where(popular_model: self).or(Popular::Friendship.where(friend: self))
   end
 
+  def unread_receiver_messages
+    Message
+      .joins(:chatroom)
+      .where(read: false, chatrooms: { receiver: self })
+  end
+
+  def unread_sender_messages
+    Message
+      .joins(:chatroom)
+      .where(read: false, chatrooms: { sender: self })
+  end
+
+  def unread_owner_messages
+    Message
+      .joins(:chatroom)
+      .where.not(user: self)
+      .where(read: false, chatrooms: { event_id: events.pluck(:id) })
+  end
+
+  def unread_joined_messages
+    Message
+      .joins(:chatroom)
+      .where.not(user: self)
+      .where(read: false, chatrooms: { event_id: joined_events.pluck(:id) })
+  end
+
   def unread_messages
-    Message.joins(:chatroom).where(read: false, chatrooms: { receiver: self }).or(Message.joins(:chatroom).where(read: false, chatrooms: { sender: self })).count
+    (unread_receiver_messages.or(unread_sender_messages)).count + (unread_owner_messages.or(unread_joined_messages)).distinct.count
   end
 
   def top_3_friends
