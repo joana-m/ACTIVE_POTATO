@@ -1,6 +1,5 @@
 /* Style the navbar */
 .navbar-lewagon {
-
   background: white;
   z-index: 10000;
   width: 100%;
@@ -25,9 +24,9 @@
 .icon-black {
   color: black !important;
 }
-.icon-background-black {
-  background: black !important;
-}
+// .icon-background-black {
+//   background: black !important;
+// }
 
 /* Page content */
 .content {
@@ -42,7 +41,6 @@
     color: black;
   }
 }
-
 
 .nav-plus {
   border-radius: 50%;
@@ -62,7 +60,7 @@
 }
 
 .icon {
-  color:#807d7d;
+  color: #807d7d;
 }
 
 .page-container {

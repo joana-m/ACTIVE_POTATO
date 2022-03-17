@@ -15,7 +15,7 @@ User.destroy_all
 
 file_1 = URI.open('https://images.pexels.com/photos/995978/pexels-photo-995978.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260')
 file_2 = URI.open('https://images.pexels.com/photos/839011/pexels-photo-839011.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260')
-file_3 = URI.open('https://res.cloudinary.com/dbhyilorl/image/upload/v1645760766/cld-sample.jpg')
+file_3 = URI.open('https://res.cloudinary.com/dbhyilorl/image/upload/v1647473775/UNADJUSTEDNONRAW_thumb_3299_ksetet.jpg')
 file_4 = URI.open('https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260')
 file_5 = URI.open('https://res.cloudinary.com/dbhyilorl/image/upload/v1647386492/UNADJUSTEDNONRAW_thumb_33e1_dmfqhp.jpg')
 file_6 = URI.open('https://res.cloudinary.com/dbhyilorl/image/upload/v1647386400/UNADJUSTEDNONRAW_mini_33da_wqks5c.jpg')
@@ -230,3 +230,4 @@ message_1 = Message.create!(user_id: joana.id, content: "hi", chatroom_id: chatr
 #friendship
 joana.befriend ray
 joana.befriend nasi
+joana.befriend ratna

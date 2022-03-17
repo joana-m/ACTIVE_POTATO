@@ -17,4 +17,8 @@ class ApplicationController < ActionController::Base
       @evening = params[:wizard][:evening]
     end
   end
+
+  def default_url_options
+    { host: ENV["www.active-potato.com"] || "localhost:3000" }
+  end
 end

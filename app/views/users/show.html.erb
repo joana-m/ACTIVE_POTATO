@@ -1,3 +1,8 @@
+<!-- app/views/users/show.html.erb -->
+<% content_for :meta_title, "#{@user.user_name} is on #{DEFAULT_META["meta_product_name"]}" %>
+<% content_for :meta_description, @user.bio %>
+<% content_for :meta_image, cl_image_path(@user.avatar.key) %>
+
 <div>
   <div class="mt-3">
     <%= link_to "< Back", :back, class:"back-btn" %>
