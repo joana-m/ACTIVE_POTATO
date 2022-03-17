@@ -38,7 +38,7 @@
           <%= cl_image_tag chatroom.event.user.avatar.key, class: "card-event-avatar" %>
           <div class="card-event-textcontent">
             <div class="card-message-username"><%= chatroom.event.title %></div>
-            <div class="card-message-content"><%= chatroom.messages.last.content %></div>
+            <div class="card-message-content"><%= chatroom.messages.last.content.truncate(40) %></div>
           </div>
           <div class="card-message-locationandtimeofday">
             <div class="card-message-date"><%=chatroom.messages.last.created_at.strftime("%-d/%m/%y")%></div>
@@ -47,7 +47,7 @@
           <%= cl_image_tag chatroom.other_person(current_user).avatar.key, class: "card-event-avatar" %>
           <div class="card-event-textcontent">
             <div class="card-message-username"><%= chatroom.other_person(current_user).user_name %></div>
-            <div class="card-message-content"><%= chatroom.messages.last.content %></div>
+            <div class="card-message-content"><%= chatroom.messages.last.content.truncate(40) %></div>
           </div>
           <div class="card-message-locationandtimeofday">
             <div class="card-message-date"><%=chatroom.messages.last.created_at.strftime("%-d/%m/%y")%></div>
