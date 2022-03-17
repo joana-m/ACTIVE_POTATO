@@ -36,6 +36,7 @@ class User < ApplicationRecord
   def unread_messages
     Message.joins(:chatroom).where(read: false, chatrooms: { receiver: self }).or(Message.joins(:chatroom).where(read: false, chatrooms: { sender: self })).count
   end
+
   def top_3_friends
     self.friends.first(3)
   end
