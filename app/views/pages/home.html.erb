@@ -76,7 +76,6 @@
             <div class="card-event-useramount"><i class="fas fa-user-friends"></i>  <%= event.user_events.count %>/<%= event.number_of_participantsg %> people</div>
             <div class="card-event-dateandtime"><i class="fas fa-clock"></i>    <%=event.time_of_event.strftime("%-l:%M %P") %></div>
             <div class="card-event-location"><i class="fas fa-map-marker-alt"></i>     <%=event.address%></div>
-            <% else %>
               <% @past_events.each do |event| %>
                 <%= link_to event_path(event), class:"index mb-4" do %>
                   <div class="card-event">
@@ -93,7 +92,6 @@
                     <%#= image_tag event.image_source, class: "card-event-timeofday-icon" %>
                   </div>
                 <% end %>
-              <% end %>
             <% end %>
           </div>
         </div>
