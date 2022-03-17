@@ -9,7 +9,7 @@
   </div>
   <div class="card-profile">
     <div class="banner-profile mt-3">
-      <%= image_tag @user.avatar, class: "avatar-square" %>
+      <%= cl_image_tag @user.avatar.key, class: "avatar-square" %>
     </div>
   </div>
   <div class="card-profile-details">

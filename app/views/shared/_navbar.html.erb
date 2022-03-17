@@ -22,7 +22,7 @@
 
     <% if user_signed_in? %>
       <%= link_to user_path(current_user), class: "m-0" do %>
-        <%= image_tag current_user.avatar, class: "avatar-navbar " %>
+        <%= cl_image_tag current_user.avatar.key, class: "avatar-navbar " %>
       <% end %>
     <% end %>
   </div>

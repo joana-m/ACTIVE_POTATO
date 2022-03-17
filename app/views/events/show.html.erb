@@ -10,7 +10,7 @@
     <div class="event-details-wrapper">
       <div class="title-event">
         <%= link_to user_path(@event.user) do %>
-          <%= image_tag @event.user.avatar, class: "card-event-avatar" %>
+          <%= cl_image_tag @event.user.avatar.key, class: "card-event-avatar" %>
          <% end %>
         <h2><%= @event.title %></h2>
       </div>
@@ -27,7 +27,7 @@
         <p>Participants: </p>
         <% @event_users.each do |event_user| %>
           <%= link_to user_path(event_user) do %>
-            <%= image_tag event_user.avatar, class: "card-event-avatar" %>
+            <%= cl_image_tag event_user.avatar.key, class: "card-event-avatar" %>
           <% end %>
         <% end %>
       </div>
