@@ -5,7 +5,14 @@ class Chatroom < ApplicationRecord
   has_many :messages
 
   def other_person(current_user)
-    if current_user == sender
+    if event
+      if current_user == event.user
+        event.users
+      else
+        # TODO: Change to everyone else
+        event.user
+      end
+    elsif current_user == sender
       receiver
     else
       sender

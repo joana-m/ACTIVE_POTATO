@@ -8,6 +8,28 @@
 
     <% @chatrooms.each do |chatroom| %>
     <% if chatroom.messages.empty? %>
+      <%= link_to chatroom_path(chatroom), class:"card-message position-relative", id: "chatroom-#{chatroom.id}" do %>
+        <% if chatroom.event %>
+          <%= cl_image_tag chatroom.event.user.avatar.key, class: "card-event-avatar" %>
+          <div class="card-event-textcontent">
+            <div class="card-message-username"><%= chatroom.event.title %></div>
+            <div class="card-message-content"></div>
+          </div>
+          <div class="card-message-locationandtimeofday">
+            <div class="card-message-date"></div>
+          </div>
+        <% else %>
+          <%= cl_image_tag chatroom.other_person(current_user).avatar.key, class: "card-event-avatar" %>
+          <div class="card-event-textcontent">
+            <div class="card-message-username"><%= chatroom.other_person(current_user).user_name %></div>
+            <div class="card-message-content"></div>
+          </div>
+          <div class="card-message-locationandtimeofday">
+            <div class="card-message-date"></div>
+          </div>
+        <% end %>
+        <div class="notification empty"></div>
+      <% end %>
     <% else %>
       <%= link_to chatroom_path(chatroom), class:"card-message position-relative", id: "chatroom-#{chatroom.id}" do%>
         <% if chatroom.event %>
