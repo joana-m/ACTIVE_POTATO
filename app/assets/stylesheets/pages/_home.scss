@@ -1,22 +1,25 @@
 // Specific CSS for your home-page
+.home-container {
+  margin: 20px;
+}
+
 .hidden {
   display: none;
 }
 
 .past-events-header {
-  color: #AEADAD;
+  color: #aeadad;
   font-weight: bolder;
   font-size: 18px;
   height: 30px;
-  margin-bottom: 10px;
   // text-decoration: underline;
   // text-decoration-color: rgb(253, 155, 114);
 }
 
 #greeting-header {
   color: $orange;
-  margin: 20px 10px 30px 20px;
-  width: 342px;
+  // margin: 20px 10px 30px 20px;
+  // width: 342px;
   font-weight: bold;
   padding-bottom: 5px;
   border-bottom: 2px solid rgb(253, 155, 114);
@@ -28,22 +31,24 @@
 }
 
 .upcoming-event-card {
-  font-family: 'Poppins', sans-serif;
-  display: flex;
-  width: 365px;
+  font-family: "Poppins", sans-serif;
+  // display: flex;
+  // width: 365px;
   // background-color: #FF8552;
   border-radius: 8px;
-  margin-bottom: 30px;
+  // margin-bottom: 30px;
   margin-left: auto;
-  margin-right: auto;
+  margin-right: 10px;
   overflow: hidden;
-  overflow-x: scroll;
+  // overflow-x: scroll;
 }
 
 .upcoming-events-cards {
-  width: 300px;
-  height: 160px;
-  margin: 10px;
+  // width: 300px;
+  // height: 160px;
+  // margin: 10px;
+  display: flex;
+  overflow-x: scroll;
 }
 
 .event-placeholder {
@@ -51,16 +56,18 @@
   // background-color: rgba(253, 155, 114, 0.8);
   // margin: 10px;
   border-radius: 8px;
-  width: 300px;
+  // width: 300px;
   padding: 10px;
-  height: 160px;
+  // height: 160px;
   justify-content: space-between;
   align-items: center;
+  width: 194px;
+  margin-right: 10px;
 }
 
 .upcoming-event-card-title {
   margin: 5px;
-  font-size: 20px;
+  // font-size: 20px;
   font-weight: bold;
   color: white;
 }
@@ -71,22 +78,22 @@
 }
 
 .upcoming-event-card-cross {
-   margin-right: 15px;
-   color: white;
+  margin-right: 15px;
+  color: white;
 }
 
 .image-logo {
-  margin-top: 20px;
+  // margin-top: 20px;
   // margin-left: 10px;
-  // margin-bottom: 20px;
-  width: 150px;
+  margin-bottom: 5%;
+  width: 32%;
   // height: 120px;
 }
 
 /* friends section */
 
 .friend-scroll-card {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   width: 365px;
   height: 180px;
   // background-color: #FF8552;

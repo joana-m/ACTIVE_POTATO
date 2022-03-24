@@ -1,18 +1,18 @@
 .btn-purple {
-  background-color: #454E9E;
-  font-family: 'Poppins', sans-serif;
+  background-color: #454e9e;
+  font-family: "Poppins", sans-serif;
   border-radius: 8px;
   border: none;
   color: white;
   font-size: 14px;
-  width: 257px;
-  height: 33px;
+  // width: 257px;
+  // height: 33px;
   font-weight: bold;
 }
 
 .btn-orange {
-  background-color: #FF8552;
-  font-family: 'Poppins', sans-serif;
+  background-color: #ff8552;
+  font-family: "Poppins", sans-serif;
   border-radius: 8px;
   border: none;
   color: white;
@@ -23,8 +23,8 @@
 }
 
 .btn-purple-filled {
-  background-color: #454E9E;
-  font-family: 'Poppins', sans-serif;
+  background-color: #454e9e;
+  font-family: "Poppins", sans-serif;
   border-radius: 8px;
   border: none;
   color: white;
@@ -37,10 +37,10 @@
 .btn-purple-unfilled {
   background-color: white;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   border-radius: 8px;
   border: none;
-  color: #454E9E;
+  color: #454e9e;
   font-size: 14px;
   width: 147px;
   height: 67px;
@@ -48,13 +48,13 @@
 }
 
 .btn-purple-small {
-  background-color: #454E9E;
-  font-family: 'Poppins', sans-serif;
+  background-color: #454e9e;
+  font-family: "Poppins", sans-serif;
   border-radius: 8px;
   border: none;
   color: white;
-  font-size: 14px;
-  width: 95px;
+  font-size: 12px;
+  width: 75px;
   height: 25px;
   font-weight: bold;
 
@@ -63,16 +63,23 @@
   align-items: center;
 }
 
+// LAPTOP
+
+@media (min-width: 768px) {
+  width: 62px !important;
+  height: 20px !important;
+}
+
 .btn-purple-small:hover {
   text-decoration: none;
 }
 
 .btn-white-small {
   background-color: white;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   border-radius: 8px;
-  border: 1px solid #454E9E;
-  color: #454E9E;
+  border: 1px solid #454e9e;
+  color: #454e9e;
   font-size: 14px;
   width: 95px;
   height: 25px;
@@ -86,7 +93,7 @@
 
 .btn-purple-long-unfilled {
   background-color: #fafafa;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   border-radius: 8px;
   border: none;
   color: $blue;
@@ -95,14 +102,14 @@
   margin: 0px 25px;
   height: 33px;
   font-weight: bold;
-  border-color: #454E9E;
+  border-color: #454e9e;
   border-style: solid;
   border: 1px solid $blue;
 }
 
 .btn-purple-chat {
-  background-color: #454E9E;
-  font-family: 'Poppins', sans-serif;
+  background-color: #454e9e;
+  font-family: "Poppins", sans-serif;
   border-radius: 50px;
   border: none;
   color: white;
@@ -124,7 +131,7 @@
   margin-top: 25px;
   margin-left: 15px;
   a {
-  color: white;
+    color: white;
   }
 }
 .online-btn {
