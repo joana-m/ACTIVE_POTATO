@@ -5,11 +5,19 @@
 .friendship-page h1 {
   color: $blue;
   margin-top: 15px;
-  margin-left: 10px;
+  // margin-left: 10px;
 }
 
 .friendship-page h2 {
-  color: #AEADAD;
+  color: #aeadad;
   margin-left: 10px;
   font-size: 18px;
+}
+
+.friendship-page h3 {
+  color: #aeadad;
+}
+
+.friendship-page {
+  margin: 20px;
 }

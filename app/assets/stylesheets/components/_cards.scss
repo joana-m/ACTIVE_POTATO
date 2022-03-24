@@ -50,8 +50,9 @@
 }
 
 .event-cards-container {
-  margin: 20px 20px 50px 20px;
-  width: 342px;
+  // margin: 20px 20px 50px 20px;
+  // margin-right: 10px;
+  // width: 342px;
   &.index {
     width: unset;
   }
@@ -61,8 +62,8 @@
   font-family: "Poppins", sans-serif;
   background-color: #454e9e12;
   border-radius: 8px;
-  width: 365px;
-  height: 100px;
+  // width: 365px;
+  height: 75px;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -70,11 +71,15 @@
   margin-left: auto;
   margin-right: auto;
   position: relative;
+
+  @media (min-width: 768px) {
+    height: 76px !important;
+  }
 }
 
 .card-event-avatar {
-  width: 55px;
-  height: 55px;
+  width: 5vw;
+  height: 5vw;
   background-color: #fafafa;
   border-radius: 50%;
   padding: 2px;
@@ -199,12 +204,13 @@
 }
 
 .card-profile {
-  background-color: rgba(69, 78, 158, 0.06);
+  // background-color: rgba(69, 78, 158, 0.06);
+  background-color: #fafafa;
 }
 
 .profile-page-card {
   font-family: "Poppins", sans-serif;
-  width: 148px;
+  width: 30%;
   background-color: white;
   opacity: 0.8;
   border-radius: 8px;
@@ -237,17 +243,17 @@
 }
 
 .card-profile-bottom {
-  background-color: white;
+  background-color: #fafafa;
   opacity: 0.8;
   border-radius: 8px;
-  width: 320px;
-  height: 120px;
+  // width: 320px;
+  // height: 120px;
   justify-content: center;
   align-items: center;
   color: black;
   font-size: 16px;
   font-weight: bold;
-  margin-left: 34px;
+  // margin-left: 34px;
   display: flex;
   flex-direction: column;
 }

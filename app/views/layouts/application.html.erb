@@ -38,12 +38,16 @@
   </head>
 
   <body>
-    <div class="page-container">
       <%= render 'shared/flashes' %>
-        <%= yield %>
-      <% unless params[:controller] == "chatrooms" && params[:action] == "show" || params[:controller] == "devise/sessions" %>
-        <%= render 'shared/navbar' %>
-      <% end %>
+    <div class="page-container">
+      <div class="phone">
+        <div class="phone__screen">
+          <%= yield %>
+          <% unless params[:controller] == "chatrooms" && params[:action] == "show" || params[:controller] == "devise/sessions" %>
+            <%= render 'shared/navbar' %>
+          <% end %>
+        </div>
+      </div>
     </div>
   </body>
 </html>

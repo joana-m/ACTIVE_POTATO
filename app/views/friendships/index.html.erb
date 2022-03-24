@@ -2,14 +2,14 @@
 <h1>Friends</h1>
 
   <div>
-    <h2>Online <i class="fas fa-caret-down"></i></h2>
+    <h3>Online <i class="fas fa-caret-down"></i></h3>
     <% @friendships.each do |friendship|  %>
         <div class="card-event">
           <%= link_to user_path(friendship.friend) do  %>
             <%= cl_image_tag friendship.friend.avatar.key, class: "card-event-avatar friendship-avatar"%>
           <% end %>
           <div class="username-friendship">
-            <%= friendship.friend.user_name %>
+            <p><%= friendship.friend.user_name %></p>
           </div>
           <p class="online-btn"><i class="fas fa-circle"></i> Online</p>
           <div>
@@ -24,14 +24,14 @@
     <% end %>
 
     <div class="people-you-may-know">
-      <h2>You may know</h2>
+      <h3>You may know</h3>
       <% @non_friends.limit(3).each do |non_friend| %>
         <div class="card-event">
           <%= link_to user_path(non_friend) do  %>
             <%= cl_image_tag non_friend.avatar.key, class: "card-event-avatar friendship-avatar"%>
           <% end %>
           <div class="username-friendship">
-            <%= non_friend.user_name%>
+            <p><%= non_friend.user_name%></p>
           </div>
           <%= link_to 'Follow', user_friendships_path(non_friend), method: :post, remote: true, class:'btn-purple-small follow-btn' %>
           <br>

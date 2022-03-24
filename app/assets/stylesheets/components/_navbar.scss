@@ -5,10 +5,17 @@
   width: 100%;
   position: fixed;
   bottom: 0;
-  height: 60px;
+  height: 6vh;
 
   & a:hover {
     color: grey;
+  }
+
+  @media (min-width: 768px) {
+    position: sticky;
+    z-index: 0;
+    bottom: 0;
+    padding: 0px 12px;
   }
 }
 
@@ -17,7 +24,6 @@
   display: block;
   color: #f2f2f2;
   text-align: center;
-  padding: 10px;
   text-decoration: none;
 }
 
@@ -40,14 +46,19 @@
   &a:active {
     color: black;
   }
+
+  @media (min-width: 768px) {
+    font-size: 18px;
+    align-items: center;
+  }
 }
 
 .nav-plus {
   border-radius: 50%;
   background: $blue;
-  height: 65px;
-  width: 65px;
-  margin-top: -8px;
+  width: 5vw;
+  height: 5vw;
+  margin-top: -1vw;
   display: flex;
   align-items: center;
   justify-content: center;
