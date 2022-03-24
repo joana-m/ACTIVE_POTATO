@@ -154,7 +154,7 @@
 // </div>
 
 .card-message {
-  margin-top: 12px;
+  margin-bottom: 30px;
   width: 100% !important;
   background-color: #454e9e21 !important;
   font-family: "Poppins", sans-serif;
@@ -170,6 +170,10 @@
 
   &.index {
     width: unset;
+  }
+
+  @media (min-width: 768px) {
+    height: 76px;
   }
 }
 
