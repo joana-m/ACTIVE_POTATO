@@ -1,11 +1,21 @@
-<div class="form">
-  <%= image_tag 'logo.png' %>
-  <div data-controller="wizard">
-    <%= simple_form_for @model, url: events_path, method: :get, data: { controller: "loading-page", action:"submit->loading-page#load"} do |f|  %>
-      <div data-wizard-target="step" class="selections">
-        <div class="time-page-wrapper">
-          <h1>When are you available tomorrow?</h1>
-              <%= f.input :morning,
+<div class="home-container">
+  <div class="form">
+    <%= image_tag 'logo.png' %>
+    <div data-controller="wizard">
+      <%= simple_form_for @model, url: events_path, method: :get, data: { controller: "loading-page", action:"submit->loading-page#load"} do |f|  %>
+        <div data-wizard-target="step" class="selections">
+          <div class="time-page-wrapper">
+            <h1>When are you available tomorrow?</h1>
+                <%= f.input :morning,
+                            as: :boolean,
+                            checked_value: true,
+                            unchecked_value: false,
+                            collection_wrapper_tag: 'div',
+                            collection_wrapper_class: 'category-time-wrapper',
+                            item_wrapper_class: 'category-time-item',
+                            input_html: {class: 'category-time-selector'} %>
+
+              <%= f.input :afternoon,
                           as: :boolean,
                           checked_value: true,
                           unchecked_value: false,
@@ -13,116 +23,108 @@
                           collection_wrapper_class: 'category-time-wrapper',
                           item_wrapper_class: 'category-time-item',
                           input_html: {class: 'category-time-selector'} %>
-
-            <%= f.input :afternoon,
-                        as: :boolean,
-                        checked_value: true,
-                        unchecked_value: false,
-                        collection_wrapper_tag: 'div',
-                        collection_wrapper_class: 'category-time-wrapper',
-                        item_wrapper_class: 'category-time-item',
-                        input_html: {class: 'category-time-selector'} %>
-            <%= f.input :evening,
-                        as: :boolean,
-                        checked_value: true,
-                        unchecked_value: false,
-                        collection_wrapper_tag: 'div',
-                        collection_wrapper_class: 'category-time-wrapper',
-                        item_wrapper_class: 'category-time-item',
-                        input_html: {class: 'category-time-selector'} %>
-        </div>
-          <div>
-            <%= button_tag "Next", type: "button", class: "btn-orange",
-              data: {
-                action: "click->wizard#goToNext",
-                next_step: "1"
-              } %>
+              <%= f.input :evening,
+                          as: :boolean,
+                          checked_value: true,
+                          unchecked_value: false,
+                          collection_wrapper_tag: 'div',
+                          collection_wrapper_class: 'category-time-wrapper',
+                          item_wrapper_class: 'category-time-item',
+                          input_html: {class: 'category-time-selector'} %>
           </div>
-      </div>
+            <div>
+              <%= button_tag "Next", type: "button", class: "btn-orange",
+                data: {
+                  action: "click->wizard#goToNext",
+                  next_step: "1"
+                } %>
+            </div>
+        </div>
 
-      <div data-wizard-target="step" class="hidden">
-      <div class="sport-form-container">
-        <div class="sport-page-wrapper">
-          <h1>What do you want to do tomorrow?</h1>
-          <div class="grid">
-            <%= f.input :surfing,
-                        as: :boolean,
-                        checked_value: :surfing,
-                        unchecked_value: false,
-                        collection_wrapper_tag: 'div',
-                        collection_wrapper_class: 'category-sport-wrapper',
-                        item_wrapper_class: 'category-sport-item',
-                        input_html: {class: 'category-sport-selector', name: "sport[]" }  %>
-            <%= f.input :yoga,
-                        as: :boolean,
-                        checked_value: :yoga,
-                        unchecked_value: false,
-                        collection_wrapper_tag: 'div',
-                        collection_wrapper_class: 'category-sport-wrapper',
-                        item_wrapper_class: 'category-sport-item',
-                        input_html: {class: 'category-sport-selector', name: "sport[]"}  %>
-            <%= f.input :swimming,
-                        as: :boolean,
-                        checked_value: :swimming,
-                        unchecked_value: false,
-                        collection_wrapper_tag: 'div',
-                        collection_wrapper_class: 'category-sport-wrapper',
-                        item_wrapper_class: 'category-sport-item',
-                        input_html: {class: 'category-sport-selector', name: "sport[]"}  %>
-            <%= f.input :boxing,
-                        as: :boolean,
-                        checked_value: :boxing,
-                        unchecked_value: false,
-                        collection_wrapper_tag: 'div',
-                        collection_wrapper_class: 'category-sport-wrapper',
-                        item_wrapper_class: 'category-sport-item',
-                        input_html: {class: 'category-sport-selector', name: "sport[]"}  %>
-            <%= f.input :hiking,
-                        as: :boolean,
-                        checked_value: :hiking,
-                        unchecked_value: false,
-                        collection_wrapper_tag: 'div',
-                        collection_wrapper_class: 'category-sport-wrapper',
-                        item_wrapper_class: 'category-sport-item',
-                        input_html: {class: 'category-sport-selector', name: "sport[]"}  %>
-            <%= f.input :tennis,
-                        as: :boolean,
-                        checked_value: :tennis,
-                        unchecked_value: false,
-                        collection_wrapper_tag: 'div',
-                        collection_wrapper_class: 'category-sport-wrapper',
-                        item_wrapper_class: 'category-sport-item',
-                        input_html: {class: 'category-sport-selector', name: "sport[]"}  %>
-            <%= f.input :crossfit,
-                        as: :boolean,
-                        checked_value: :crossfit,
-                        unchecked_value: false,
-                        collection_wrapper_tag: 'div',
-                        collection_wrapper_class: 'category-sport-wrapper',
-                        item_wrapper_class: 'category-sport-item',
-                        input_html: {class: 'category-sport-selector', name: "sport[]"}  %>
-            <%= f.input :running,
-                        as: :boolean,
-                        checked_value: :running,
-                        unchecked_value: false,
-                        collection_wrapper_tag: 'div',
-                        collection_wrapper_class: 'category-sport-wrapper',
-                        item_wrapper_class: 'category-sport-item',
-                        input_html: {class: 'category-sport-selector', name: "sport[]"}  %>
+        <div data-wizard-target="step" class="hidden">
+        <div class="sport-form-container">
+          <div class="sport-page-wrapper">
+            <h1>What do you want to do tomorrow?</h1>
+            <div class="grid">
+              <%= f.input :surfing,
+                          as: :boolean,
+                          checked_value: :surfing,
+                          unchecked_value: false,
+                          collection_wrapper_tag: 'div',
+                          collection_wrapper_class: 'category-sport-wrapper',
+                          item_wrapper_class: 'category-sport-item',
+                          input_html: {class: 'category-sport-selector', name: "sport[]" }  %>
+              <%= f.input :yoga,
+                          as: :boolean,
+                          checked_value: :yoga,
+                          unchecked_value: false,
+                          collection_wrapper_tag: 'div',
+                          collection_wrapper_class: 'category-sport-wrapper',
+                          item_wrapper_class: 'category-sport-item',
+                          input_html: {class: 'category-sport-selector', name: "sport[]"}  %>
+              <%= f.input :swimming,
+                          as: :boolean,
+                          checked_value: :swimming,
+                          unchecked_value: false,
+                          collection_wrapper_tag: 'div',
+                          collection_wrapper_class: 'category-sport-wrapper',
+                          item_wrapper_class: 'category-sport-item',
+                          input_html: {class: 'category-sport-selector', name: "sport[]"}  %>
+              <%= f.input :boxing,
+                          as: :boolean,
+                          checked_value: :boxing,
+                          unchecked_value: false,
+                          collection_wrapper_tag: 'div',
+                          collection_wrapper_class: 'category-sport-wrapper',
+                          item_wrapper_class: 'category-sport-item',
+                          input_html: {class: 'category-sport-selector', name: "sport[]"}  %>
+              <%= f.input :hiking,
+                          as: :boolean,
+                          checked_value: :hiking,
+                          unchecked_value: false,
+                          collection_wrapper_tag: 'div',
+                          collection_wrapper_class: 'category-sport-wrapper',
+                          item_wrapper_class: 'category-sport-item',
+                          input_html: {class: 'category-sport-selector', name: "sport[]"}  %>
+              <%= f.input :tennis,
+                          as: :boolean,
+                          checked_value: :tennis,
+                          unchecked_value: false,
+                          collection_wrapper_tag: 'div',
+                          collection_wrapper_class: 'category-sport-wrapper',
+                          item_wrapper_class: 'category-sport-item',
+                          input_html: {class: 'category-sport-selector', name: "sport[]"}  %>
+              <%= f.input :crossfit,
+                          as: :boolean,
+                          checked_value: :crossfit,
+                          unchecked_value: false,
+                          collection_wrapper_tag: 'div',
+                          collection_wrapper_class: 'category-sport-wrapper',
+                          item_wrapper_class: 'category-sport-item',
+                          input_html: {class: 'category-sport-selector', name: "sport[]"}  %>
+              <%= f.input :running,
+                          as: :boolean,
+                          checked_value: :running,
+                          unchecked_value: false,
+                          collection_wrapper_tag: 'div',
+                          collection_wrapper_class: 'category-sport-wrapper',
+                          item_wrapper_class: 'category-sport-item',
+                          input_html: {class: 'category-sport-selector', name: "sport[]"}  %>
+            </div>
+          </div>
+
+          <%= button_tag "Previous", type: "button", class: "btn-purple-long-unfilled",
+            data: {
+              action: "click->wizard#goToPrevious",
+              previous_step: "1"
+            } %>
+
+          <div class="btn-purple btn-sport">
+            <%= f.button :submit, "See events" %>
           </div>
         </div>
-
-        <%= button_tag "Previous", type: "button", class: "btn-purple-long-unfilled",
-          data: {
-            action: "click->wizard#goToPrevious",
-            previous_step: "1"
-          } %>
-
-        <div class="btn-purple btn-sport">
-          <%= f.button :submit, "See events" %>
         </div>
-      </div>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
 </div>
