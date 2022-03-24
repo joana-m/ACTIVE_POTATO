@@ -1,4 +1,8 @@
-.chatrooms-page h1 {
+.chatrooms-page {
+  min-height: 568px;
+
+  h1 {
   color: $blue;
-  margin: 20px;
+  // margin: 20px;
+  }
 }
