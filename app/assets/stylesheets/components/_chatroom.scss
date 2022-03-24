@@ -6,6 +6,7 @@
   flex-direction: column;
   justify-content: space-between;
   flex-grow: 1;
+  margin-top: 0 !important;
 
   h1 {
     border-bottom: 1px solid $gray-200;
@@ -21,6 +22,13 @@
     padding: 1rem;
   }
 
+  .messages p {
+
+    margin-top: 0;
+    margin-bottom: 1rem;
+    width: 376px;
+  }
+
   #new_message {
     border-top: 1px solid $gray-200;
     padding: 1rem;
@@ -32,8 +40,8 @@
 }
 
 .form-control {
-  line-height: 0.5;
-  margin-top: 5px;
+  line-height: 1.5;
+  margin-top: 0px;
 }
 
 .messagebox {

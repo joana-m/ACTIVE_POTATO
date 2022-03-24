@@ -3,8 +3,6 @@ class PagesController < ApplicationController
 
   def home
     @events = Event.all
-    @past_events = []
-    @events_today = []
     # @events.each do |event|
     #   event.users.each do |user|
     #     @user_events << event if current_user == user || current_user == event.user
@@ -12,16 +10,11 @@ class PagesController < ApplicationController
     #   end
     # end
 
-   all_my_events =  @events.joins(:user_events).where(user_events: {user_id: current_user})
-   all_my_events.each do |event|
-    if event.date == Date.today || Date.tomorrow
-      @events_today << event
-    elsif event.date.past?
-      @past_events << event
-    end
-
-    # @user_friends = []
+    all_my_events =  @events.joins(:user_events).where(user_events: {user_id: current_user})
+    @past_events = all_my_events.where("date < ?", Date.today)
+    @events_today = all_my_events.where("date >= ? ", Date.today)
     @user_friends = current_user.top_3_friends
+    # @user_friends = []
     # current_user.friends.first(3) do |friend|
     #   @user_friends << User.find(friend.friend_id)
     # end
@@ -48,7 +41,6 @@ class PagesController < ApplicationController
   #   events = [morning_events, afternoon_events, evening_events].flatten.compact.sort_by { |event| event.time_of_event}
 
   #   @grouped_events = events.group_by { |event| event.sport }
-  end
 
   def form
     session[:wizard] = nil
