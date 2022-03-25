@@ -5,7 +5,9 @@
   </div>
   <h2 id="greeting-header">Hello, <%= current_user.user_name %></h2>
   <div class="event-cards-container index">
-    <div class="past-events-header"><h3>Your Upcoming Events</h3></div>
+    <div class="past-events-header">
+      <h3>Your Upcoming Events</h3>
+    </div>
     <div class="upcoming-event-card">
       <% if @events_today.empty? %>
           <p id="upcoming-event-card-empty-today">No events planned for today 😔</p>
@@ -28,75 +30,74 @@
     <%= link_to '+ Create', new_event_path, class: "btn-purple join-btn btn-create" %>
   </div>
 
-    <div class="event-cards-container index">
-      <div class="past-events-header"><h3>Your Friends</h3></div>
-      <div class="friend-scroll-cards">
-        <% if @user_friends.nil? %>
-          <p id="upcoming-event-card-empty-today">You have no friends yet.</p>
-        <% else %>
-          <% @user_friends.each do |friendship| %>
-            <%# <%= link_to event_path(event, @param), class:"index mb-4"  do %>
-            <div class="friend-scroll-cards">
-              <div class="card-event">
-                <%= link_to user_path(friendship.friend) do  %>
-                  <%= cl_image_tag friendship.friend.avatar.key, class: "card-event-avatar friendship-avatar"%>
-                <% end %>
-                <div class="username-friendship">
-                  <p><%= friendship.friend.user_name %></p>
-                </div>
-                <p class="online-btn"><i class="fas fa-circle"></i> Online</p>
-                <div>
-                  <% chatroom = Chatroom.find_by(receiver: friendship.friend, sender: current_user) %>
-                  <% if chatroom %>
-                    <%= link_to 'Message', chatroom_path(chatroom), class: "btn-purple-small follow-btn"%>
-                  <% else %>
-                    <%= link_to 'Message', user_chatrooms_path(friendship.friend), method: :post, class: 'btn-purple-small follow-btn' %>
-                  <% end %>
-                </div>
-              </div>
-            </div>
-          <% end %>
-        <% end %>
-      </div>
-    </div>
-
-    <div class="event-cards-container index">
-      <div class="past-events-header"><h3>Your Past Events</h3></div>
-      <% if @past_events.empty? %>
-        <p id="upcoming-event-card-empty-today">You have no past events.</p>
-      <% end %>
-      <% @past_events.each do |event| %>
-        <%= link_to event_path(event), class:"index mb-4" do %>
-          <div class="card-event">
-            <div>
-              <%= cl_image_tag event.user.avatar.key, class: "card-event-avatar" %>
-            </div>
-            <div class="card-event-title"><%= event.title %></div>
-            <div class="card-event-textcontent">
-              <div class="card-event-useramount"><i class="fas fa-user-friends"></i>  <%= event.user_events.count %>/<%= event.number_of_participants %> people</div>
-              <div class="card-event-dateandtime"><i class="fas fa-clock"></i>    <%=event.time_of_event.strftime("%-l:%M %P") %></div>
-              <div class="card-event-location"><i class="fas fa-map-marker-alt"></i>     <%=event.address%></div>
-                <% @past_events.each do |event| %>
-                  <%= link_to event_path(event), class:"index mb-4" do %>
-                    <div class="card-event">
-                      <div>
-                        <%= cl_image_tag event.user.avatar.key, class: "card-event-avatar" %>
-                      </div>
-                      <div class="card-event-title"><%= event.title %></div>
-                      <div class="card-event-textcontent">
-                        <div class="card-event-useramount"><i class="fas fa-user-friends"></i>  <%= event.user_events.count %>/10 people</div>
-                        <div class="card-event-dateandtime"><i class="fas fa-clock"></i>    <%=event.time_of_event.strftime("%-l:%M %P") %></div>
-                        <div class="card-event-location"><i class="fas fa-map-marker-alt"></i>     <%=event.address%></div>
-                      </div>
-                      <%# <div class="card-event-locationandtimeofday"> %>
-                      <%#= image_tag event.image_source, class: "card-event-timeofday-icon" %>
-                    </div>
-                  <% end %>
+  <div class="event-cards-container index">
+    <div class="past-events-header"><h3>Your Friends</h3></div>
+    <div class="friend-scroll-cards">
+      <% if @user_friends.nil? %>
+        <p id="upcoming-event-card-empty-today">You have no friends yet.</p>
+      <% else %>
+        <% @user_friends.each do |friendship| %>
+          <%# <%= link_to event_path(event, @param), class:"index mb-4"  do %>
+          <div class="friend-scroll-cards">
+            <div class="card-event">
+              <%= link_to user_path(friendship.friend) do  %>
+                <%= cl_image_tag friendship.friend.avatar.key, class: "card-event-avatar friendship-avatar"%>
               <% end %>
+              <div class="username-friendship">
+                <p><%= friendship.friend.user_name %></p>
+              </div>
+              <p class="online-btn"><i class="fas fa-circle"></i> Online</p>
+              <div>
+                <% chatroom = Chatroom.find_by(receiver: friendship.friend, sender: current_user) %>
+                <% if chatroom %>
+                  <%= link_to 'Message', chatroom_path(chatroom), class: "btn-purple-small follow-btn"%>
+                <% else %>
+                  <%= link_to 'Message', user_chatrooms_path(friendship.friend), method: :post, class: 'btn-purple-small follow-btn' %>
+                <% end %>
+              </div>
             </div>
           </div>
         <% end %>
       <% end %>
     </div>
+  </div>
+
+  <div class="event-cards-container index">
+    <div class="past-events-header"><h3>Your Past Events</h3></div>
+    <% if @past_events.empty? %>
+      <p id="upcoming-event-card-empty-today">You have no past events.</p>
+    <% end %>
+    <% @past_events.each do |event| %>
+      <%= link_to event_path(event), class:"index mb-4" do %>
+        <div class="card-event">
+          <div>
+            <%= cl_image_tag event.user.avatar.key, class: "card-event-avatar" %>
+          </div>
+          <div class="card-event-title"><%= event.title %></div>
+          <div class="card-event-textcontent">
+            <div class="card-event-useramount"><i class="fas fa-user-friends"></i>  <%= event.user_events.count %>/<%= event.number_of_participants %> people</div>
+            <div class="card-event-dateandtime"><i class="fas fa-clock"></i>    <%=event.time_of_event.strftime("%-l:%M %P") %></div>
+            <div class="card-event-location"><i class="fas fa-map-marker-alt"></i>     <%=event.address%></div>
+              <% @past_events.each do |event| %>
+                <%= link_to event_path(event), class:"index mb-4" do %>
+                  <div class="card-event">
+                    <div>
+                      <%= cl_image_tag event.user.avatar.key, class: "card-event-avatar" %>
+                    </div>
+                    <div class="card-event-title"><%= event.title %></div>
+                    <div class="card-event-textcontent">
+                      <div class="card-event-useramount"><i class="fas fa-user-friends"></i>  <%= event.user_events.count %>/10 people</div>
+                      <div class="card-event-dateandtime"><i class="fas fa-clock"></i>    <%=event.time_of_event.strftime("%-l:%M %P") %></div>
+                      <div class="card-event-location"><i class="fas fa-map-marker-alt"></i>     <%=event.address%></div>
+                    </div>
+                    <%# <div class="card-event-locationandtimeofday"> %>
+                    <%#= image_tag event.image_source, class: "card-event-timeofday-icon" %>
+                  </div>
+                <% end %>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
   </div>
 </div>
