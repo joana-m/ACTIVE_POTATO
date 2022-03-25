@@ -38,23 +38,20 @@
       <% else %>
         <div class="friend-scroll-cards">
           <% @user_friends.each do |friendship| %>
-          <%#= link_to event_path(event, @param), class:"index mb-4"  do %>
-            <div class="card-event">
-              <div>
-                <%= link_to user_path(friendship.friend) do %>
-                  <%= cl_image_tag friendship.friend.avatar.key, class: "card-event-avatar"%>
-                <% end %>
-              </div>
-              <div class="username-friendship">
+            <div class="card-friend">
+              <%= link_to user_path(friendship.friend) do %>
+                <%= cl_image_tag friendship.friend.avatar.key, class:"avatar" %>
+              <% end %>
+              <div class="card-friend-username">
                 <p><%= friendship.friend.user_name %></p>
               </div>
-              <p class="online-btn"><i class="fas fa-circle"></i> Online</p>
-              <div>
+              <div class="card-friend-action">
+                <p class="online-btn"><i class="fas fa-circle"></i> Online</p>
                 <% chatroom = Chatroom.find_by(receiver: friendship.friend, sender: current_user) %>
                 <% if chatroom %>
-                  <%= link_to 'Message', chatroom_path(chatroom), class: "btn-purple-small follow-btn"%>
+                  <%= link_to 'Message', chatroom_path(chatroom), class: "btn-purple-small"%>
                 <% else %>
-                  <%= link_to 'Message', user_chatrooms_path(friendship.friend), method: :post, class: 'btn-purple-small follow-btn' %>
+                  <%= link_to 'Message', user_chatrooms_path(friendship.friend), method: :post, class: 'btn-purple-small' %>
                 <% end %>
               </div>
             </div>
