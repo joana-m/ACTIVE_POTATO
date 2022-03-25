@@ -1,28 +1,25 @@
-
-<div class="index-content">
-
-<h2 class="mt-4 ms-4"><%=@random_event ? @random_event.date.strftime("%A, %d %B ") : "No events for selected time" %></h1>
-<% @grouped_events.each do |sport, events| %>
-  <div class="event-cards-container index">
-    <div class="sport-type-header"><h3><%= sport %></h3></div>
-    <% events.each do |event| %>
-      <%= link_to event_path(event, @param), class:"index mb-4"  do %>
-        <div class="card-event">
-          <div>
-            <%= cl_image_tag event.user.avatar.key, class: "card-event-avatar" %>
+<div class="home-container">
+  <h2 class="index-content"><%=@random_event ? @random_event.date.strftime("%A, %d %B ") : "No events for selected time" %></h1>
+  <% @grouped_events.each do |sport, events| %>
+    <div class="event-cards-container index">
+      <div class="sport-type-header"><h3><%= sport %></h3></div>
+      <% events.each do |event| %>
+        <%= link_to event_path(event, @param), class:"index mb-4"  do %>
+          <div class="card-event">
+            <div>
+              <%= cl_image_tag event.user.avatar.key, class: "card-event-avatar" %>
+            </div>
+              <div class="card-event-title"><%= event.title %></div>
+            <div class="card-event-textcontent">
+              <div class="card-event-useramount"><i class="fas fa-user-friends"></i>  <%= event.user_events.count + 1 %>/<%= event.number_of_participants %></div>
+              <div class="card-event-dateandtime"><i class="fas fa-clock"></i>    <%=event.time_of_event.strftime("%-l:%M %P") %></div>
+              <div class="card-event-location"><i class="fas fa-map-marker-alt"></i>     <%=event.address%></div>
+            </div>
+              <%# <div class="card-event-locationandtimeofday"> %>
+              <%#= image_tag event.image_source, class: "card-event-timeofday-icon" %>
           </div>
-            <div class="card-event-title"><%= event.title %></div>
-          <div class="card-event-textcontent">
-            <div class="card-event-useramount"><i class="fas fa-user-friends"></i>  <%= event.user_events.count + 1 %>/<%= event.number_of_participants %></div>
-            <div class="card-event-dateandtime"><i class="fas fa-clock"></i>    <%=event.time_of_event.strftime("%-l:%M %P") %></div>
-            <div class="card-event-location"><i class="fas fa-map-marker-alt"></i>     <%=event.address%></div>
-          </div>
-            <%# <div class="card-event-locationandtimeofday"> %>
-            <%#= image_tag event.image_source, class: "card-event-timeofday-icon" %>
-        </div>
+        <% end %>
       <% end %>
-    <% end %>
-  </div>
-<% end %>
+    </div>
+  <% end %>
 </div>
-<div style="height: 90px;"></div>
