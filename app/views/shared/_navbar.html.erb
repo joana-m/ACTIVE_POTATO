@@ -7,7 +7,7 @@
       <%= link_to chatrooms_path, data: { controller: "notification", notification_user_id_value: current_user.id  }, class:"position-relative" do %>
         <i class="far fa-comment icon <%= 'icon-black' if params[:controller] == "chatrooms" %>">
         </i>
-        <span data-notification-target="counter" class="notification <%= 'empty' if current_user.unread_messages.zero? %>"><%= current_user.unread_messages %></span>
+        <span data-notification-target="counter" class="position-absolute top-50 start-100 translate-middle notification <%= 'empty' if current_user.unread_messages.zero? %>"><%= current_user.unread_messages %></span>
       <% end %>
     <% end %>
     <div class="nav-plus <%= 'icon-background-black' if params[:controller] == "pages" && params[:action] == "form" %>">
