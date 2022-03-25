@@ -64,7 +64,7 @@
   background-color: #454e9e12;
   border-radius: 8px;
   // width: 365px;
-  height: 75px;
+  height: 95px;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -94,20 +94,20 @@
 }
 
 .card-event-textcontent {
-  padding-left: 12px;
-  // width: 154.5px;
-  // margin-right: 12px;
+  // padding-left: 12px;
+  // margin-left: auto;
   overflow: hidden;
-  flex-grow: 1;
+  // flex-grow: 1;
 }
 
 .card-event-title {
   font-size: 18px;
   margin-left: 12px;
   margin-right: 12px;
+  // min-width: 200px;
 
   @media (min-width: 768px) {
-    font-size: 14px;
+    font-size: 12px;
   }
 }
 
@@ -301,4 +301,61 @@
 .card-profile-bottom h2 {
   font-size: 16px;
   font-weight: bold;
+}
+
+
+// friendship cards on home page
+.card-friend {
+  background-color: #454e9e12;
+  border-radius: 8px;
+  height: 75px;
+  margin-bottom: 30px;
+  padding: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .avatar {
+    width: 55px;
+    height: 55px;
+    background-color: #fafafa;
+    border-radius: 50%;
+    // padding: 2px;
+    // margin-left: 12px;
+    object-fit: cover;
+  }
+
+  p {
+    margin: 0;
+    font-size: 14px;
+  }
+}
+
+.card-friend-username {
+  padding-left: 12px;
+  flex-grow: 1;
+}
+
+.card-friend-action {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: end;
+}
+
+@media (min-width: 768px) {
+  .card-friend .avatar {
+    width: 40px;
+    height: 40px;
+    background-color: #fafafa;
+    border-radius: 50%;
+    // padding: 2px;
+    // margin-left: 12px;
+    object-fit: cover;
+  }
+
+  .card-friend p {
+    font-size: 8px;
+  }
 }

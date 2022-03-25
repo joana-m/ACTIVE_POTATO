@@ -55,14 +55,21 @@
   border: none;
   color: white;
   font-size: 12px;
-  width: 75px;
-  height: 25px;
-  font-weight: bold;
+  // width: 75px;
+  // height: 25px;
+  // font-weight: bold;
+  padding: 2px 8px;
 
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media (min-width: 768px) {
+    // width: 60px;
+    // height: 20px;
+  }
 }
+
 
 .btn-purple-small:hover {
   text-decoration: none;
@@ -83,6 +90,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media (min-width: 768px) {
+    font-size: 8px;
+  }
 }
 
 .btn-purple-long-unfilled {
@@ -128,11 +139,12 @@
     color: white;
   }
 }
-.online-btn {
-  position: absolute;
-  top: 15px;
-  right: 26px;
-}
+
+// .online-btn {
+//   position: absolute;
+//   top: 15px;
+//   right: 26px;
+// }
 
 .follow-btn {
   text-align: center;
