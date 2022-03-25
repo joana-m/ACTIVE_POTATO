@@ -5,9 +5,10 @@
   background: white;
   z-index: 10000;
   width: 100%;
-  position: sticky;
+  position: fixed;
   bottom: 0;
   // height: 6vh;
+  margin-top: 10px;
 
   & a:hover {
     color: grey;
@@ -122,7 +123,6 @@
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
   .navbar-lewagon {
-    position: sticky;
     z-index: 0;
     bottom: 0;
     padding: 0px 12px;

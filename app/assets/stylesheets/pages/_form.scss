@@ -5,13 +5,9 @@
 }
 
 .form > img {
-  height: 110px;
-  width: 150px;
+  // height: 110px;
+  width: 50%;
   object-fit: cover;
-}
-
-.form > h1 {
-  color: #ff8552;
 }
 
 .form-check {
@@ -20,13 +16,8 @@
   display: flex;
 }
 
-.selections {
-  margin-top: 10%;
-}
-
 .time-page-wrapper > h1 {
   color: #ff8552;
-  margin-bottom: 20px;
 }
 
 .category-time-wrapper {
@@ -145,5 +136,59 @@
 
   & input {
     color: white;
+  }
+}
+
+// Smallest device
+@media (min-width: 100px) and (max-width: 575px) {
+  .form > img {
+    width: 130px;
+    padding-top: 20px;
+  }
+
+  h1 {
+    font-size: 26px;
+    padding: 22px 0px;
+  }
+
+  .category-time-selector + label {
+    width: 257px;
+    height: 124px;
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) and (max-width: 896px) {
+  .category-time-selector + label {
+    width: 257px;
+    height: 100px;
+  }
+
+  .form > img {
+    width: 158px;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .category-time-selector + label {
+    width: 222px;
+    height: 82px;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .category-time-selector + label {
+    width: 80%;
+    height: 78px;
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  .category-time-selector + label {
+    width: 212px;
+    height: 78px;
   }
 }

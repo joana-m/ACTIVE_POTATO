@@ -1,3 +1,4 @@
+// DEFAULT
 .btn-purple {
   background-color: #454e9e;
   font-family: "Poppins", sans-serif;
@@ -61,13 +62,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-// LAPTOP
-
-@media (min-width: 768px) {
-  width: 62px !important;
-  height: 20px !important;
 }
 
 .btn-purple-small:hover {
@@ -146,4 +140,32 @@
   position: absolute;
   right: 20px;
   text-decoration: none;
+}
+
+// MEDIA QUERIES
+
+// Smallest device
+@media (min-width: 100px) and (max-width: 575px) {
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) and (max-width: 896px) {
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .btn-orange {
+    width: 222px;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .btn-orange {
+    width: 80%;
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
 }
