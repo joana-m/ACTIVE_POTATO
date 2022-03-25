@@ -26,15 +26,15 @@
     <div class="people-you-may-know">
       <h3>You may know</h3>
       <% @non_friends.limit(3).each do |non_friend| %>
-        <div class="card-event">
+        <div class="card-friend">
           <%= link_to user_path(non_friend) do  %>
-            <%= cl_image_tag non_friend.avatar.key, class: "card-event-avatar friendship-avatar"%>
+            <%= cl_image_tag non_friend.avatar.key, class: "avatar"%>
           <% end %>
-          <div class="username-friendship">
+          <div class="card-friend-username">
             <p><%= non_friend.user_name%></p>
           </div>
-          <%= link_to 'Follow', user_friendships_path(non_friend), method: :post, remote: true, class:'btn-purple-small follow-btn' %>
-          <br>
+          <%= link_to 'Follow', user_friendships_path(non_friend), method: :post, remote: true, class:'btn-purple-small' %>
+          <%# <br> %>
         </div>
       <% end %>
     </div>
