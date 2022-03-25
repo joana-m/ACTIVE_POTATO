@@ -59,6 +59,7 @@
 }
 
 .card-event {
+  padding: 12px;
   font-family: "Poppins", sans-serif;
   background-color: #454e9e12;
   border-radius: 8px;
@@ -85,6 +86,11 @@
   // padding: 2px;
   // margin-left: 12px;
   object-fit: cover;
+
+  @media (min-width: 768px) {
+    width: 40px;
+    height: 40px;
+  }
 }
 
 .card-event-textcontent {
@@ -97,16 +103,28 @@
 
 .card-event-title {
   font-size: 18px;
-  margin-left: 22px;
-  margin-right: 18px;
+  margin-left: 12px;
+  margin-right: 12px;
+
+  @media (min-width: 768px) {
+    font-size: 14px;
+  }
 }
 
 .card-event-useramount {
   font-size: 14px;
+
+  @media (min-width: 768px) {
+    font-size: 10px;
+  }
 }
 
 .card-event-dateandtime {
   font-size: 14px;
+
+  @media (min-width: 768px) {
+    font-size: 10px;
+  }
 }
 
 .card-event-locationandtimeofday {
@@ -136,6 +154,10 @@
 
 .card-event-location {
   font-size: 14px;
+
+  @media (min-width: 768px) {
+    font-size: 10px;
+  }
 }
 
 /* Card design for messages page */
@@ -199,6 +221,11 @@
   background-color: gray;
   border-radius: 50%;
   padding: 5px;
+
+  @media (min-width: 768px) {
+    width: 40px;
+    height: 40px;
+  }
 }
 
 .card-message-date {
