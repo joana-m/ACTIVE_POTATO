@@ -6,7 +6,8 @@
         <div data-wizard-target="step" class="selections">
           <div class="time-page-wrapper">
             <h1>When are you available tomorrow?</h1>
-                <%= f.input :morning,
+            <div class="form-choices">
+              <%= f.input :morning,
                             as: :boolean,
                             checked_value: true,
                             unchecked_value: false,
@@ -31,6 +32,7 @@
                           collection_wrapper_class: 'category-time-wrapper',
                           item_wrapper_class: 'category-time-item',
                           input_html: {class: 'category-time-selector'} %>
+            </div>
           </div>
 
             <div>

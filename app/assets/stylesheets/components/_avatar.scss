@@ -66,3 +66,34 @@
   color: black;
   font-weight: bolder;
 }
+
+// MEDIA QUERIES
+
+// Smallest device
+@media (min-width: 100px) and (max-width: 575px) {
+  .avatar-navbar {
+    width: 32px !important;
+    height: 32px !important;
+    margin-top: -6px !important;
+  }
+
+  .navbar-lewagon {
+    height: 42px;
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) and (max-width: 896px) {
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+}
