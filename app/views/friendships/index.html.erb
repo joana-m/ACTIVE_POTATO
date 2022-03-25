@@ -4,23 +4,23 @@
   <div>
     <h3>Online <i class="fas fa-caret-down"></i></h3>
     <% @friendships.each do |friendship|  %>
-        <div class="card-event">
-          <%= link_to user_path(friendship.friend) do  %>
-            <%= cl_image_tag friendship.friend.avatar.key, class: "card-event-avatar friendship-avatar"%>
-          <% end %>
-          <div class="username-friendship">
-            <p><%= friendship.friend.user_name %></p>
-          </div>
-          <p class="online-btn"><i class="fas fa-circle"></i> Online</p>
-          <div>
-            <% chatroom = Chatroom.find_by(receiver: friendship.friend, sender: current_user) %>
-            <% if chatroom %>
-              <%= link_to 'Message', chatroom_path(chatroom), class: "btn-purple-small follow-btn"%>
-            <% else %>
-              <%= link_to 'Message', user_chatrooms_path(friendship.friend), method: :post, class: 'btn-purple-small follow-btn' %>
-            <% end %>
-          </div>
+      <div class="card-friend">
+        <%= link_to user_path(friendship.friend) do %>
+          <%= cl_image_tag friendship.friend.avatar.key, class:"avatar" %>
+        <% end %>
+        <div class="card-friend-username">
+          <p><%= friendship.friend.user_name %></p>
         </div>
+        <div class="card-friend-action">
+          <p class="online-btn"><i class="fas fa-circle"></i> Online</p>
+          <% chatroom = Chatroom.find_by(receiver: friendship.friend, sender: current_user) %>
+          <% if chatroom %>
+            <%= link_to 'Message', chatroom_path(chatroom), class: "btn-purple-small"%>
+          <% else %>
+            <%= link_to 'Message', user_chatrooms_path(friendship.friend), method: :post, class: 'btn-purple-small' %>
+          <% end %>
+        </div>
+      </div>
     <% end %>
 
     <div class="people-you-may-know">
