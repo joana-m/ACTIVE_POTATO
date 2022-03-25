@@ -1,15 +1,16 @@
 <!-- app/views/chatrooms/show.html.erb -->
-
-<div class="container chatroom"
-  data-controller="chatroom-subscription"
-  data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>"
->
-  <p class="mt-3">
+<p class="mt-3 ms-3">
   <% if @chatroom == nil %>
     <%= link_to "< Back", event_path(@event)  %>
   <% else %>
     <%= link_to "< Back", chatrooms_path %><p>
   <% end %>
+
+<div class="container chatroom"
+  data-controller="chatroom-subscription"
+  data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>"
+>
+
   <% if @chatroom.event %>
     <h1><%= @chatroom.event.title %></h1>
   <% else %>

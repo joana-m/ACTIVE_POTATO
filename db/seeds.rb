@@ -140,7 +140,7 @@ user_event_17 = UserEvent.create!(user_id: shania.id, event_id: event_10.id)
 
 # YOGA AM
 
-event_11 = Event.create!(user_id: maria.id, title: "Yoga with #{maria.user_name}", description: "Let's do Yoga!", address: "Canggu, Bali", sport: "Yoga", date: Date.tomorrow, time_of_event: "08:00", number_of_participants: 3, morning: true)
+event_11 = Event.create!(user_id: maria.id, title: "Yoga with #{maria.user_name}", description: "Let's do Yoga!", address: "Canggu, Bali", sport: "Yoga", date: Date.today, time_of_event: "20:00", number_of_participants: 2, evening: true)
 user_event_18 = UserEvent.create!(user_id: joana.id, event_id: event_11.id)
 
 event_12 = Event.create!(user_id: mel.id, title: "Yoga with #{mel.user_name}", description: "Yoga for beginners", address: "Canggu, Bali", sport: "Yoga", date: Date.tomorrow, time_of_event: "08:00", number_of_participants: 4, morning: true)
@@ -203,22 +203,22 @@ user_event_36 = UserEvent.create!(user_id: ethan.id, event_id: event_24.id)
 event_25 = Event.create!(user_id: lauren.id, title: "Swimming with #{rachel.user_name}", description: "All levels are welcome", address: "Canggu, Bali", sport: "Swimming", date: Date.tomorrow, time_of_event: "13:30", number_of_participants: 1, afternoon: true)
 
 # boxing afternoon YESTERDAY
-event_26 = Event.create!(user_id: antoni.id, title: "Boxing with #{antoni.user_name}", description: "All levels are welcome", address: "Canggu, Bali", sport: "Boxing", date: Date.yesterday, time_of_event: "13:30", number_of_participants: 2, afternoon: true)
+event_26 = Event.create!(user_id: antoni.id, title: "Boxing with #{antoni.user_name}", description: "All levels are welcome", address: "Canggu, Bali", sport: "Boxing", date: Date.yesterday, time_of_event: "13:30", number_of_participants: 3, afternoon: true)
 user_event_37 = UserEvent.create!(user_id: joana.id, event_id: event_26.id)
 user_event_38 = UserEvent.create!(user_id: melike.id, event_id: event_26.id)
 
 
 #SURF AM YESTERDAY
-event_1 = Event.create!(user_id: chris.id, title: "Surf with #{chris.user_name}", description: "Let's go surfing together", address: "Canggu, Bali", sport: "Surfing", date: Date.yesterday, time_of_event: "8:00", number_of_participants: 5, morning: true)
-user_event_43 = UserEvent.create!(user_id: andrey.id, event_id: event_1.id)
-user_event_44 = UserEvent.create!(user_id: nasi.id, event_id: event_1.id)
-user_event_40 = UserEvent.create!(user_id: joana.id, event_id: event_1.id)
+event_27 = Event.create!(user_id: chris.id, title: "Surf with #{chris.user_name}", description: "Let's go surfing together", address: "Canggu, Bali", sport: "Surfing", date: Date.yesterday, time_of_event: "8:00", number_of_participants: 4, morning: true)
+user_event_39 = UserEvent.create!(user_id: andrey.id, event_id: event_27.id)
+user_event_40 = UserEvent.create!(user_id: nasi.id, event_id: event_27.id)
+user_event_41 = UserEvent.create!(user_id: joana.id, event_id: event_27.id)
 
 #SURF AM YESTERDAY
-event_1 = Event.create!(user_id: andrey.id, title: "Surf with #{andrey.user_name}", description: "Let's go surfing together", address: "Canggu, Bali", sport: "Surfing", date: Date.yesterday, time_of_event: "7:00", number_of_participants: 5, morning: true)
-user_event_43 = UserEvent.create!(user_id: melike.id, event_id: event_1.id)
-user_event_44 = UserEvent.create!(user_id: nasi.id, event_id: event_1.id)
-user_event_40 = UserEvent.create!(user_id: joana.id, event_id: event_1.id)
+event_28 = Event.create!(user_id: andrey.id, title: "Surf with #{andrey.user_name}", description: "Let's go surfing together", address: "Canggu, Bali", sport: "Surfing", date: Date.yesterday, time_of_event: "7:00", number_of_participants: 4, morning: true)
+user_event_42 = UserEvent.create!(user_id: melike.id, event_id: event_28.id)
+user_event_43 = UserEvent.create!(user_id: nasi.id, event_id: event_28.id)
+user_event_44 = UserEvent.create!(user_id: joana.id, event_id: event_28.id)
 
 #chatrooms
 # chatroom_1 = Chatroom.create!(event_id: event_1.id)
