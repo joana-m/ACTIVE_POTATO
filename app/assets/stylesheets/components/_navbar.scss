@@ -5,17 +5,10 @@
   width: 100%;
   position: fixed;
   bottom: 0;
-  height: 6vh;
+  // height: 6vh;
 
   & a:hover {
     color: grey;
-  }
-
-  @media (min-width: 768px) {
-    position: sticky;
-    z-index: 0;
-    bottom: 0;
-    padding: 0px 12px;
   }
 }
 
@@ -46,18 +39,13 @@
   &a:active {
     color: black;
   }
-
-  @media (min-width: 768px) {
-    font-size: 18px;
-    align-items: center;
-  }
 }
 
 .nav-plus {
   border-radius: 50%;
   background: $blue;
-  width: 5vw;
-  height: 5vw;
+  width: 48px;
+  height: 48px;
   margin-top: -1vw;
   display: flex;
   align-items: center;
