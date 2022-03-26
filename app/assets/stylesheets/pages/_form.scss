@@ -2,18 +2,26 @@
   display: block;
   text-align: center;
   // margin-top: 25%;
+  bottom: 20;
+}
+
+.form-check {
+  padding: 0px;
+}
+
+.form-choices-time {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  padding: 0px 2.5px;
+  justify-content: center;
+  display: flex;
 }
 
 .form > img {
   // height: 110px;
   width: 50%;
   object-fit: cover;
-}
-
-.form-check {
-  padding: 0px;
-  justify-content: center;
-  display: flex;
 }
 
 .time-page-wrapper > h1 {
@@ -38,7 +46,7 @@
 .grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  margin: 20px;
+  justify-items: center;
 }
 
 .category-time-selector + label {
@@ -130,9 +138,10 @@
 }
 
 .btn-sport {
-  width: 100%;
+  // width: 100%;
   height: 33px;
   margin-top: 15px;
+  width: 92%;
 
   & input {
     color: white;
@@ -155,11 +164,21 @@
     width: 257px;
     height: 124px;
   }
+
+  .category-time-selector:checked + label {
+    width: 257px;
+    height: 124px;
+  }
 }
 
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) and (max-width: 896px) {
   .category-time-selector + label {
+    width: 257px;
+    height: 100px;
+  }
+
+  .category-time-selector:checked + label {
     width: 257px;
     height: 100px;
   }
@@ -174,14 +193,49 @@
   .category-time-selector + label {
     width: 222px;
     height: 82px;
+    font-size: 14px;
+  }
+
+  .category-time-selector:checked + label {
+    width: 222px;
+    height: 82px;
+    font-size: 14px;
+  }
+
+  .category-sport-selector + label {
+    width: 118px;
+    height: 53px;
+    font-size: 12px;
+  }
+
+  .category-sport-selector:checked + label {
+    width: 118px;
+    height: 53px;
+    font-size: 12px;
   }
 }
 
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
   .category-time-selector + label {
-    width: 80%;
+    width: 212px;
     height: 78px;
+    font-size: 14px;
+  }
+  .category-time-selector:checked + label {
+    width: 212px;
+    height: 78px;
+    font-size: 14px;
+  }
+
+  .category-sport-selector + label {
+    width: 118px;
+    height: 53px;
+  }
+
+  .category-sport-selector:checked + label {
+    width: 118px;
+    height: 53px;
   }
 }
 
@@ -190,5 +244,22 @@
   .category-time-selector + label {
     width: 212px;
     height: 78px;
+    font-size: 14px;
+  }
+
+  .category-time-selector:checked + label {
+    width: 212px;
+    height: 78px;
+    font-size: 14px;
+  }
+
+  .category-sport-selector + label {
+    width: 118px;
+    height: 53px;
+  }
+
+  .category-sport-selector:checked + label {
+    width: 118px;
+    height: 53px;
   }
 }
