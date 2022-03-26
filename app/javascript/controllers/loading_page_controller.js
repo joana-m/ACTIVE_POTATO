@@ -43,6 +43,6 @@ export default class extends Controller {
     document.body.insertAdjacentHTML("beforeend", template);
     setTimeout(() => {
       this.element.submit();
-    }, 2500);
+    }, 10000);
   }
 }
