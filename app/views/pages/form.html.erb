@@ -6,7 +6,7 @@
         <div data-wizard-target="step" class="selections">
           <div class="time-page-wrapper">
             <h1>When are you available tomorrow?</h1>
-            <div class="form-choices">
+            <div class="form-choices-time">
               <%= f.input :morning,
                             as: :boolean,
                             checked_value: true,
@@ -34,19 +34,16 @@
                           input_html: {class: 'category-time-selector'} %>
             </div>
           </div>
-
-            <div>
-              <%= button_tag "Next", type: "button", class: "btn-orange",
-                data: {
-                  action: "click->wizard#goToNext",
-                  next_step: "1"
-                } %>
-            </div>
+            <%= button_tag "Next", type: "button", class: "btn-orange",
+              data: {
+                action: "click->wizard#goToNext",
+                next_step: "1"
+              } %>
         </div>
 
         <div data-wizard-target="step" class="hidden">
           <div class="sport-form-container">
-            <div class="sport-page-wrapper">
+            <div class="sport-page-wrapper selections">
               <h1>What do you want to do tomorrow?</h1>
               <div class="grid">
                 <%= f.input :surfing,
