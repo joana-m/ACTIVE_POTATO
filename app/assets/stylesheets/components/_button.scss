@@ -133,10 +133,19 @@
 }
 
 .back-btn {
-  padding-top: 25px;
-  padding-left: 15px;
+  margin-top: 0px;
+  margin-left: -6px;
+  margin-bottom: 6px;
+  // padding-top: 25px;
+  // padding-left: 15px;
   a {
     color: white;
+  }
+
+  @media (min-width: 768px) {
+    margin-top: -12px;
+    margin-left: -6px;
+    margin-bottom: 6px;
   }
 }
 
