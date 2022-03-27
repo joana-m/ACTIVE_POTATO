@@ -251,15 +251,17 @@
 
 .profile-page-card {
   font-family: "Poppins", sans-serif;
-  width: 30%;
+  width: 45%;
   background-color: white;
   opacity: 0.8;
   border-radius: 8px;
-  margin: 10px 10px 10px 10px;
+  // margin: 10px;
+  padding: 15px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
 }
 
 .profile-page-card p {
@@ -277,13 +279,9 @@
   color: black;
   font-weight: lighter;
 }
-.card-profile-bottom p {
-  font-weight: bold;
-  font-size: 16px;
-  color: black;
-}
 
 .card-profile-bottom {
+  margin-bottom: 12px;
   background-color: #fafafa;
   opacity: 0.8;
   border-radius: 8px;
@@ -297,12 +295,29 @@
   // margin-left: 34px;
   display: flex;
   flex-direction: column;
-}
-.card-profile-bottom h2 {
-  font-size: 16px;
-  font-weight: bold;
-}
+  padding: 12px;
 
+  img {
+    height: 40px;
+  }
+
+  h2 {
+    font-size: 14px;
+    font-weight: bold;
+  }
+
+  p {
+    font-weight: bold;
+    font-size: 14px;
+    color: black;
+  }
+
+  @media (min-width: 768px) {
+    img {
+      height: 20px;
+    }
+  }
+}
 
 // friendship cards on home page
 .card-friend {
