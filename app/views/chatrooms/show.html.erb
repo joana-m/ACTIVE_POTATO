@@ -1,38 +1,39 @@
 <!-- app/views/chatrooms/show.html.erb -->
-<p class="mt-3 ms-3">
-  <% if @chatroom == nil %>
-    <%= link_to "< Back", event_path(@event)  %>
-  <% else %>
-    <%= link_to "< Back", chatrooms_path %><p>
-  <% end %>
 
-<div class="container chatroom"
-  data-controller="chatroom-subscription"
-  data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>"
->
-
-  <% if @chatroom.event %>
-    <h1><%= @chatroom.event.title %></h1>
-  <% else %>
-  <%# so,eti %>
-  <% end %>
-
-  <div class="messages" data-chatroom-subscription-target="messages">
-    <% @chatroom.messages.each do |message| %>
-      <%= render "messages/message", message: message %>
+<div class="home-container">
+  <div>
+    <% if @chatroom == nil %>
+      <%= link_to "< Back", event_path(@event)  %>
+    <% else %>
+      <%= link_to "< Back", chatrooms_path %>
     <% end %>
   </div>
+
+  <div class="container chatroom"
+    data-controller="chatroom-subscription"
+    data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>">
+
+    <% if @chatroom.event %>
+      <h1><%= @chatroom.event.title %></h1>
+    <% end %>
+
+    <div data-chatroom-subscription-target="messages">
+      <% @chatroom.messages.each do |message| %>
+        <%= render "messages/message", message: message %>
+      <% end %>
+    </div>
+
+    <%= simple_form_for [@chatroom, @message],
+      remote: true,
+      html: {data: {chatroom_subscription_target: "form"}, class: "d-flex"} do |f|
+    %>
+      <%= f.input :content,
+        label: false,
+        placeholder: "Message #{@chatroom.event ? @chatroom.event.title : @chatroom.other_person(current_user).user_name}",
+        wrapper_html: {class: "flex-grow-1 no-mb message-formbox"},
+        input_html: { class: "messagebox"}
+      %>
+      <button type="submit" class= "btn-purple-chat" ><i class="far h3 fa-paper-plane"></i></button>
+  <% end %>
+  </div>
 </div>
-<%= simple_form_for [@chatroom, @message],
-  remote: true,
-  html: {data: {chatroom_subscription_target: "form"}, class: "d-flex"} do |f|
-%>
-  <%= f.input :content,
-    label: false,
-    placeholder: "Message #{@chatroom.event ? @chatroom.event.title : @chatroom.other_person(current_user).user_name}",
-    wrapper_html: {class: "flex-grow-1 no-mb message-formbox"},
-    input_html: { class: "messagebox"}
-  %>
-  <%#= f.submit "Send", class: "btn-purple-chat " %>
-  <button type="submit" class= "btn-purple-chat" ><i class="far h3 fa-paper-plane"></i></button>
-<% end %>

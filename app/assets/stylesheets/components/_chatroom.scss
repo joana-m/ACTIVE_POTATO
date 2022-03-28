@@ -1,5 +1,4 @@
 .chatroom {
-  background: white;
   margin-top: 9px;
   height: calc(100vh - 75px);
   display: flex;
@@ -23,7 +22,6 @@
   }
 
   .messages p {
-
     margin-top: 0;
     margin-bottom: 1rem;
     width: 376px;
@@ -31,7 +29,7 @@
 
   #new_message {
     border-top: 1px solid $gray-200;
-    padding: 1rem;
+    // padding: 1rem;
 
     .form-group {
       margin-bottom: 0;
