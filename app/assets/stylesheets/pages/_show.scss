@@ -125,8 +125,41 @@
   height: 300px !important;
   border-radius: 8px;
   object-fit: cover;
+}
 
-  @media (min-width: 768px) {
-    height: 150px !important;
+// Smallest device
+@media (min-width: 100px) and (max-width: 575px) {
+  .avatar-square {
+    height: 162px;
   }
+
+  .profile-page-card {
+    width: 50%;
+  }
+
+  .join-btn {
+    padding: 7px 112px;
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) and (max-width: 896px) {
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .join-btn {
+    padding: 3px 72px;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+}
+
+@media (min-width: 768px) {
 }

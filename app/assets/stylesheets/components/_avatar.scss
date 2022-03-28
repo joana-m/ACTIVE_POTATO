@@ -93,6 +93,21 @@
 
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
+  .avatar-square {
+    height: 105px;
+  }
+
+  .active-image {
+    height: 54px;
+  }
+
+  .bar-image {
+    height: 34px;
+  }
+
+  .p-4 {
+    padding: 0px !important;
+  }
 }
 
 // Large devices (desktops, 992px and up)
