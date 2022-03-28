@@ -8,24 +8,22 @@
     <p><%= link_to "< Back", :back, class:"back-btn" %></p>
   </div>
   <div class="card-profile">
-    <div class="banner-profile mt-3">
-      <%= cl_image_tag @user.avatar.key, class: "avatar-square" %>
-    </div>
+    <%= cl_image_tag @user.avatar.key, class: "avatar-square" %>
   </div>
   <div class="card-profile-details">
-    <h2 class="text-justify text-center mt-3"><%= @user.user_name %></h2>
+    <h2 class="text-justify text-center mt-2"><%= @user.user_name %></h2>
     <p class="text-justify text-center main-p"><%= @user.bio %></p>
-    <div class="d-flex justify-content-center">
-      <div class="profile-page-card p-4">
+    <div class="d-flex justify-content-between">
+      <div class="profile-page-card">
         <h2 class="profile-number"><%= @user.joined_events.size + @user.events.size %></h2>
         <p class="profile-line">Events</p>
       </div>
-      <div class="profile-page-card p-4">
+      <div class="profile-page-card">
         <h2 class="profile-number"><%= @user.friends.size %></h2>
         <p class="profile-line">Friends</p>
       </div>
     </div>
-    <div class="card-profile-bottom mt-2 mb-3">
+    <div class="card-profile-bottom">
       <h2 class="active-header"> Activity </h2>
       <div class="active-bars">
         <%= image_tag "mini-logo.png", class:"active-image"%>
