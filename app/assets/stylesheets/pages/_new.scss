@@ -17,10 +17,10 @@
 
 .container {
   display: flex;
-  // justify-content: center;
+  justify-content: center;
   flex-direction: column;
   margin-top: 10vh;
-  align-items: flex-start;
+  align-items: center;
 }
 
 .form-control {
