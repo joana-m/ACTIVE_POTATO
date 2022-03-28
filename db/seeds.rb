@@ -189,14 +189,14 @@ event_21 = Event.create!(user_id: lauren.id, title: "Run run run with #{lauren.u
 user_event_35 = UserEvent.create!(user_id: rachel.id, event_id: event_21.id)
 
 # Running Evening
-event_22 = Event.create!(user_id: rachel.id, title: "Evening run with #{rachel.user_name}", description: "Sunset runner is here", address: "Canggu, Bali", sport: "Running", date: Date.tomorrow, time_of_event: "17:30", number_of_participants: 1, evening: true)
+event_22 = Event.create!(user_id: rachel.id, title: "Run with #{rachel.user_name}", description: "Sunset runner is here", address: "Canggu, Bali", sport: "Running", date: Date.tomorrow, time_of_event: "17:30", number_of_participants: 1, evening: true)
 
 #Surf evening
 
 event_23 = Event.create!(user_id: monica.id, title: "Surf with #{rachel.user_name}", description: "Sunset is the best for surfing", address: "Canggu, Bali", sport: "Surfing", date: Date.tomorrow, time_of_event: "17:30", number_of_participants: 1, evening: true)
 
 # YOGA afternoon
-event_24 = Event.create!(user_id: monica.id, title: "Vinyasa yoga with #{rachel.user_name}", description: "Yoga for everyone!", address: "Canggu, Bali", sport: "Yoga", date: Date.today, time_of_event: "13:30", number_of_participants: 2, afternoon: true)
+event_24 = Event.create!(user_id: monica.id, title: "Yoga with #{rachel.user_name}", description: "Yoga for everyone!", address: "Canggu, Bali", sport: "Yoga", date: Date.today, time_of_event: "13:30", number_of_participants: 2, afternoon: true)
 user_event_36 = UserEvent.create!(user_id: ethan.id, event_id: event_24.id)
 
 # Swimming afternoon
