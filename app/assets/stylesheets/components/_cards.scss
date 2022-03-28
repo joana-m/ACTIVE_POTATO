@@ -303,7 +303,6 @@
   font-weight: bold;
 }
 
-
 // friendship cards on home page
 .card-friend {
   background-color: #454e9e12;
@@ -344,18 +343,46 @@
   text-align: end;
 }
 
-@media (min-width: 768px) {
-  .card-friend .avatar {
-    width: 40px;
-    height: 40px;
-    background-color: #fafafa;
-    border-radius: 50%;
-    // padding: 2px;
-    // margin-left: 12px;
-    object-fit: cover;
+// Smallest device
+@media (min-width: 100px) and (max-width: 575px) {
+  .avatar-square {
+    height: 162px;
   }
 
-  .card-friend p {
-    font-size: 8px;
+  .profile-page-card {
+    width: 50%;
   }
+
+  .bar-image {
+    height: 12vw;
+  }
+
+  .active-image {
+    height: 14vw;
+  }
+
+  .card-profile-bottom {
+    .mb-3 {
+      margin-bottom: 3rem !important;
+    }
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) and (max-width: 896px) {
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+}
+
+@media (min-width: 768px) {
 }
